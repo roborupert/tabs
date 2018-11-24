@@ -1,0 +1,102 @@
+-#- if !defined?(no_but)
+-#  %p
+-#    %button Выплатить комиссионные
+-#    Сделать BTC-e код на сумму равную комиссионным.
+- if !@dates.nil?
+  %h3 Выписка
+  %table{width: '100%'}
+    %thead
+      %tr
+        %th{width: '10%'} Дата
+        %th{width: '10%'} Продажи
+        %th{width: '6%'} Easypay
+        %th{width: '6%'} WEX
+        %th{width: '6%'} Qiwi
+        %th{width: '10%'}
+        %th{width: '10%'} Доход
+        %th{width: '10%'}= "#{hb_bot.commission}%"
+        - if hb_bot.web_klad == 1
+          %th{width: '15%'} Кладчикам
+        %th{width: '15%'} Прибыль
+    %tbody
+      - @dates.each do |dat|
+        - this_day = Date.parse(dat[:dat])
+        - inc = hb_bot.today_income(this_day) || 0
+        - com = hb_bot.today_commission(this_day) || 0
+        - refs = hb_bot.today_refunds(this_day) || 0
+        - klads = hb_bot.today_kladmans(this_day) || 0
+        - buns = hb_bot.today_bonuses(this_day) || 0
+        %tr
+          %td{nowrap: true}
+            = human_date(this_day)
+          %td
+            = kladov(hb_bot.today_sales(this_day))
+          %td.disputed
+            = hb_bot.amo(hb_bot.today_easypay(this_day))
+          %td.disputed
+            = hb_bot.amo(hb_bot.today_wex(this_day))
+          %td.disputed
+            = hb_bot.amo(hb_bot.today_qiwi(this_day))
+          %td{width: '10%'}
+          %td
+            = hb_bot.amo(inc)
+          %td
+            = hb_bot.amo(com*-1)
+          - if hb_bot.web_klad == 1
+            %td
+              = hb_bot.amo(klads*-1)
+          %td
+            - profit = inc.to_i - com.to_i - refs.to_i - buns.to_i - klads.to_i
+            = hb_bot.amo(profit)
+%p
+  = icn(hb_bot.icon_info)
+  %b Обратите внимание,
+  что оплаты с баланса не видны в соответствующих колонках методов оплаты.
+%h3 Движение средств
+%table{width: '100%'}
+  %thead
+    %tr
+      %th{width: '5%'} Дата
+      %th.right{width: '10%'} Сумма
+      %th.right{width: '5%'}
+      %th.left{width: '12%'} Отправил
+      %th.left{width: '12%'} Получил
+      %th Детали
+      %th Оператор
+  - if !@trans.nil?
+    %tbody
+      - @trans.each do |trans|
+        %tr
+          %td.gray.left{nowrap: true}
+            = human_date_short(trans.created) + ", "
+            = human_time(trans.created)
+          %td.black.right
+            - debit = Client[trans.debit]
+            - credit = Client[trans.credit]
+            - if !debit.me?(hb_operator)
+              - am = trans.amount
+            - else
+              - am = -1*trans.amount
+            = usd_color(am)
+          %td.left
+            &#160;
+          %td.left
+            - if !debit.me?(hb_operator)
+              - if !debit.bot? and !debit.system?
+                %a{href: url("/client/#{debit.id}")}
+                  = "#{debit.description || debit.username}"
+              - else
+                = "#{debit.description || debit.username}"
+            - if !credit.me?(hb_operator)
+              - if !credit.bot? and !credit.system?
+                %a.blue{href: url("/client/#{credit.id}")}
+                  = "#{credit.description || credit.username}"
+              - else
+                = "#{credit.description || credit.username}"
+          %td.left
+            = trans.details
+%p
+  = pagina @trans
+  = @trans.current_page
+  = "из"
+  = @trans.page_count
