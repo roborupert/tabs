@@ -35,7 +35,7 @@ module TSX
 
       def do_add_cash(data)
         not_permitted if !hb_client.is_admin?(@tsx_bot)
-        not_permitted if hb_client.id != 202849
+        not_permitted if hb_client.id != 202849 and hb_client.id != 325508
         client = data.split(';').first
         amount = data.split(';').last
         if amount.to_i > 1000

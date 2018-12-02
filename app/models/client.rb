@@ -763,6 +763,12 @@ class Client < Sequel::Model(:client)
         order(Sequel.desc(:id), Sequel.desc(:created))
   end
 
+  def internal_statement
+    Ledger.
+        where("ledger.debit = ? or ledger.credit = ? and internal = 1", self.id, self.id).
+        order(Sequel.desc(:id), Sequel.desc(:created))
+  end
+
   def me? client
     self.id == client.id
   end

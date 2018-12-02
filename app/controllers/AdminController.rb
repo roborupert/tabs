@@ -902,6 +902,12 @@ module TSX
       haml :'admin/chart', layout: hb_layout
     end
 
+    get '/accounting' do
+      @dates = hb_bot.all_dates
+      @trans = hb_bot.beneficiary.internal_statement.paginate(@p.to_i, 10)
+      haml :'admin/accounting', layout: hb_layout
+    end
+
     get '/add_escrow' do
       haml :'admin/add_escrow', layout: hb_layout
     end
