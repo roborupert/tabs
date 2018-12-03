@@ -26,8 +26,8 @@
       <file leaf-file-name="SearchController.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="215" column="0" lean-forward="false" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
+            <state relative-caret-position="350">
+              <caret line="243" column="0" lean-forward="false" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -117,7 +117,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>PEM</find>
       <find>OpenSSL::PKey::RSA</find>
       <find>hostname</find>
       <find>top</find>
@@ -147,6 +146,7 @@
       <find>btn_</find>
       <find>trade_ove</find>
       <find>tokenbar</find>
+      <find>'tokenbar'</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -510,12 +510,12 @@
       <workItem from="1542992671490" duration="17400000" />
       <workItem from="1543103721950" duration="1779000" />
       <workItem from="1543466842695" duration="13000" />
-      <workItem from="1543733455457" duration="2572000" />
+      <workItem from="1543733455457" duration="2880000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="304669000" />
+    <option name="totallyTimeSpent" value="304977000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="831" extended-state="6" />
@@ -955,8 +955,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="215" column="0" lean-forward="false" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
+        <state relative-caret-position="350">
+          <caret line="243" column="0" lean-forward="false" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
           <folding />
         </state>
       </provider>

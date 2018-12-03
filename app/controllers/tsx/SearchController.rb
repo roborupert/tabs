@@ -237,11 +237,12 @@ module TSX
         seller = Client[_trade.seller]
         seller_bot = Bot[_buy.bot]
         if data.nil?
+          # if !method
+          #   method = Country[@tsx_bot.get_var('country')].code == 'RU' ? 'qiwi' : 'easypay'
+          #   sset('telebot_method', 'easypay')
+          # end
+          sset('telebot_method', 'easypay')
           method = sget('telebot_method')
-          if !method
-            method = Country[@tsx_bot.get_var('country')].code == 'RU' ? 'qiwi' : 'easypay'
-            sset('telebot_method', 'easypay')
-          end
           buts = _trade.confirmation_buttons(hb_client, method)
           puts "#{seller_bot.beneficiary} #{seller_bot} #{method} #{@tsx_bot.is_chief?}"
           reply_inline 'search/trade', ben: seller_bot.beneficiary, seller_bot: seller_bot, seller: seller, method: method, ch: @tsx_bot.is_chief?
