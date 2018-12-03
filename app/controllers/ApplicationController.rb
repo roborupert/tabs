@@ -71,7 +71,7 @@ module TSX
     Rack::Timeout::Logger.logger = LOGGER
     Rack::Timeout::Logger.device = $stdout
     Rack::Timeout::Logger.level  = Logger::ERROR
-    # DB.logger = LOGGER
+    DB.logger = LOGGER
 
     Telegram::Bot.configure do |config|
       config.adapter = :net_http_persistent
