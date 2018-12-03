@@ -213,7 +213,7 @@ module TSX
           start
         else
           botrec('Выбран метод оплаты Easypay')
-          sset('telebot_method', Country[@tsx_bot.get_var('country')].code == 'RU' ? 'qiwi' : 'tokenbar')
+          sset('telebot_method', Country[@tsx_bot.get_var('country')].code == 'RU' ? 'qiwi' : 'easypay')
           strade(pending)
           sbuy(Item[pending.item])
           trade_overview
