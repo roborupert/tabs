@@ -1,7 +1,7 @@
 require_relative './requires'
 logger = CronLogger.new
 
-hook = 'https://9669c1a3.ngrok.io/hook/'
+hook = 'https://5912e4ec.ngrok.io/hook/'
 puts "Bot: " + ARGV[0]
 puts "Setting webhook ... "
 b = Bot.find(tele: ARGV[0])

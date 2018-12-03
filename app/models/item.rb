@@ -81,8 +81,10 @@ class Item < Sequel::Model(:item)
       puts "PRICE WITH METH DISCOUNT: #{p}"
       return p
     elsif self.old?
+      puts "OLD KLAD"
       return p.price - (p.price.to_f * bot.discount.to_f / 100).round.to_i
     else
+      puts "NOT OLD KLAD"
       return p.price
     end
   end
