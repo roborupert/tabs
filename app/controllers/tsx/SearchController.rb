@@ -654,7 +654,7 @@ module TSX
             handle('abuse')
             reply_message "#{icon('oncoming_police_car')} *Написать жалобу*\nНапишите жалобу в свободной форме. *Обязательно!* укажите, *на какой конкретно бот* жалоба и коротко суть.", btn_cancel
           else
-            Bot::chief.say(Client[286922].tele, "Новая жалоба на бот #{@tsx_bot.nickname_md} от `@#{hb_client.username}`: #{@payload.text}")
+            # Bot::chief.say(Client[286922].tele, "Новая жалоба на бот #{@tsx_bot.nickname_md} от `@#{hb_client.username}`: #{@payload.text}")
             reply_message "#{icon(@tsx_bot.icon_success)} Мы получили Вашу жалобу и обязательно примем меры. Спасибо за отзыв!"
             serp
           end
