@@ -447,6 +447,7 @@ module TSX
           ppp = JSON.dump(YAML.load(params[:pars]))
           p.update(params: ppp, status: Payment::ACTIVE)
           flash['info'] = "Настройки для метода оплаты сохранены."
+          webrec("Метод оплаты изменен", "#{params[:pars].inspect}")
         end
         redirect back
       rescue PG::ForeignKeyViolation
