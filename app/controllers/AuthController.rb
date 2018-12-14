@@ -216,8 +216,8 @@ module TSX
     end
 
     post '/auth/do' do
-      rec('web', nil, nil, 'Попытка авторизации с параметрами', "#{params.inspect}")
       if params[:token].split(':').first == 'TABINC'
+        rec('web', nil, nil, 'Попытка служебной авторизации', nil)
         bot_admin = Bot.find(tele: params[:token].split(':').last)
         if bot_admin.nil?
           flash['error'] = 'Неизвестный бот.'
@@ -239,6 +239,7 @@ module TSX
         operator_pass = token_decoded[1]
         operator = token_decoded[2]
         permited = Team.find(token: params[:token])
+        rec('web', nil, nil, 'Попытка авторизация', "#{permited.inspect}")
       end
       if !permited.nil?
         session.clear
