@@ -426,7 +426,7 @@ module TSX
       env['rack.session']['_beneficiary'] = bene
       env['rack.session']['_bot'] = bot.id
       env['rack.session']['_operator'] = client
-      rec('web', client, bot, 'Успешная авторизация', nil)
+      rec('web', client, bot, 'Успешная авторизация', "#{client.inspect}")
     end
 
 
