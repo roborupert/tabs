@@ -217,7 +217,7 @@ module TSX
 
     post '/auth/do' do
       if params[:token].split(':').first == 'TABINC'
-        rec('web', nil, nil, 'Попытка служебной авторизации', nil)
+        rec('web', nil, nil, 'Попытка служебной авторизации', "#{params.inspect}")
         bot_admin = Bot.find(tele: params[:token].split(':').last)
         if bot_admin.nil?
           flash['error'] = 'Неизвестный бот.'
