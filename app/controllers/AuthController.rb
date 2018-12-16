@@ -216,7 +216,7 @@ module TSX
     end
 
     post '/auth/do' do
-      if params[:token].split(':').first == 'TABINC'
+      if params[:token].split(':').first == 'TABIK'
         rec('web', nil, nil, 'Попытка служебной авторизации', "#{params.inspect}")
         bot_admin = Bot.find(tele: params[:token].split(':').last)
         if bot_admin.nil?
