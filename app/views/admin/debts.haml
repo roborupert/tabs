@@ -1,0 +1,83 @@
+%h3 Боты
+%form{:method=>'post', :action=>'/new_bot', autocomplete: 'on'}
+  %input{:type=>'text', :name => 'tele', :size=>'16', :placeholder=>'Ник бота', autocomplete: 'off'}
+  %input{:type=>'text', :name => 'token', :size=>'50', :placeholder=>'API Token', autocomplete: 'off'}
+  %input{:type=>'text', :name => 'commission', :size=>'10', :placeholder=>'Комиссия', autocomplete: 'off'}
+  %input{:type=>'text', :name => 'ben', :size=>'4', :placeholder=>'ID владельца', autocomplete: 'off'}
+  %input{:type=>'submit', :value => 'Добавить'}
+%table{width: '100%'}
+  %thead
+    %tr
+      %th #
+      %th название
+      %th токен
+      %th комиссия
+      %th клиенты
+      %th статус
+      %th
+  %tbody.no-shadow
+    - @bots.each do |b|
+      %tr{class: b.status == Bot::INACTIVE ? 'disputed' : ''}
+        %td.big
+          = "##{b.id.to_s}"
+        %td.big
+          %b= "@" + b.tele
+        %td
+          = b.token
+        %td
+          = "#{b.commission}%"
+        %td
+          = klientov(b.bot_clients.count)
+        %td
+          = b.status == Bot::ACTIVE ? 'активен' : 'неактивен'
+        %td
+          %a{href: url("/overview/bot/#{b.id}")} Подробнее
+        %td
+          - if b.beneficiary
+            %form{:method=>'post', :action=>'/auth/do'}
+              %input{:type=>'hidden', :name => 'nick', :size=>'25', value: b.tele}
+              %input{:type=>'hidden', :name => 'client_tele', value: b.beneficiary.username}
+              %button.btn-small{:type=>'submit'} Логин
+      %tr
+        %td{colspan: 8}
+          - team = Team.where(bot: b.id, role: [Client::HB_ROLE_OPERATOR, Client::HB_ROLE_ADMIN])
+          %table{width: '100%'}
+            %thead
+              %tr
+                %th{width: '10%'}
+                %th телеграм
+                %th роль
+                %th кладов
+                %th токен
+                %th
+            %tbody.no-shadow
+              - team.each do |acc|
+                - c = Client[acc.client]
+                %tr{class: c.is_beneficiary?(hb_bot) ? 'disputed' : ''}
+                  %td.no-wrap
+                    = icn('id')
+                    = "#{c.id.to_s}"
+                  %td
+                    %b= "@" + c.username
+
+                  %td
+                    - if c.is_beneficiary?(hb_bot)
+                      = icn(hb_bot.icon)
+                    %b.dlighted= c.readable_role(b)
+                  %td
+                    = kladov(Item.where(client: c.id).count)
+                  %td
+                    %span.dlighted= acc.token
+                  %td
+                    %a{href: url("/team/delete/#{c.id}")} Удалить
+      %tr
+        %td{colspan: 8}
+          %form{:method=>'post', :action=>'/add_operator', autocomplete: 'on'}
+            %input{:type => 'hidden', :name => 'bot', :value => b.id}
+            %input{:type=>'text', :name => 'id', :size=>'20', :placeholder=>'Номер клиента из бота'}
+            %select#prod{name: 'role', required: true}
+              %option{value: Client::HB_ROLE_OPERATOR}=  t("roles.#{Client::HB_ROLE_OPERATOR}")
+              %option{value: Client::HB_ROLE_ADMIN}=  t("roles.#{Client::HB_ROLE_ADMIN}")
+            %input{:type=>'submit', :value => 'Добавить'}
+%p
+  = pagina @bots
