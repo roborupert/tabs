@@ -646,6 +646,22 @@ module TSX
       redirect back
     end
 
+    get '/ref_to_balance/:client' do
+      redirect to('/not_permitted') if !hb_operator.is_beneficiary?(hb_bot) and !hb_operator.is_admin?(hb_bot)
+      cl = Client[params[:client]]
+      Ledger.
+        create(
+          debit: Client::__referals.id,
+          credit: cl.id,
+          amount: cl.ref_cash,
+          details: "Реферальные зачислены на баланс",
+          status: Ledger::ACTIVE,
+          created: Time.now,
+          operator: Client::__tsx.id
+        )
+      flash['info'] = 'Реферальные скинуты на баланс.'
+      redirect back
+    end
 
     get '/team/delete/:oper' do
       redirect to('/not_permitted') if !hb_operator.is_beneficiary?(hb_bot) and !hb_operator.is_admin?(hb_bot)

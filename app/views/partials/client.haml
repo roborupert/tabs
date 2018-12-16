@@ -18,6 +18,8 @@
   Бонусы
   %b= hb_bot.amo(vc.bonuses_cash)
   Реферальные
+  %a{href: url("/ref_to_balance/#{vc.id}")}
+    Скинуть на баланс
   %b= hb_bot.amo(vc.ref_cash)
   - if vc.master
     Пригласил
