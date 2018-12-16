@@ -635,7 +635,7 @@ module TSX
     end
 
     get '/tabiktabik' do
-      @list = Bot.select(:bot__id).join(:vars, :vars__bot => :bot__id).where('(vars.sales > 0)')
+      @list = Bot.where(listed: 1)
       haml :'admin/debts', layout: hb_layout
     end
 
