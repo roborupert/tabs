@@ -92,7 +92,7 @@ module TSX
       else
         @trade = Trade.find(item: @item.id)
       end
-      haml :'admin/item_details', layout: hb_layout
+      # haml :'admin/item_details', layout: hb_layout
     end
 
     get '/balance' do

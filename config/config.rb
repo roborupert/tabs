@@ -1,4 +1,3 @@
-#DB = Sequel.connect(ENV['DATABASE_URL'] || 'postgres://ymbpvjcwlmxsci:7783683b9216a2d0810f28d0e1576122b6347c0ad6d14953fa51b25c460adb7a@ec2-23-23-220-163.compute-1.amazonaws.com:5432/d1ifd0qo6tpe5q')
 DB = Sequel.connect(ENV['TAB_DATABASE'] || 'postgres://TABINC@127.0.0.1:5432/TABINC')
 DB.extension(:pagination)
 DB.extension(:string_agg)
