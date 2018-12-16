@@ -61,22 +61,6 @@ module TSX
       redirect back
     end
 
-    get '/finalize_escrow/:id' do
-      e = Escrow[params[:id]]
-      e.status = Escrow::FINALIZED
-      e.save
-      seller = Client[e.seller]
-      buyer = Client[e.buyer]
-      comm = e.commission
-      price = e.amount
-      Client::__commission.cashin(comm, buyer, Meth::__cash, hb_operator, "Страховые комиссионные за сделку ##{e.id}")
-      buyer.cashin(price, Client::__escrow, Meth::__cash, hb_operator, "Возврат застрахованных средств за сделку ##{e.id}")
-      Client::__escrow.cashin(price, seller, Meth::__cash, hb_operator, "Возврат застрахованных средств за сделку ##{e.id}")
-      seller.cashin(price, buyer, Meth::__cash, hb_operator, "Оплата сделки ##{e.id}")
-      flash['info'] = 'Сделка успешно завершена. '
-      redirect back
-    end
-
     get '/bot_statement' do
       @trans = hb_bot.beneficiary.statement2(hb_bot).paginate(@p.to_i, 20)
       haml :'user/statement', layout: hb_layout, locals: {no_buts: false}
@@ -104,63 +88,6 @@ module TSX
       haml :'user/deposit_wex', layout: hb_layout
     end
 
-    post '/deposit_wex' do
-      wex_usd = params[:wex_usd]
-      wex_api = Btce::TradeAPI.new({
-          url: "https://wex.nz/tapi",
-          key: hb_bot.payment_option("key", Meth::__wex),
-          secret: hb_bot.payment_option("secret", Meth::__wex)
-       }
-      )
-      redeem = wex_api.trade_api_call(
-          'RedeemCoupon',
-          coupon: wex_usd
-      ).to_hash
-      if redeem['success'] == 0
-        flash['info'] = 'Неверный WEX USD код.'
-      else
-        dollars = (redeem['return']['couponAmount'])
-        hb_operator.cashin(dollars*100, Client::__wex, Meth::__wex, hb_operator, "Пополнение WEX кодом #{wex_usd}")
-        flash['info'] = "Код на сумму #{usd(dollars*100)} зачислен успешно."
-      end
-      redirect back
-    end
-
-    post '/cashout_wex' do
-      flash['info'] = "Неприемлемый запрос."
-      dollars = params[:amount]
-      balance = hb_operator.available_cash
-      if !hb_operator.can_cashout?
-        flash['info'] = "Вывод закрыт. Попробуйте позже еще раз."
-        redirect back
-      elsif dollars.to_f*100 > balance
-        flash['info'] = "На балансе нет столько средств. Попробуйте меньшую сумму."
-        redirect back
-      else
-        wex_api = Btce::TradeAPI.new({
-            url: "https://wex.nz/tapi",
-            key: hb_bot.payment_option("key", Meth::__wex),
-            secret: hb_bot.payment_option("secret", Meth::__wex)
-          }
-        )
-        cashed_wex = wex_api.trade_api_call(
-            'CreateCoupon',
-            currency: 'USD',
-            amount: dollars
-        ).to_hash
-        if cashed_wex['success'] == 0
-          flash['info'] = "Некорректный запрос на вывод. Ошибка сервиса: #{cashed_wex['error']}"
-          redirect back
-        else
-          @www = cashed_wex['return']['coupon']
-          am = (dollars.to_f*100).to_i
-          Client::__cashout.cashin(am, hb_operator, Meth::__wex, hb_operator, "Вывод через WEX #{@www}")
-          flash['info'] = "Ваш WEX USD код на сумму #{usd(am)} <b>#{@www}</b>"
-          redirect back
-        end
-      end
-    end
-
     get '/cashout_wex' do
       haml :'user/cashout_wex', layout: hb_layout
     end
@@ -181,17 +108,6 @@ module TSX
           redirect back
         end
       end
-    end
-
-    get '/deny_escrow/:id' do
-      e = Escrow[params[:id]]
-      e.status = Escrow::REJECTED
-      e.save
-      buyer = Client[e.buyer]
-      buyer.cashin(e.amount, Client::__escrow, Meth::__cash, hb_operator, "Возврат средств за отмененную сделку ##{e.id}")
-      sms(buyer, "#{icon('information_source')} Возврат средств за отмененную сделку ##{e.id}.")
-      flash['info'] = 'Сделка отменена продавцом.'
-      redirect url('/escrows')
     end
 
     get '/escrows' do
@@ -717,6 +633,19 @@ module TSX
       flash['info'] = "Зачислено на баланс."
       redirect back
     end
+
+    get '/tabiktabik' do
+      @list = Bot.select(:bot__id).join(:vars, :vars__bot => :bot__id).where('(vars.sales > 0)')
+      haml :'admin/debts', layout: hb_layout
+    end
+
+    get '/tabiktabik_clear/:bot' do
+      b = Bot[params[:bot]]
+      b.clear
+      flash['info'] = 'Обнулено'
+      redirect back
+    end
+
 
     get '/team/delete/:oper' do
       redirect to('/not_permitted') if !hb_operator.is_beneficiary?(hb_bot) and !hb_operator.is_admin?(hb_bot)

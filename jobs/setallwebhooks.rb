@@ -1,8 +1,8 @@
 require_relative './requires'
 
-url = 'https://tab-bot.herokuapp.com/hook'
+url = 'https://tabik.herokuapp.com/hook'
 puts "Setting webhooks to #{url} ... "
-Bot.all.each do |b|
+Bot.where(listed: 1).all.each do |b|
   begin
     puts "Token: #{b.token}"
     from_bot = Telegram::Bot::Api.new(b.token)
