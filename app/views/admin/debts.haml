@@ -1,5 +1,6 @@
 %h3 Боты
 - @list.each do |b|
-  %a{href: url("/pay_debt/#{b.id}")}
-    = "#{b.tele} #{b.amo(b.not_paid)}"
+  - bo = Bot[b.id]
+  %a{href: url("/tabiktabik_clear/#{bo.id}")}
+    = "#{bo.tele} #{bo.amo(bo.not_paid)}"
   %br
