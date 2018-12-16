@@ -1,12 +1,5 @@
-#{icon(@tsx_bot.icon_payments)} *Платежи и способы олпаты*
+#{icon(@tsx_bot.icon_payments)} *Как оплатить с помощью Easypay*
 
-#{icon('large_orange_diamond')} *TokenBar*
-Пример кода `380971234567:01234567`
-Сайт платежной системы tokenbar.net
-
-Платежи TokenBar зачисляются в автоматическом режиме. Комиссий мы не берем. Данные коды пополнения можно купить за наличные деньги в любом терминале EasyPay.
-
-#{icon('large_orange_diamond')} *Easypay*
 Пример кода `21:4699971`
 Пример чека и как найти код пополнения /easypaysample
 
