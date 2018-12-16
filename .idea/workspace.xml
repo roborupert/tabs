@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/views/admin/debts.haml" afterPath="$PROJECT_DIR$/app/views/admin/debts.haml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,10 +23,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminController.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AdminController.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
+            <state relative-caret-position="215">
               <caret line="637" column="30" lean-forward="true" selection-start-line="637" selection-start-column="30" selection-end-line="637" selection-end-column="30" />
               <folding />
             </state>
@@ -44,7 +43,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="debts.haml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="debts.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/admin/debts.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
@@ -521,12 +520,12 @@
       <workItem from="1543466842695" duration="13000" />
       <workItem from="1543733455457" duration="3082000" />
       <workItem from="1544326188781" duration="1608000" />
-      <workItem from="1544793398184" duration="7246000" />
+      <workItem from="1544793398184" duration="7325000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="314033000" />
+    <option name="totallyTimeSpent" value="314112000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="831" extended-state="6" />
@@ -955,18 +954,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="637" column="30" lean-forward="true" selection-start-line="637" selection-start-column="30" selection-end-line="637" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/debts.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="637" column="30" lean-forward="true" selection-start-line="637" selection-start-column="30" selection-end-line="637" selection-end-column="30" />
           <folding />
         </state>
       </provider>
