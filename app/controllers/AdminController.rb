@@ -341,7 +341,7 @@ module TSX
         redirect url("/payments/#{@payment.meth}")
       else
         @pays = Payment.where(bot: hb_bot.id)
-        haml :'admin/payments', layout: hb_layout
+        # haml :'admin/payments', layout: hb_layout
       end
     end
 
@@ -444,8 +444,8 @@ module TSX
           p.delete
           flash['info'] = "Метод оплаты деактивирован."
         else
-          ppp = JSON.dump(YAML.load(params[:pars]))
-          p.update(params: ppp, status: Payment::ACTIVE)
+          # ppp = JSON.dump(YAML.load(params[:pars]))
+          # p.update(params: ppp, status: Payment::ACTIVE)
           flash['info'] = "Настройки для метода оплаты сохранены."
           webrec("Метод оплаты изменен", "#{params[:pars].inspect}")
         end

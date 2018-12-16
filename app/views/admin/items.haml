@@ -102,13 +102,13 @@
               = partial 'partials/not_sold', locals: {sale: sale, item: item, trade: t, product: p}
             %td
               = (!sale.nil? and !sale.code.nil?) ? "<img width='20px' src=#{url('/images/payments/'+ (Meth[sale.meth].nil? ? 'cash' : Meth[sale.meth].title.downcase)+ '.png')}>#{sale.code.gsub(',', '').truncate(20)}" : ''
-          %tr{id: "item_#{item.id}", style: 'display: none'}
-            %td{colspan: 8}
-              - if !hb_operator.is_support?(hb_bot)
-                %pre.code
-                  = human_date_short(item.created) + ", " + human_time(item.created)
-                  = "&#160;"
-                  %a{href: item.photo}= item.photo
+          -#%tr{id: "item_#{item.id}", style: 'display: none'}
+          -#  %td{colspan: 8}
+          -#    - if !hb_operator.is_support?(hb_bot)
+          -#      %pre.code
+          -#        = human_date_short(item.created) + ", " + human_time(item.created)
+          -#        = "&#160;"
+          -#        %a{href: item.photo}= item.photo
   %p
     = pagina @items
     = @items.current_page

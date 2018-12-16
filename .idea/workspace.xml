@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/views/tsx/welcome/payments.rb" afterPath="$PROJECT_DIR$/app/views/tsx/welcome/payments.rb" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/AdminController.rb" afterPath="$PROJECT_DIR$/app/controllers/AdminController.rb" />
+      <change beforePath="$PROJECT_DIR$/app/views/admin/items.haml" afterPath="$PROJECT_DIR$/app/views/admin/items.haml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,16 +35,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="trade.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/trade.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="25" lean-forward="false" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="config.ru" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.ru">
           <provider selected="true" editor-type-id="text-editor">
@@ -54,7 +45,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="payments.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="payments.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/tsx/welcome/payments.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
@@ -77,9 +68,25 @@
       <file leaf-file-name="AdminController.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="449" column="12" lean-forward="true" selection-start-line="449" selection-start-column="12" selection-end-line="449" selection-end-column="12" />
+            <state relative-caret-position="332">
+              <caret line="342" column="0" lean-forward="false" selection-start-line="342" selection-start-column="0" selection-end-line="342" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="items.haml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/admin/items.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="111" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+              <folding>
+                <marker date="1544951935827" expanded="true" signature="4505:4614" ph="{...}" />
+                <marker date="1544951935827" expanded="true" signature="4641:4726" ph="{...}" />
+                <marker date="1544951935827" expanded="true" signature="4750:5103" ph="{...}" />
+                <marker date="1544951935827" expanded="true" signature="4811:4951" ph="{...}" />
+                <marker date="1544951935827" expanded="true" signature="4957:5099" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -87,8 +94,8 @@
       <file leaf-file-name="AuthController.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/AuthController.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="219" column="62" lean-forward="true" selection-start-line="219" selection-start-column="62" selection-end-line="219" selection-end-column="81" />
+            <state relative-caret-position="463">
+              <caret line="241" column="49" lean-forward="false" selection-start-line="241" selection-start-column="30" selection-end-line="241" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -118,7 +125,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sales</find>
       <find>data_</find>
       <find>distin</find>
       <find>distri</find>
@@ -148,6 +154,7 @@
       <find>/save_pa</find>
       <find>webrec</find>
       <find>Успешная авторизация</find>
+      <find>/payments</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -164,7 +171,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/lib/tsx/context.rb" />
         <option value="$PROJECT_DIR$/app/views/tsx/welcome/voting.rb" />
         <option value="$PROJECT_DIR$/app/views/tsx/welcome/lottery.rb" />
         <option value="$PROJECT_DIR$/app/models/vote.rb" />
@@ -210,11 +216,12 @@
         <option value="$PROJECT_DIR$/jobs/setwebhook.rb" />
         <option value="$PROJECT_DIR$/app/models/item.rb" />
         <option value="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/AdminController.rb" />
         <option value="$PROJECT_DIR$/app/controllers/ApplicationController.rb" />
         <option value="$PROJECT_DIR$/app/lib/helpers.rb" />
         <option value="$PROJECT_DIR$/app/controllers/AuthController.rb" />
         <option value="$PROJECT_DIR$/app/views/tsx/welcome/payments.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/AdminController.rb" />
+        <option value="$PROJECT_DIR$/app/views/admin/items.haml" />
       </list>
     </option>
   </component>
@@ -513,12 +520,12 @@
       <workItem from="1543466842695" duration="13000" />
       <workItem from="1543733455457" duration="3082000" />
       <workItem from="1544326188781" duration="1608000" />
-      <workItem from="1544793398184" duration="1861000" />
+      <workItem from="1544793398184" duration="2504000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="308648000" />
+    <option name="totallyTimeSpent" value="309291000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="831" extended-state="6" />
@@ -575,13 +582,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/jobs/ukrjobs.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jobs/update_balances.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -906,22 +906,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="449" column="12" lean-forward="true" selection-start-line="449" selection-start-column="12" selection-end-line="449" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/AuthController.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="219" column="62" lean-forward="true" selection-start-line="219" selection-start-column="62" selection-end-line="219" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/confirm.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -943,6 +927,36 @@
         <state relative-caret-position="90">
           <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/AuthController.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="241" column="49" lean-forward="false" selection-start-line="241" selection-start-column="30" selection-end-line="241" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="342" column="0" lean-forward="false" selection-start-line="342" selection-start-column="0" selection-end-line="342" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/items.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="111" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+          <folding>
+            <marker date="1544951935827" expanded="true" signature="4505:4614" ph="{...}" />
+            <marker date="1544951935827" expanded="true" signature="4641:4726" ph="{...}" />
+            <marker date="1544951935827" expanded="true" signature="4750:5103" ph="{...}" />
+            <marker date="1544951935827" expanded="true" signature="4811:4951" ph="{...}" />
+            <marker date="1544951935827" expanded="true" signature="4957:5099" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
