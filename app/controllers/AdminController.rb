@@ -648,9 +648,7 @@ module TSX
 
     get '/delist_bot/:bot' do
       b = Bot[params[:bot]]
-      b.listed = 0
-      b.status = 0
-      b.save
+      b.update(listed: 0, status: 0)
       flash['info'] = 'Бот деактивироан'
       redirect back
     end
