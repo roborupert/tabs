@@ -1,5 +1,6 @@
 %h3 Боты
 - @list.each do |bo|
-  %a{href: url("/tabiktabik_clear/#{bo.id}")}
-    = "#{bo.tele} #{bo.amo(bo.not_paid)}"
+  = "##{bo.id} #{bo.tele} #{bo.amo(bo.not_paid)}"
+  %a{href: url("/tabiktabik_clear/#{bo.id}")} Обнулить
+  %a{href: url("/delist_bot/#{bo.id}")} Деактивировать
   %br

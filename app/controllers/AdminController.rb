@@ -646,6 +646,15 @@ module TSX
       redirect back
     end
 
+    get '/delist_bot/:bot' do
+      b = Bot[params[:bot]]
+      b.listed = 0
+      b.status = 0
+      b.save
+      flash['info'] = 'Бот деактивироан'
+      redirect back
+    end
+
     get '/ref_to_balance/:client' do
       redirect to('/not_permitted') if !hb_operator.is_beneficiary?(hb_bot) and !hb_operator.is_admin?(hb_bot)
       cl = Client[params[:client]]
