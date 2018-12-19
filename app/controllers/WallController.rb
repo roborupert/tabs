@@ -105,7 +105,7 @@ module TSX
     end
 
     get '/recommended' do
-      @available_bots = Bot.select_all(:bot).join(:vars, :vars__bot => :bot__id).where(status: Bot::ACTIVE, listed: 1).order(Sequel.desc(:vars__today_sales), Sequel.desc(:vars__sales))
+      @available_bots = Bot.select_all(:bot).join(:vars, :vars__bot => :bot__id).where(listed: 1).order(Sequel.desc(:vars__today_sales))
       haml :'public/recommended', layout: hb_layout, locals: {its: @available_bots}
     end
 
