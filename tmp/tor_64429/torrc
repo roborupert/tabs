@@ -1,0 +1,7 @@
+DataDirectory /code/tabs/tmp/tor_64429/data
+ControlPort 64429
+HiddenServiceDir /code/tabs/tmp/tor_64429/hidden_service
+HiddenServicePort 80 localhost:5000
+PidFile /code/tabs/tmp/tor_64429/pid
+RunAsDaemon 1
+SocksPort 0
