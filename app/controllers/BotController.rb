@@ -8,33 +8,33 @@ class TABTimeout < Timeout::Error; end
 class BotController < TSX::ApplicationController
 
   post '/hook/*' do
-    # begin
-    #   mess = ''
-    #   token = params[:splat].first
-    #   @bot = Telegram::Bot::Client.new(token)
-    #   @tsx_bot = Bot.find(token: token)
-    #   @tsx_host = request.host
-    #   parse_update(request.body)
-    #   setup_sessa
-    #   raise 'Возникла проблема при регистрации вашего никнейма. Обратитесь в поддержку.' if !hb_client
-    #   raise "Бот на техобслуживании." if @tsx_bot.inactive?
-    #   raise "Вы забанены. Удачи." if hb_client.banned?
-    #   show_typing
-    #   call_handler
-    #   log_update
-    # rescue Telegram::Bot::Exceptions::ResponseError => re
-    #   hb_client.status = Client::CLIENT_BANNED
-    #   hb_client.save
-    #   mess = re.message
-    #   puts mess.colorize(:red)
-    #   # puts re.backtrace.join("\n\t")
-    # rescue => ex
-    #   puts "====================================="
-    #   puts ex.message.colorize(:red)
-    #   # puts ex.backtrace.join("\n\t")
-    #   puts mess.colorize(:red)
-    #   puts "====================================="
-    # end
+    begin
+      mess = ''
+      token = params[:splat].first
+      @bot = Telegram::Bot::Client.new(token)
+      @tsx_bot = Bot.find(token: token)
+      @tsx_host = request.host
+      parse_update(request.body)
+      setup_sessa
+      raise 'Возникла проблема при регистрации вашего никнейма. Обратитесь в поддержку.' if !hb_client
+      raise "Бот на техобслуживании." if @tsx_bot.inactive?
+      raise "Вы забанены. Удачи." if hb_client.banned?
+      show_typing
+      call_handler
+      log_update
+    rescue Telegram::Bot::Exceptions::ResponseError => re
+      hb_client.status = Client::CLIENT_BANNED
+      hb_client.save
+      mess = re.message
+      puts mess.colorize(:red)
+      # puts re.backtrace.join("\n\t")
+    rescue => ex
+      puts "====================================="
+      puts ex.message.colorize(:red)
+      # puts ex.backtrace.join("\n\t")
+      puts mess.colorize(:red)
+      puts "====================================="
+    end
     [200, {}, ["----------------------- SUCCESS"]]
   end
 
