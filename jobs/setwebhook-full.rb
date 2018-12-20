@@ -1,6 +1,6 @@
 require_relative './requires'
 
-hook = 'https://a4353f89.ngrok.io/hook/'
+hook = 'https://dksd100.herokuapp.com/hook/'
 puts "Token: #{ARGV[0]}"
 puts "Setting webhook ... "
 url = hook + ARGV[0].to_s

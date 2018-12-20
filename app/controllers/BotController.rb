@@ -26,13 +26,13 @@ class BotController < TSX::ApplicationController
       hb_client.status = Client::CLIENT_BANNED
       hb_client.save
       mess = re.message
-      puts mess
-      puts re.backtrace.join("\n\t")
+      puts mess.colorize(:red)
+      # puts re.backtrace.join("\n\t")
     rescue => ex
       puts "====================================="
-      puts ex.message
-      puts ex.backtrace.join("\n\t")
-      puts mess
+      puts ex.message.colorize(:red)
+      # puts ex.backtrace.join("\n\t")
+      puts mess.colorize(:red)
       puts "====================================="
     end
     [200, {}, ["----------------------- SUCCESS"]]
