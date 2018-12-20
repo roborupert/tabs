@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/AdminController.rb" afterPath="$PROJECT_DIR$/app/controllers/AdminController.rb" />
       <change beforePath="$PROJECT_DIR$/app/controllers/BotController.rb" afterPath="$PROJECT_DIR$/app/controllers/BotController.rb" />
-      <change beforePath="$PROJECT_DIR$/jobs/setallwebhooks.rb" afterPath="$PROJECT_DIR$/jobs/setallwebhooks.rb" />
-      <change beforePath="$PROJECT_DIR$/jobs/setwebhook-full.rb" afterPath="$PROJECT_DIR$/jobs/setwebhook-full.rb" />
-      <change beforePath="$PROJECT_DIR$/jobs/setwebhook.rb" afterPath="$PROJECT_DIR$/jobs/setwebhook.rb" />
-      <change beforePath="$PROJECT_DIR$/jobs/token.rb" afterPath="$PROJECT_DIR$/jobs/token.rb" />
-      <change beforePath="$PROJECT_DIR$/jobs/update_proxies.rb" afterPath="$PROJECT_DIR$/jobs/update_proxies.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,8 +47,8 @@
       <file leaf-file-name="BotController.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/BotController.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="23" lean-forward="true" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+            <state relative-caret-position="540">
+              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -515,12 +509,12 @@
       <workItem from="1543733455457" duration="3082000" />
       <workItem from="1544326188781" duration="1608000" />
       <workItem from="1544793398184" duration="9426000" />
-      <workItem from="1545104603254" duration="7795000" />
+      <workItem from="1545104603254" duration="8167000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="324008000" />
+    <option name="totallyTimeSpent" value="324380000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="0" />
@@ -957,8 +951,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/BotController.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="23" lean-forward="true" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+        <state relative-caret-position="540">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding />
         </state>
       </provider>
