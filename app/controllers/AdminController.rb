@@ -76,7 +76,7 @@ module TSX
       else
         @trade = Trade.find(item: @item.id)
       end
-      # haml :'admin/item_details', layout: hb_layout
+      haml :'admin/item_details', layout: hb_layout
     end
 
     get '/balance' do
@@ -257,7 +257,7 @@ module TSX
         redirect url("/payments/#{@payment.meth}")
       else
         @pays = Payment.where(bot: hb_bot.id)
-        # haml :'admin/payments', layout: hb_layout
+        haml :'admin/payments', layout: hb_layout
       end
     end
 
@@ -279,7 +279,7 @@ module TSX
         @payment = Payment.create(bot: hb_bot.id, meth: params[:method].to_i, params: JSON.parse(@meth.options).to_json, status: Payment::ACTIVE)
       end
       puts @payment.inspect
-      # haml :'admin/payments', layout: hb_layout
+      haml :'admin/payments', layout: hb_layout
     end
 
     get '/update_prices/product/:product/price/:price/qnt/:qnt' do
