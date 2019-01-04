@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/views/admin/items.haml" afterPath="$PROJECT_DIR$/app/views/admin/items.haml" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/AdminController.rb" afterPath="$PROJECT_DIR$/app/controllers/AdminController.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,24 +33,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminController.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AdminController.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="295" column="17" lean-forward="true" selection-start-line="295" selection-start-column="17" selection-end-line="295" selection-end-column="17" />
+            <state relative-caret-position="386">
+              <caret line="364" column="0" lean-forward="false" selection-start-line="362" selection-start-column="0" selection-end-line="364" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="items.haml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="items.haml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/admin/items.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="239">
               <caret line="111" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
-              <folding>
-                <marker date="1546604237336" expanded="true" signature="2447:4029" ph="- @items.each do |item|" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -119,7 +117,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>trade_ove</find>
       <find>tokenbar</find>
       <find>'tokenbar'</find>
       <find>ошибка</find>
@@ -149,6 +146,7 @@
       <find>payments</find>
       <find># haml</find>
       <find>prices</find>
+      <find>save_pa</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -214,8 +212,8 @@
         <option value="$PROJECT_DIR$/jobs/token.rb" />
         <option value="$PROJECT_DIR$/app/lib/view_helpers.rb" />
         <option value="$PROJECT_DIR$/jobs/setwebhook.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/AdminController.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/items.haml" />
+        <option value="$PROJECT_DIR$/app/controllers/AdminController.rb" />
       </list>
     </option>
   </component>
@@ -513,12 +511,12 @@
       <workItem from="1545104603254" duration="10817000" />
       <workItem from="1545583676325" duration="343000" />
       <workItem from="1546093676315" duration="77000" />
-      <workItem from="1546604092679" duration="144000" />
+      <workItem from="1546604092679" duration="338000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="327594000" />
+    <option name="totallyTimeSpent" value="327788000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="0" />
@@ -927,21 +925,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="295" column="17" lean-forward="true" selection-start-line="295" selection-start-column="17" selection-end-line="295" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/items.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="239">
           <caret line="111" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
-          <folding>
-            <marker date="1546604237336" expanded="true" signature="2447:4029" ph="- @items.each do |item|" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="364" column="0" lean-forward="false" selection-start-line="362" selection-start-column="0" selection-end-line="364" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
