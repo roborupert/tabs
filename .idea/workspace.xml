@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/AdminController.rb" afterPath="$PROJECT_DIR$/app/controllers/AdminController.rb" />
-      <change beforePath="$PROJECT_DIR$/jobs/token.rb" afterPath="$PROJECT_DIR$/jobs/token.rb" />
+      <change beforePath="$PROJECT_DIR$/app/views/admin/items.haml" afterPath="$PROJECT_DIR$/app/views/admin/items.haml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,12 +33,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminController.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AdminController.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="206">
               <caret line="295" column="17" lean-forward="true" selection-start-line="295" selection-start-column="17" selection-end-line="295" selection-end-column="17" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="items.haml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/admin/items.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="111" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+              <folding>
+                <marker date="1546604237336" expanded="true" signature="2447:4029" ph="- @items.each do |item|" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,16 +70,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
               <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="redefine_method.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.4.3/gems/activesupport-5.2.1/lib/active_support/core_ext/module/redefine_method.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="6" lean-forward="false" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -200,7 +200,6 @@
         <option value="$PROJECT_DIR$/app/controllers/ApplicationController.rb" />
         <option value="$PROJECT_DIR$/app/lib/helpers.rb" />
         <option value="$PROJECT_DIR$/app/views/tsx/welcome/payments.rb" />
-        <option value="$PROJECT_DIR$/app/views/admin/items.haml" />
         <option value="$PROJECT_DIR$/config/config.rb" />
         <option value="$PROJECT_DIR$/app/views/partials/client.haml" />
         <option value="$PROJECT_DIR$/app/views/admin/debts.haml" />
@@ -216,6 +215,7 @@
         <option value="$PROJECT_DIR$/app/lib/view_helpers.rb" />
         <option value="$PROJECT_DIR$/jobs/setwebhook.rb" />
         <option value="$PROJECT_DIR$/app/controllers/AdminController.rb" />
+        <option value="$PROJECT_DIR$/app/views/admin/items.haml" />
       </list>
     </option>
   </component>
@@ -513,12 +513,12 @@
       <workItem from="1545104603254" duration="10817000" />
       <workItem from="1545583676325" duration="343000" />
       <workItem from="1546093676315" duration="77000" />
-      <workItem from="1546604092679" duration="109000" />
+      <workItem from="1546604092679" duration="144000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="327559000" />
+    <option name="totallyTimeSpent" value="327594000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="0" />
@@ -677,13 +677,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="568">
           <caret line="429" column="0" lean-forward="false" selection-start-line="428" selection-start-column="0" selection-end-line="429" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/items.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="111" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -939,6 +932,16 @@
         <state relative-caret-position="206">
           <caret line="295" column="17" lean-forward="true" selection-start-line="295" selection-start-column="17" selection-end-line="295" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/items.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="111" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+          <folding>
+            <marker date="1546604237336" expanded="true" signature="2447:4029" ph="- @items.each do |item|" />
+          </folding>
         </state>
       </provider>
     </entry>
