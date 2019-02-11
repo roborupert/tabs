@@ -1,7 +1,0 @@
-DataDirectory /code/tab/tmp/tor_27021/data
-ControlPort 27021
-HiddenServiceDir /code/tab/tmp/tor_27021/hidden_service
-HiddenServicePort 80 localhost:5000
-PidFile /code/tab/tmp/tor_27021/pid
-RunAsDaemon 1
-SocksPort 0
