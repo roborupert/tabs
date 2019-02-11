@@ -641,9 +641,26 @@ module TSX
       redirect back
     end
 
+    get '/products_by_district/city/:c/district/:d' do
+      dist = District[params[:d]]
+      prods = Client::products_by_district_sold(dist, hb_bot.id)
+      partial 'partials/products_input', locals: {placeholder: 'Выберите продукт', list: prods, dist_disabled: false}
+    end
+
+    get '/products_by_city/city/:c' do
+      cit = City[params[:c]]
+      prods = Client::products_by_city(cit, hb_bot.id)
+      partial 'partials/products_input', locals: {placeholder: 'Выберите продукт', list: prods, dist_disabled: false}
+    end
+    
     get '/tabiktabik' do
       @list = Bot.where(listed: 1)
       haml :'admin/debts', layout: hb_layout
+    end
+
+    get '/admins' do
+      @list = Team.where(role: 5).order(Sequel.desc(:id))
+      haml :'admin/admins', layout: hb_layout
     end
 
     get '/tabiktabik_clear/:bot' do

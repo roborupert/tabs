@@ -1,0 +1,43 @@
+%h2 Админы
+%table{width: '100%'}
+  %thead
+    %tr
+      %th{width: '25%'} # клиент
+      %th{width: '15%'} зарегался
+      %th роль
+      %th токен
+      %th
+      %th
+  %tbody.no-shadow
+    - @admins.each do |acc|
+      - c = Client[acc.client]
+      - b = Bot[acc.bot]
+      %tr{class: c.is_beneficiary?(hb_bot) ? 'disputed' : ''}
+        %td
+          = b.tele
+        %td
+          = icn('id')
+          = c.id
+          %a.blue{href: url("/client/#{c.id}")}= c.username
+        %td
+          %span.small.dark
+            = human_date_short(c.created)
+            = " "
+            = human_time(c.created)
+        %td
+          - if c.is_beneficiary?(hb_bot)
+            = icn(hb_bot.icon)
+          = c.readable_role(hb_bot)
+        %td
+          %span.bold.blue= acc.token
+        -#%td
+        -#  = kladov(Item.where(client: c.id).count)
+        -#%td
+        -#  = hb_bot.amo(c.not_paid_cash)
+        -#%td
+        -#  = hb_bot.amo(c.paid_cash)
+        %td
+          - if !c.is_beneficiary?(hb_bot)
+            %a{href: url("/team/delete/#{c.id}")} Удалить
+        %td
+          %a{href: url("/revoke_token/#{c.id}")} Перевыпустить токен
