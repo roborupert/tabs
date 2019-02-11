@@ -560,6 +560,19 @@ class Client < Sequel::Model(:client)
     prods
   end
 
+  def self.districts_by_city_and_product(product, tsx_bot, city)
+    dists = District.select(Sequel.as(:district__id, :entity_id), Sequel.as(:district__russian, :entity_russian)).
+        distinct(:district).
+        join(:item, item__district: :district__id).
+        where(
+            item__bot: tsx_bot,
+            item__product: product.id,
+            item__status: Item::ACTIVE,
+            item__city: city.id
+        )
+    dists
+  end
+
   def self.products_by_city(city, tsx_bot)
     prods = Product.select(Sequel.as(:product__id, :entity_id), Sequel.as(:product__russian, :entity_russian), Sequel.as(:product__icon, :entity_icon)).
         distinct(:product).

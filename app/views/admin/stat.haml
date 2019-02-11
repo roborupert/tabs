@@ -8,7 +8,8 @@
       %option{value: ci[:entity_id]}= ci[:entity_russian]
   %span#hidden.hide
     %select{:name => 'b22_product', id: 'b22_d', required: true, autocomplete: 'off'}
-    %input{id: 'upload_submit', :type=>'submit', :value => 'Добавить все клады'}
+    %br
+    %input{id: 'upload_submit', :type=>'submit', :value => 'Показать'}
 :javascript
   function update_stat_products() {
     city = $('#city').val()

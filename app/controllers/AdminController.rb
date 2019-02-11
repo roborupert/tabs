@@ -659,7 +659,7 @@ module TSX
     end
 
     get '/admins' do
-      @list = Team.where(role: 5).order(Sequel.desc(:id))
+      @admins = Team.where(role: 5).order(Sequel.desc(:id))
       haml :'admin/admins', layout: hb_layout
     end
 

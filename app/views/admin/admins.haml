@@ -2,18 +2,18 @@
 %table{width: '100%'}
   %thead
     %tr
-      %th{width: '25%'} # клиент
-      %th{width: '15%'} зарегался
-      %th роль
-      %th токен
+      %th{width: '10%'} бот
+      %th{width: '15%'} админ
+      %th зарегался
       %th
       %th
   %tbody.no-shadow
     - @admins.each do |acc|
       - c = Client[acc.client]
-      - b = Bot[acc.bot]
+      - b = Bot[c.bot]
       %tr{class: c.is_beneficiary?(hb_bot) ? 'disputed' : ''}
         %td
+          = icn('b')
           = b.tele
         %td
           = icn('id')
@@ -21,21 +21,9 @@
           %a.blue{href: url("/client/#{c.id}")}= c.username
         %td
           %span.small.dark
-            = human_date_short(c.created)
+            = human_date_short(acc.created)
             = " "
-            = human_time(c.created)
-        %td
-          - if c.is_beneficiary?(hb_bot)
-            = icn(hb_bot.icon)
-          = c.readable_role(hb_bot)
-        %td
-          %span.bold.blue= acc.token
-        -#%td
-        -#  = kladov(Item.where(client: c.id).count)
-        -#%td
-        -#  = hb_bot.amo(c.not_paid_cash)
-        -#%td
-        -#  = hb_bot.amo(c.paid_cash)
+            = human_time(acc.created)
         %td
           - if !c.is_beneficiary?(hb_bot)
             %a{href: url("/team/delete/#{c.id}")} Удалить

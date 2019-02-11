@@ -2,6 +2,8 @@ require_relative './requires'
 logger = CronLogger.new
 # DB.logger = logger
 
+logger.noise "Deleting all stats ... "
+Stat.truncate
 logger.noise "Calculating data for charts ... "
 m_int = [*Date.parse('2017-06-01') .. Date.today]
 
