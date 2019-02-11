@@ -1,0 +1,17 @@
+%h3
+  Статистика по районам в городе
+  %b= @city.russian
+  по
+  =icn(@product.icon)
+  =@product.russian
+%table
+  %tbody
+    - @districts.each do |d|
+      %tr
+        %td
+          = d[:entity_russian]
+        %td
+          - dist = District[d[:entity_id]]
+          = dist.sales_by_district(hb_bot, dist)
+          = usd(dist.sales_amount_by_district(hb_bot, dist))
+      %br

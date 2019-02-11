@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/tmp/hidden.pem" />
-      <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/config.ru" afterPath="$PROJECT_DIR$/config.ru" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/views/admin/show_stats.haml" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/AdminController.rb" afterPath="$PROJECT_DIR$/app/controllers/AdminController.rb" />
+      <change beforePath="$PROJECT_DIR$/app/views/admin/stat.haml" afterPath="$PROJECT_DIR$/app/views/admin/stat.haml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,31 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="token.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jobs/token.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="view_helpers.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/lib/view_helpers.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7350">
-              <caret line="490" column="134" lean-forward="false" selection-start-line="490" selection-start-column="134" selection-end-line="490" selection-end-column="134" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdminController.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AdminController.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="364" column="0" lean-forward="false" selection-start-line="362" selection-start-column="0" selection-end-line="364" selection-end-column="0" />
+            <state relative-caret-position="251">
+              <caret line="823" column="14" lean-forward="false" selection-start-line="823" selection-start-column="14" selection-end-line="823" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -76,12 +55,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.ru" pinned="false" current-in-tab="true">
+      <file leaf-file-name="config.ru" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.ru">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+            <state relative-caret-position="345">
+              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show_stats.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/admin/show_stats.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stat.haml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/admin/stat.haml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="3" lean-forward="false" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
+              <folding>
+                <marker date="1549881548814" expanded="true" signature="746:963" ph="{...}" />
+                <marker date="1549881548814" expanded="true" signature="857:958" ph="{...}" />
+                <marker date="1549881548814" expanded="true" signature="991:1189" ph="{...}" />
+                <marker date="1549881548814" expanded="true" signature="1107:1184" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -120,7 +124,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tokenbar</find>
       <find>'tokenbar'</find>
       <find>ошибка</find>
       <find>we</find>
@@ -150,6 +153,7 @@
       <find># haml</find>
       <find>prices</find>
       <find>save_pa</find>
+      <find>/stat</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -166,7 +170,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/controllers/tsx/PublicController.rb" />
         <option value="$PROJECT_DIR$/app/views/tsx/search/serp.rb" />
         <option value="$PROJECT_DIR$/config/const.rb" />
@@ -187,7 +190,6 @@
         <option value="$PROJECT_DIR$/app/models/bot.rb" />
         <option value="$PROJECT_DIR$/app/views/partials/district_input.haml" />
         <option value="$PROJECT_DIR$/app/views/partials/products_input.haml" />
-        <option value="$PROJECT_DIR$/app/views/admin/stat.haml" />
         <option value="$PROJECT_DIR$/app/views/admin/add_items.haml" />
         <option value="$PROJECT_DIR$/app/views/admin/batch.haml" />
         <option value="$PROJECT_DIR$/jobs/calc_charts.rb" />
@@ -214,9 +216,11 @@
         <option value="$PROJECT_DIR$/app/lib/view_helpers.rb" />
         <option value="$PROJECT_DIR$/jobs/setwebhook.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/items.haml" />
-        <option value="$PROJECT_DIR$/app/controllers/AdminController.rb" />
         <option value="$PROJECT_DIR$/tmp/hidden.pem" />
         <option value="$PROJECT_DIR$/config.ru" />
+        <option value="$PROJECT_DIR$/app/views/admin/show_stats.haml" />
+        <option value="$PROJECT_DIR$/app/views/admin/stat.haml" />
+        <option value="$PROJECT_DIR$/app/controllers/AdminController.rb" />
       </list>
     </option>
   </component>
@@ -284,6 +288,30 @@
             <path>
               <item name="tab" type="b2602c69:ProjectViewProjectNode" />
               <item name="tab" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tab" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tab" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tab" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tab" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tab" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tab" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tab" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tab" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tab" type="b2602c69:ProjectViewProjectNode" />
@@ -389,12 +417,12 @@
       <workItem from="1545583676325" duration="343000" />
       <workItem from="1546093676315" duration="77000" />
       <workItem from="1546604092679" duration="338000" />
-      <workItem from="1549881200475" duration="200000" />
+      <workItem from="1549881200475" duration="409000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="327988000" />
+    <option name="totallyTimeSpent" value="328197000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="0" />
@@ -451,20 +479,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/models/bot.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="135" column="8" lean-forward="false" selection-start-line="135" selection-start-column="8" selection-end-line="135" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/stat.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/add_items.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -781,14 +795,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="364" column="0" lean-forward="false" selection-start-line="362" selection-start-column="0" selection-end-line="364" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tmp/hidden.pem">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -815,8 +821,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config.ru">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+        <state relative-caret-position="345">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/show_stats.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/stat.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="3" lean-forward="false" selection-start-line="28" selection-start-column="3" selection-end-line="28" selection-end-column="3" />
+          <folding>
+            <marker date="1549881548814" expanded="true" signature="746:963" ph="{...}" />
+            <marker date="1549881548814" expanded="true" signature="857:958" ph="{...}" />
+            <marker date="1549881548814" expanded="true" signature="991:1189" ph="{...}" />
+            <marker date="1549881548814" expanded="true" signature="1107:1184" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="823" column="14" lean-forward="false" selection-start-line="823" selection-start-column="14" selection-end-line="823" selection-end-column="14" />
           <folding />
         </state>
       </provider>

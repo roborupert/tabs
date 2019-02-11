@@ -376,6 +376,13 @@ module TSX
       end
     end
 
+    post '/show_stat' do
+      @city = City[params[:b22_city]]
+      @product = Product[params[:b22_product]]
+      @districts = Client::districts_by_city_and_product(@product, hb_bot.id, @city)
+      haml :'admin/show_stat', layout: hb_layout
+    end
+
     post '/activate_shop' do
       # dollars = 50
       # balance = hb_operator.available_cash
@@ -814,12 +821,7 @@ module TSX
       line_chart @data
     end
 
-    get '/stat*' do
-      @cities = hb_bot.cities_list
-      @city = City.find(russian: params[:splat].first.gsub('/', ''))
-      if @city
-        @products = hb_bot.products_by_city(@city)
-      end
+    get '/stat' do
       haml :'admin/stat', layout: hb_layout
     end
 
