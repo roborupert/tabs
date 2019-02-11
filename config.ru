@@ -17,10 +17,13 @@ require_rel './app/controllers'
 module Tor
   class HiddenService
     def hostname
-      "i4cmwdfnrdfq4xef.onion"
+      "7pgwtdfira74ykfe.onion"
     end
   end
 end
+
+#OpenSSL::PKey::RSA.generate(1024).to_pem
+#File.read("#{ROOT}/tmp/hidden.pem")
 
 if production?
   if Tor.available?
