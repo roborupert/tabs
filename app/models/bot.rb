@@ -529,10 +529,10 @@ class Bot < Sequel::Model(:bot)
   def amount_sales_by_product_and_date_and_district(product, dat, dist)
     prc = Price.find(product: product.id, bot: self.id)
     r = Trade.
-        select(Sequel.function("sum", :trade__amount)).
         join(:item, :item__id => :trade__item).
-        where(item__bot: self.id, item__district: dist.id, trade__status: [Trade::FINISHED, Trade::FINALIZED], :item__prc => prc.id, :trade__closed => dat..dat + 1.day)
-    r[0][:sum].nil? ?  0 : r[0][:sum]
+        where(item__bot: self.id, item__district: dist.id, trade__status: [Trade::FINISHED, Trade::FINALIZED], :item__prc => prc.id, :trade__closed => dat..dat + 1.day).
+        sum(:trade__amount)
+    r.nil? ?  0 : r
   end
 
 

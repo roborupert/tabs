@@ -1,6 +1,6 @@
 require_relative './requires'
 logger = CronLogger.new
-# DB.logger = logger
+DB.logger = logger
 
 logger.noise "Deleting all stats ... "
 Stat.truncate
