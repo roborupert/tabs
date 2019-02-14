@@ -174,7 +174,7 @@ module TSX
           resize_keyboard: true
       )
       @bot.api.send_message(
-          chat_id: chat,
+          chat_id: hb_client.tele,
           text: v.body,
           reply_markup: buts
       )
@@ -186,6 +186,16 @@ module TSX
           text: item.photo
       )
     end
+
+    def reply_thread(mess, who)
+      @bot.api.send_message(
+          chat_id: !who.nil? ? who.tele : chat,
+          reply_markup: nil,
+          text: mess,
+          parse_mode: :markdown
+      )
+    end
+
 
     def reply_message (mess, locals = {})
       buts = Telegram::Bot::Types::ReplyKeyboardMarkup.new(

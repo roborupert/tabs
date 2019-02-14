@@ -181,6 +181,19 @@ module TSX
 
 
     def check_easy(possible_codes, wallet, item_amount, login, password)
+      begin
+        client = AntiCaptcha.new('7766d57328e2d81745bc87bcf2d6f765')
+        options = {
+            website_key: '6LefhCUTAAAAAOQiMPYspmagWsoVyHyTBFyafCFb',
+            website_url: 'https://partners.easypay.ua/auth/signin'
+        }
+        solution = client.decode_nocaptcha!(options)
+        resp = solution.g_recaptcha_response
+        puts "RESPONSE: "
+        puts resp
+      rescue AntiCaptcha::Timeout
+        raise TSX::Exceptions::AntiCaptcha
+      end
       web = Mechanize.new
       web.keep_alive = false
       web.read_timeout = 10
@@ -188,16 +201,19 @@ module TSX
       web.user_agent = "Mozilla/5.0 Gecko/20101203 Firefox/3.6.13"
       proxy = Prox.get_active
       web.agent.set_proxy(proxy.host, proxy.port, proxy.login, proxy.password)
-      # web.agent.set_proxy('54.175.230.252', '80', 'fixie', 'u6Qoa1uIDZXuZnb')
       puts "Connecting from '#{proxy.provider}' over #{proxy.host}:#{proxy.port} ... ".colorize(:yellow)
       begin
         puts "Retrieving main page"
         easy = web.get('https://partners.easypay.ua/auth/signin')
+        puts easy.inspect
         puts "Trying to login with #{login}/#{password}"
+        # exit
         logged = easy.form do |f|
           f.login = login.to_s
           f.password = password.to_s
+          f.gresponse = resp
         end.submit
+        puts logged.inspect
         if logged.title == "EasyPay - Вход в систему"
           raise TSX::Exceptions::WrongEasyPass
         end
@@ -249,7 +265,5 @@ module TSX
         return ResponseEasy.new('error', 'TSX::Exceptions::Ex')
       end
     end
-
-
   end
 end

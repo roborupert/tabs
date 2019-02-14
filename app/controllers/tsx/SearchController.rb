@@ -477,114 +477,107 @@ module TSX
           elsif data == 'Отменить'
             cancel_trade
           else
-            begin
-              reply_message "#{icon(@tsx_bot.icon_wait)} Проверяем платеж *EasyPay*."
-              botrec("check 1", "")
-              puts "checking 1".colorize(:yellow)
-              raise TSX::Exceptions::NoPendingTrade if !hb_client.has_pending_trade?(@tsx_bot)
-              botrec("check 2", "")
-              puts "checking 2".colorize(:yellow)
-              raise TSX::Exceptions::WrongFormat if @tsx_bot.check_easypay_format(data).nil?
-              botrec("check 3", "")
-              puts "checking 3".colorize(:yellow)
-              possible_codes = @tsx_bot.used_code?(data, @tsx_bot.id)
-              botrec("check 4", "")
-              puts "checking 4".colorize(:yellow)
-              handle('easypay')
-              uah_price = @tsx_bot.amo_pure(_buy.discount_price_by_method(Meth::__easypay))
-              # lg "ITEM PRICE in UAH: #{uah_price}грн.
-              code1 = Invoice.create(code: possible_codes.first, client: hb_client.id)
-              code2 = Invoice.create(code: possible_codes.last, client: hb_client.id)
-              seller = Client[_trade.seller]
-              seller_bot = Bot[_buy.bot]
-              botrec("check 5", "")
-              puts "checking 5".colorize(:yellow)
-              uah_payment = @tsx_bot.check_easy([possible_codes.first, possible_codes.last],
-                                  @tsx_bot.payment_option('wallet', Meth::__easypay),
-                                  uah_price,
-                                  @tsx_bot.payment_option('login', Meth::__easypay),
-                                  @tsx_bot.payment_option('password', Meth::__easypay)
-              )
-              puts "checking 6".colorize(:yellow)
-              puts "#{uah_payment}"
-              rsp = eval(uah_payment.respond.inspect)
-              puts "response from Tor processing server: #{rsp}".colorize(:blue)
-              if rsp[:result] == 'error'
-                ex = eval("#{rsp[:exception]}.new(#{rsp[:amount].to_s})")
-                raise ex
-              else
-                if hb_client.cashin(@tsx_bot.cnts(rsp[:amount].to_i), Client::__easypay, Meth::__easypay, Client::__tsx)
-                  puts "PAYMENT ACCEPTED".colorize(:blue)
-                  botrec("Оплата клада #{_buy.id} зачислена. Коды пополнения: ", "#{code1.code}, #{code2.code}")
-                  update_message "#{icon(@tsx_bot.icon_success)} Оплата успешно зачислена."
-                  finalize_trade(data, Meth::__easypay)
-                  # hb_client.allow_try
+            reply_message "#{icon(@tsx_bot.icon_wait)} Проверяем платеж *EasyPay*. Вы получите клад в течение одной минуты. Просто ожидайте."
+            Thread.new {
+              begin
+                raise TSX::Exceptions::NoPendingTrade if !hb_client.has_pending_trade?(@tsx_bot)
+                raise TSX::Exceptions::WrongFormat if @tsx_bot.check_easypay_format(data).nil?
+                possible_codes = @tsx_bot.used_code?(data, @tsx_bot.id)
+                handle('easypay')
+                uah_price = @tsx_bot.amo_pure(_buy.discount_price_by_method(Meth::__easypay))
+                code1 = Invoice.create(code: possible_codes.first, client: hb_client.id)
+                code2 = Invoice.create(code: possible_codes.last, client: hb_client.id)
+                seller = Client[_trade.seller]
+                seller_bot = Bot[_buy.bot]
+                uah_payment = @tsx_bot.check_easy([possible_codes.first, possible_codes.last],
+                                                  @tsx_bot.payment_option('wallet', Meth::__easypay),
+                                                  uah_price,
+                                                  @tsx_bot.payment_option('login', Meth::__easypay),
+                                                  @tsx_bot.payment_option('password', Meth::__easypay)
+                )
+                rsp = eval(uah_payment.respond.inspect)
+                puts "response from Tor processing server: #{rsp}".colorize(:blue)
+                if rsp[:result] == 'error'
+                  ex = eval("#{rsp[:exception]}.new(#{rsp[:amount].to_s})")
+                  raise ex
+                else
+                  if hb_client.cashin(@tsx_bot.cnts(rsp[:amount].to_i), Client::__easypay, Meth::__easypay, Client::__tsx)
+                    puts "PAYMENT ACCEPTED".colorize(:blue)
+                    botrec("Оплата клада #{_buy.id} зачислена. Коды пополнения: ", "#{code1.code}, #{code2.code}")
+                    reply_thread "#{icon(@tsx_bot.icon_success)} Оплата успешно зачислена.", hb_client
+                    finalize_trade(data, Meth::__easypay)
+                    # hb_client.allow_try
+                  end
                 end
+              rescue TSX::Exceptions::ProxyError, Rack::Timeout::RequestExpiryError, Rack::Timeout::RequestTimeoutException => ex
+                Prox::flush
+                update_message "#{icon(@tsx_bot.icon_warning)} Ошибка соединения. Вводите свой код пополнения, пока оплата не пройдет. #{method_desc('easypay')} Помощь /payments."
+                puts "TIMEOUT HAPPENED. More than 24 sec while checking easypay".colorize(:yellow)
+                puts ex.message.red
+                code1.delete
+                code2.delete
+                reply_thread "#{icon(@tsx_bot.icon_warning)} Проверка платежа заняла слишком много времени. Попробуйте еще раз прямо сейчсас.", hb_client
+                handle('trade_overview')
+                botrec("Ошибка соединения при покупке клада", _buy.id.to_s)
+                handle('trade_overview')
+                return
+              rescue TSX::Exceptions::PaymentNotFound
+                code1.delete
+                code2.delete
+                botrec("Оба кода удалены из базы.", "#{code1.code}, #{code2.code}")
+                # hb_client.set_next_try(@tsx_bot)
+                puts "PAYMENT NOT FOUND".colorize(:yellow)
+                botrec("Оплата не найдена", data)
+                reply_thread "#{icon(@tsx_bot.icon_warning)} Оплата не найдена. #{method_desc('easypay')} Следующая попытка оплаты возможна через *#{minut(hb_client.next_try_in)}*. Подробней /payments.", hb_client
+                handle('trade_overview')
+              rescue TSX::Exceptions::NotEnoughAmount => ex
+                found_amount = ex.message.to_i
+                puts "NOT EMOUGH AMOUNT".colorize(:red)
+                botrec("Найдено #{@tsx_bot.amo(@tsx_bot.cnts(found_amount))} Не хватает суммы при покупке клада #{_buy.id}", "")
+                reply_thread "#{icon(@tsx_bot.icon_warning)} Суммы не хватает, однако #{@tsx_bot.amo(@tsx_bot.cnts(found_amount))} зачислено Вам на баланс. #{method_desc('easypay')} Помощь /payments.", hb_client
+                hb_client.cashin(@tsx_bot.cnts(found_amount.to_i), Client::__easypay, Meth::__easypay, Client::__tsx)
+                handle('trade_overview')
+              rescue TSX::Exceptions::UsedCode => e
+                puts e.message
+                # puts e.backtrace.join("\t\n")
+                botrec("Введен использованный код", data)
+                reply_thread "#{icon(@tsx_bot.icon_warning)} Код уже был использован. Код пополнения Easypay должен иметь вид `00:0012345`. Если Вы уверены, что не использовали этот код, создайте запрос в службу поддержки.", hb_client
+                puts "USED CODE".colorize(:yellow)
+                handle('trade_overview')
+              rescue TSX::Exceptions::WrongFormat
+                puts "WRONG FORMAT".colorize(:yellow)
+                botrec("Неверный формат кода пополнения при покупке клада #{_buy.id}", data)
+                reply_thread "#{icon(@tsx_bot.icon_warning)} Неверный формат кода пополнения. Пожалуйста, прочитайте внимательно /payments и вводите сразу верный код пополнения.", hb_client
+                handle('trade_overview')
+              rescue TSX::Exceptions::WrongEasyPass
+                code1.delete
+                code2.delete
+                puts "WRONG EASYPAY PASS".colorize(:yellow)
+                botrec("Неверный пароль в Изипей", data)
+                reply_thread "#{icon(@tsx_bot.icon_warning)} Ошибка соединения *(2)*. Ваш код активен. Просто подождите минуту и попробуйте еще раз. Не стоит делать попытки каждую секунду. Это лишь усугубляет ситуацию.", hb_client
+                handle('trade_overview')
+              rescue TSX::Exceptions::AntiCaptcha
+                code1.delete
+                code2.delete
+                puts "ANTICAPTCHA ERROR".colorize(:yellow)
+                botrec("Проблема с капчей", data)
+                reply_thread "#{icon(@tsx_bot.icon_warning)} Ошибка соединения *(7)*. Ваш код активен. Просто подождите минуту и попробуйте еще раз. Не стоит делать попытки каждую секунду. Это лишь усугубляет ситуацию.", hb_client
+                handle('trade_overview')
+              rescue TSX::Exceptions::Ex
+                code1.delete
+                code2.delete
+                reply_thread "#{icon(@tsx_bot.icon_warning)} Ошибка соединения *(3)*. Ваш код активен. Просто подождите минуту и попробуйте еще раз. Не стоит делать попытки каждую секунду. Это лишь усугубляет ситуацию.", hb_client
+                handle('trade_overview')
+              rescue TSX::Exceptions::NoPendingTrade
+                reply_thread "#{icon(@tsx_bot.icon_warning)} Заказ был отменен. Начните сначала.", hb_client
+                start
+              rescue => e
+                puts "--------------------"
+                puts "Ошибка соединения:  #{e.message}"
+                puts e.backtrace.join("\t\n")
+                puts "----------------------"
               end
-            rescue TSX::Exceptions::ProxyError, Rack::Timeout::RequestExpiryError, Rack::Timeout::RequestTimeoutException => ex
-              Prox::flush
-              update_message "#{icon(@tsx_bot.icon_warning)} Ошибка соединения. Вводите свой код пополнения, пока оплата не пройдет. #{method_desc('easypay')} Помощь /payments."
-              puts "TIMEOUT HAPPENED. More than 24 sec while checking easypay".colorize(:yellow)
-              puts ex.message.red
-              code1.delete
-              code2.delete
-              update_message "#{icon(@tsx_bot.icon_warning)} Проверка платежа заняла слишком много времени. Попробуйте еще раз прямо сейчсас."
-              handle('trade_overview')
-              botrec("Ошибка соединения при покупке клада", _buy.id.to_s)
-              handle('trade_overview')
-              return
-            rescue TSX::Exceptions::PaymentNotFound
-              code1.delete
-              code2.delete
-              botrec("Оба кода удалены из базы.", "#{code1.code}, #{code2.code}")
-              # hb_client.set_next_try(@tsx_bot)
-              puts "PAYMENT NOT FOUND".colorize(:yellow)
-              botrec("Оплата не найдена", data)
-              update_message "#{icon(@tsx_bot.icon_warning)} Оплата не найдена. #{method_desc('easypay')} Следующая попытка оплаты возможна через *#{minut(hb_client.next_try_in)}*. Подробней /payments."
-              handle('trade_overview')
-            rescue TSX::Exceptions::NotEnoughAmount => ex
-              found_amount = ex.message.to_i
-              puts "NOT EMOUGH AMOUNT".colorize(:red)
-              botrec("Найдено #{@tsx_bot.amo(@tsx_bot.cnts(found_amount))} Не хватает суммы при покупке клада #{_buy.id}", "")
-              update_message "#{icon(@tsx_bot.icon_warning)} Суммы не хватает, однако #{@tsx_bot.amo(@tsx_bot.cnts(found_amount))} зачислено Вам на баланс. #{method_desc('easypay')} Помощь /payments."
-              hb_client.cashin(@tsx_bot.cnts(found_amount.to_i), Client::__easypay, Meth::__easypay, Client::__tsx)
-              handle('trade_overview')
-            rescue TSX::Exceptions::UsedCode => e
-              puts e.message
-              # puts e.backtrace.join("\t\n")
-              botrec("Введен использованный код", data)
-              update_message "#{icon(@tsx_bot.icon_warning)} Код уже был использован. Код пополнения Easypay должен иметь вид `00:0012345`. Если Вы уверены, что не использовали этот код, создайте запрос в службу поддержки."
-              puts "USED CODE".colorize(:yellow)
-              handle('trade_overview')
-            rescue TSX::Exceptions::WrongFormat
-              puts "WRONG FORMAT".colorize(:yellow)
-              botrec("Неверный формат кода пополнения при покупке клада #{_buy.id}", data)
-              update_message "#{icon(@tsx_bot.icon_warning)} Неверный формат кода пополнения. Пожалуйста, прочитайте внимательно /payments и вводите сразу верный код пополнения."
-              handle('trade_overview')
-            rescue TSX::Exceptions::WrongEasyPass
-              code1.delete
-              code2.delete
-              puts "WRONG EASYPAY PASS".colorize(:yellow)
-              botrec("Неверный пароль в Изипей", data)
-              update_message "#{icon(@tsx_bot.icon_warning)} Ошибка соединения *(2)*. Ваш код активен. Просто подождите минуту и попробуйте еще раз. Не стоит делать попытки каждую секунду. Это лишь усугубляет ситуацию."
-              handle('trade_overview')
-              Prox::flush
-            rescue TSX::Exceptions::Ex
-              code1.delete
-              code2.delete
-              update_message "#{icon(@tsx_bot.icon_warning)} Ошибка соединения *(3)*. Ваш код активен. Просто подождите минуту и попробуйте еще раз. Не стоит делать попытки каждую секунду. Это лишь усугубляет ситуацию."
-              handle('trade_overview')
-              Prox::flush
-            rescue TSX::Exceptions::NoPendingTrade
-              reply_message "#{icon(@tsx_bot.icon_warning)} Заказ был отменен. Начните сначала."
-              start
-            rescue => e
-              Prox::flush
-              puts "--------------------"
-              puts "Ошибка соединения:  #{e.message}"
-              puts e.backtrace.join("\t\n")
-              puts "----------------------"
-            end
+            }
           end
         end
 
@@ -604,7 +597,7 @@ module TSX
           end
         end
 
-        def wex(data)
+        def exmo(data)
           if callback_query?
             sset('telebot_method', data)
             trade_overview
@@ -616,7 +609,7 @@ module TSX
               start
             else
               # 538976685
-              reply_message "#{icon(@tsx_bot.icon_wait)} Проверяем WEX код."
+              reply_message "#{icon(@tsx_bot.icon_wait)} Проверяем EXMO-USD код."
               handle('wex')
               uah_price = _buy.discount_price
               seller_bot = Bot[_buy.bot]
@@ -624,21 +617,21 @@ module TSX
               puts "PRICE IN CENTS: #{uah_price}"
               puts "FOUND IN COUPON: #{uah_payment}"
               uah_rate = @tsx_bot.get_var('USD_UAH').to_f
-              wex_rate = @tsx_bot.get_var('WEX_UAH').to_f
-              needed_extra_wex = uah_price / wex_rate
-              needed_uah = needed_extra_wex * uah_rate
+              exmo_rate = @tsx_bot.get_var('EXMO_UAH').to_f
+              needed_extra_exmo = uah_price / exmo_rate
+              needed_uah = needed_extra_exmo * uah_rate
               puts "NEEEDED UAH: #{needed_uah}"
               if uah_payment == 'false'
-                update_message "#{icon(@tsx_bot.icon_warning)} Неверный WEX код. Помощь /payments"
+                update_message "#{icon(@tsx_bot.icon_warning)} Неверный EXMO-USD код. Помощь /payments"
                 handle('trade_overview')
               elsif needed_uah >= uah_price
                 update_message "#{icon(@tsx_bot.icon_warning)} Суммы не хватает, зачислено на баланс. Помощь /payments"
-                hb_client.cashin(uah_payment, Client::__wex, Meth::__wex, Client::__tsx)
+                hb_client.cashin(uah_payment, Client::__exmo, Meth::__exmo, Client::__tsx)
                 handle('trade_overview')
               else
                 update_message "#{icon(@tsx_bot.icon_success)} Оплата успешно зачислена."
-                hb_client.cashin(uah_payment, Client::__wex, Meth::__wex, Client::__tsx)
-                finalize_trade(data, Meth::__wex)
+                hb_client.cashin(uah_payment, Client::__exmo, Meth::__exmo, Client::__tsx)
+                finalize_trade(data, Meth::__exmo)
               end
             end
           end

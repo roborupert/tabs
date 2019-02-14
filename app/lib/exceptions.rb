@@ -24,6 +24,9 @@ module TSX
     class WrongEasyPass < Exception
     end
 
+    class AntiCaptcha < Exception
+    end
+
     class OpenTimeout < Exception
     end
 
