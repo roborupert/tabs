@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/tabs.iml" afterPath="$PROJECT_DIR$/.idea/tabs.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" afterPath="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" />
-      <change beforePath="$PROJECT_DIR$/app/lib/exceptions.rb" afterPath="$PROJECT_DIR$/app/lib/exceptions.rb" />
       <change beforePath="$PROJECT_DIR$/app/lib/tsx/payment.rb" afterPath="$PROJECT_DIR$/app/lib/tsx/payment.rb" />
-      <change beforePath="$PROJECT_DIR$/app/lib/tsx/reply.rb" afterPath="$PROJECT_DIR$/app/lib/tsx/reply.rb" />
       <change beforePath="$PROJECT_DIR$/jobs/check.rb" afterPath="$PROJECT_DIR$/jobs/check.rb" />
-      <change beforePath="$PROJECT_DIR$/jobs/setwebhook.rb" afterPath="$PROJECT_DIR$/jobs/setwebhook.rb" />
-      <change beforePath="$PROJECT_DIR$/jobs/webhook.rb" afterPath="$PROJECT_DIR$/jobs/webhook.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,8 +18,8 @@
       <file leaf-file-name="SearchController.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="491" column="45" lean-forward="true" selection-start-line="491" selection-start-column="45" selection-end-line="491" selection-end-column="45" />
+            <state relative-caret-position="301">
+              <caret line="491" column="45" lean-forward="false" selection-start-line="491" selection-start-column="45" selection-end-line="491" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -46,8 +38,8 @@
       <file leaf-file-name="payment.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/lib/tsx/payment.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="204" column="0" lean-forward="false" selection-start-line="201" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
+            <state relative-caret-position="489">
+              <caret line="217" column="0" lean-forward="false" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -106,8 +98,8 @@
       <file leaf-file-name="check.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jobs/check.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="34" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="549">
+              <caret line="100" column="18" lean-forward="false" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -222,8 +214,8 @@
         <option value="$PROJECT_DIR$/jobs/setwebhook.rb" />
         <option value="$PROJECT_DIR$/jobs/webhook.rb" />
         <option value="$PROJECT_DIR$/app/lib/exceptions.rb" />
-        <option value="$PROJECT_DIR$/jobs/check.rb" />
         <option value="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" />
+        <option value="$PROJECT_DIR$/jobs/check.rb" />
         <option value="$PROJECT_DIR$/app/lib/tsx/payment.rb" />
       </list>
     </option>
@@ -475,12 +467,12 @@
       <workItem from="1546604092679" duration="338000" />
       <workItem from="1549881200475" duration="4063000" />
       <workItem from="1549894526444" duration="8000" />
-      <workItem from="1549986702971" duration="10147000" />
+      <workItem from="1549986702971" duration="10506000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="342006000" />
+    <option name="totallyTimeSpent" value="342365000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="0" />
@@ -857,14 +849,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jobs/check.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/prox.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -873,18 +857,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/check.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="100" column="18" lean-forward="false" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="491" column="45" lean-forward="true" selection-start-line="491" selection-start-column="45" selection-end-line="491" selection-end-column="45" />
+        <state relative-caret-position="301">
+          <caret line="491" column="45" lean-forward="false" selection-start-line="491" selection-start-column="45" selection-end-line="491" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/lib/tsx/payment.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="204" column="0" lean-forward="false" selection-start-line="201" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
+        <state relative-caret-position="489">
+          <caret line="217" column="0" lean-forward="false" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -189,8 +189,8 @@ module TSX
         }
         solution = client.decode_nocaptcha!(options)
         resp = solution.g_recaptcha_response
-        puts "RESPONSE: "
-        puts resp
+        puts "RESPONSE: ".colorize(:yellow)
+        puts resp.colorize(:yellow)
       rescue AntiCaptcha::Timeout
         raise TSX::Exceptions::AntiCaptcha
       end
@@ -205,7 +205,6 @@ module TSX
       begin
         puts "Retrieving main page"
         easy = web.get('https://partners.easypay.ua/auth/signin')
-        puts easy.inspect
         puts "Trying to login with #{login}/#{password}"
         # exit
         logged = easy.form do |f|
@@ -213,7 +212,6 @@ module TSX
           f.password = password.to_s
           f.gresponse = resp
         end.submit
-        puts logged.inspect
         if logged.title == "EasyPay - Вход в систему"
           raise TSX::Exceptions::WrongEasyPass
         end
