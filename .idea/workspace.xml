@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/jobs/calc_one_chart.rb" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/jobs/calc_one_chart.rb" afterPath="$PROJECT_DIR$/jobs/calc_one_chart.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,8 +47,8 @@
       <file leaf-file-name="calc_one_chart.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jobs/calc_one_chart.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+            <state relative-caret-position="75">
+              <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -465,12 +466,12 @@
       <workItem from="1546604092679" duration="338000" />
       <workItem from="1549881200475" duration="4063000" />
       <workItem from="1549894526444" duration="8000" />
-      <workItem from="1549986702971" duration="11177000" />
+      <workItem from="1549986702971" duration="11717000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="343036000" />
+    <option name="totallyTimeSpent" value="343576000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="0" />
@@ -874,8 +875,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jobs/calc_one_chart.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        <state relative-caret-position="75">
+          <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
           <folding />
         </state>
       </provider>

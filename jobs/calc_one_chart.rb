@@ -3,7 +3,7 @@ logger = CronLogger.new
 # DB.logger = logger
 
 logger.noise "Calculating data for charts ... "
-m_int = [*Date.parse('2017-06-01') .. Date.today]
+m_int = [*Date.parse('2018-06-01') .. Date.today]
 
 bot = Bot.find(tele: ARGV[0])
 logger.noise "Deleting all stats ... "
