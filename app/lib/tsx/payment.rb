@@ -182,7 +182,7 @@ module TSX
     def check_easy(possible_codes, wallet, item_amount, login, password)
       begin
         i = 0
-        num = 10
+        num = 20
         logged = false
 
         while i < num  do
