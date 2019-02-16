@@ -477,7 +477,7 @@ module TSX
           elsif data == 'Отменить'
             cancel_trade
           else
-            reply_message "#{icon(@tsx_bot.icon_wait)} Проверяем платеж *EasyPay*. Вы получите клад в течение одной минуты. Просто ожидайте."
+            reply_message "#{icon(@tsx_bot.icon_wait)} Проверяем платеж *EasyPay*. Вы получите клад в течение *пяти* минуты. Просто ожидайте."
             Thread.new {
               begin
                 raise TSX::Exceptions::NoPendingTrade if !hb_client.has_pending_trade?(@tsx_bot)
