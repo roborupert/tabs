@@ -17,8 +17,8 @@ class BotController < TSX::ApplicationController
       parse_update(request.body)
       setup_sessa
       raise 'Возникла проблема при регистрации вашего никнейма. Обратитесь в поддержку.' if !hb_client
-      raise "Бот на техобслуживании." if @tsx_bot.inactive?
-      raise "Вы забанены. Удачи." if hb_client.banned?
+      raise 'Бот на техобслуживании.' if @tsx_bot.inactive?
+      raise 'Вы забанены. Удачи.' if hb_client.banned?
       show_typing
       call_handler
       log_update

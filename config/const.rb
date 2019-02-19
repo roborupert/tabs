@@ -58,7 +58,7 @@ HAMDLERS = {
       "Пожаловаться": 'abuse',
       "Отмена": 'cancel',
       "Кабинет": 'panel',
-      "вывод": 'cashout',
+      "Вывести": 'cashout',
       "Выписка": 'client_statement',
       "Рефералы": 'client_referals'
 }

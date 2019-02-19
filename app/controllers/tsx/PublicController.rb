@@ -51,6 +51,10 @@ module TSX
         reply_simple 'welcome/bots'
       end
 
+      def cashout
+        reply_simple 'welcome/cashout'
+      end
+
     end
   end
 end

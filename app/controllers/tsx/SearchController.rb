@@ -14,7 +14,8 @@ module TSX
         unfilter
         reply_inline 'welcome/welcome', links: false, sh: hb_client.shop?, support_line: @tsx_bot.support_line
         serp
-        play_game
+        # play_game
+        reply_inline "welcome/referals"
       end
 
       def serp
@@ -91,13 +92,13 @@ module TSX
       def buttons_by_filter
         filter = sget('tsx_filter')
         if filter.instance_of?(District)
-          bts = [btn_back, btn_wallet, btn_main]
+          bts = [btn_back, btn_cashout, btn_main]
         end
         if filter.instance_of?(Product)
-          bts = [btn_back, btn_wallet, btn_main]
+          bts = [btn_back, btn_cashout, btn_main]
         end
         if filter.instance_of?(City)
-          bts = [btn_back, btn_wallet, btn_main]
+          bts = [btn_back, btn_cashout, btn_main]
         end
         bts
       end

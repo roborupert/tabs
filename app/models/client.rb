@@ -100,6 +100,7 @@ class Client < Sequel::Model(:client)
   end
 
   def master
+    puts "finding REFERAL".colorize(:red)
     r = Ref.find(referal: self.id)
     if !r.nil?
       Client[r.client]
@@ -860,7 +861,7 @@ class Client < Sequel::Model(:client)
     credit = Ledger.dataset.
         select{Sequel.as(Sequel.expr{COALESCE(sum(:ledger__amount), 0)}, :credit)}.
         where(credit: self.id)
-    credit.map(:credit)[0] - debit.map(:debit)[0]
+    credit.map(:credit)[0] - debit.map(:debit)[0] + self.ref_cash
   end
 
   def bonus_cash

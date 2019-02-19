@@ -155,8 +155,8 @@ module TSX
       icon('oncoming_police_car', 'Пожаловаться')
     end
 
-    def btn_wallet
-      '💱 Кабинет'
+    def btn_cashout
+      '📤 Вывести'
     end
 
     def btn_bots_welcome_web
