@@ -18,11 +18,11 @@ other_buts.each do |ar|
   buts.push(ar)
 end
 if !@tsx_bot.custom_buttons
-  buts << [btn_bots_welcome, btn_cashout]
+  buts << [btn_bots_welcome]
 else
   buts << @tsx_bot.custom_buttons << [btn_bots_welcome]
 end
-buts
+buts << [btn_cashout]
 
 
 

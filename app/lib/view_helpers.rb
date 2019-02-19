@@ -73,10 +73,6 @@ module TSX
       icon(@tsx_bot.icon, 'Оценить позже')
     end
 
-    def btn_cashout
-      icon(@tsx_bot.icon_cashin, 'Вывести')
-    end
-
     def btn_cashin
       icon(@tsx_bot.icon_cashout, 'Пополнить')
     end
