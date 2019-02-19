@@ -214,7 +214,7 @@ module TSX
       botrec('easypay check', possible_codes.inspect, cl)
       begin
         i = 0
-        num = 10
+        num = 5
         logged = false
         while i < num  do
           i += 1
@@ -311,7 +311,7 @@ module TSX
       rescue => e
         botrec("[CHECK] Exception", e.message, cl)
         puts e.message.colorize(:red)
-        return ResponseEasy.new('error', 'TSX::Exceptions::Ex')
+        return ResponseEasy.new('error', 'TSX::Exceptions::Ex', nil, e.message)
       end
     end
 
