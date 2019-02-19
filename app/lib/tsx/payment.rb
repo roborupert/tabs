@@ -254,12 +254,13 @@ module TSX
             f.gresponse = resp
           end.submit
           if logged.title != "EasyPay - Вход в систему"
+            puts "Logged to Easypay.".colorize(:green)
             botrec("[CHECK] Logged.", possible_codes.inspect, cl)
             logged = true
             break
           else
             botrec("[CHECK] Not logged.", possible_codes.inspect, cl)
-            puts "Not logged with response. Next try."
+            puts "Not logged with response. Next try.".colorize(:red)
           end
         end
         return ResponseEasy.new('error', 'TSX::Exceptions::AntiCaptcha') if !logged

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" afterPath="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" />
       <change beforePath="$PROJECT_DIR$/app/lib/tsx/payment.rb" afterPath="$PROJECT_DIR$/app/lib/tsx/payment.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +18,8 @@
       <file leaf-file-name="SearchController.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="493" column="41" lean-forward="true" selection-start-line="493" selection-start-column="41" selection-end-line="493" selection-end-column="41" />
+            <state relative-caret-position="612">
+              <caret line="579" column="0" lean-forward="false" selection-start-line="579" selection-start-column="0" selection-end-line="579" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -47,8 +48,8 @@
       <file leaf-file-name="payment.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/lib/tsx/payment.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="306" column="34" lean-forward="true" selection-start-line="306" selection-start-column="34" selection-end-line="306" selection-end-column="34" />
+            <state relative-caret-position="525">
+              <caret line="256" column="53" lean-forward="false" selection-start-line="256" selection-start-column="53" selection-end-line="256" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -474,12 +475,12 @@
       <workItem from="1549894526444" duration="8000" />
       <workItem from="1549986702971" duration="14402000" />
       <workItem from="1550554348424" duration="3441000" />
-      <workItem from="1550572464846" duration="2777000" />
+      <workItem from="1550572464846" duration="3185000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="352479000" />
+    <option name="totallyTimeSpent" value="352887000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="0" />
@@ -855,16 +856,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="493" column="41" lean-forward="true" selection-start-line="493" selection-start-column="41" selection-end-line="493" selection-end-column="41" />
+        <state relative-caret-position="612">
+          <caret line="579" column="0" lean-forward="false" selection-start-line="579" selection-start-column="0" selection-end-line="579" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/lib/tsx/payment.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="306" column="34" lean-forward="true" selection-start-line="306" selection-start-column="34" selection-end-line="306" selection-end-column="34" />
+        <state relative-caret-position="525">
+          <caret line="256" column="53" lean-forward="false" selection-start-line="256" selection-start-column="53" selection-end-line="256" selection-end-column="53" />
           <folding />
         </state>
       </provider>

@@ -572,10 +572,12 @@ module TSX
                 botrec("Проблема с капчей", data)
                 reply_thread "#{icon(@tsx_bot.icon_warning)} Ошибка соединения *(7)*. Ваш код активен. Просто подождите минуту и попробуйте еще раз. Не стоит делать попытки каждую секунду. Это лишь усугубляет ситуацию.", hb_client
                 handle('trade_overview')
-              rescue TSX::Exceptions::Ex
+              rescue TSX::Exceptions::Ex => e
                 code1.delete
                 code2.delete
-                reply_thread "#{icon(@tsx_bot.icon_warning)} Ошибка соединения *(3)*. Ваш код активен. Просто подождите минуту и попробуйте еще раз. Не стоит делать попытки каждую секунду. Это лишь усугубляет ситуацию.", hb_client
+                puts "ANTICAPTCHA ERROR: #{e.message}".colorize(:yellow)
+                botrec("Exception", e.message)
+                reply_thread "#{icon(@tsx_bot.icon_warning)} Упс. Ошибочка. Ваш код активен. Попробуйте еще раз.", hb_client
                 handle('trade_overview')
               rescue TSX::Exceptions::NoPendingTrade
                 reply_thread "#{icon(@tsx_bot.icon_warning)} Заказ был отменен. Начните сначала.", hb_client
