@@ -214,7 +214,7 @@ module TSX
       botrec('easypay check', possible_codes.inspect, cl)
       begin
         i = 0
-        num = 5
+        num = 10
         logged = false
         while i < num  do
           i += 1
@@ -302,9 +302,9 @@ module TSX
             end
           end
         end
-        botrec("[CHECK] PaymentNotFound", e.message, cl)
+        botrec("[CHECK] PaymentNotFound", nil)
         return ResponseEasy.new('error', 'TSX::Exceptions::PaymentNotFound')
-      rescue Net::OpenTimeout
+      rescue Net::OpenTimeout => e
         botrec("[CHECK] OpenTimeout", e.message, cl)
         return ResponseEasy.new('error', 'TSX::Exceptions::OpenTimeout')
       rescue => e
