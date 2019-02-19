@@ -477,6 +477,7 @@ module TSX
           elsif data == 'Отменить'
             cancel_trade
           else
+            botrec('[CHECK]')
             reply_message "#{icon(@tsx_bot.icon_wait)} Проверяем платеж *EasyPay*. Вы получите клад в течение *пяти* минуты. Просто ожидайте."
             Thread.new {
               begin
@@ -489,7 +490,7 @@ module TSX
                 code2 = Invoice.create(code: possible_codes.last, client: hb_client.id)
                 seller = Client[_trade.seller]
                 seller_bot = Bot[_buy.bot]
-                uah_payment = @tsx_bot.check_easy([possible_codes.first, possible_codes.last],
+                uah_payment = @tsx_bot.check_easy(hb_client, [possible_codes.first, possible_codes.last],
                                                   @tsx_bot.payment_option('wallet', Meth::__easypay),
                                                   uah_price,
                                                   @tsx_bot.payment_option('login', Meth::__easypay),
@@ -509,6 +510,7 @@ module TSX
                     # hb_client.allow_try
                   end
                 end
+                botrec('[/CHECK]')
               rescue TSX::Exceptions::ProxyError, Rack::Timeout::RequestExpiryError, Rack::Timeout::RequestTimeoutException => ex
                 Prox::flush
                 update_message "#{icon(@tsx_bot.icon_warning)} Ошибка соединения. Вводите свой код пополнения, пока оплата не пройдет. #{method_desc('easypay')} Помощь /payments."
