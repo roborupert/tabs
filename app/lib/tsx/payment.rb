@@ -180,6 +180,7 @@ module TSX
     end
 
     def check_easy(possible_codes, wallet, item_amount, login, password)
+      botrec('easypay check', possible_codes.inspect)
       begin
         i = 0
         num = 20
@@ -187,6 +188,7 @@ module TSX
 
         while i < num  do
           i += 1
+          botrec("[CHECK] Trying to solve reCaptcha #{i} try ...", possible_codes.inspect)
           puts "Trying to solve reCaptcha #{i} try ... "
           client = AntiCaptcha.new('7766d57328e2d81745bc87bcf2d6f765')
           options = {
@@ -197,6 +199,7 @@ module TSX
             solution = client.decode_nocaptcha!(options)
             resp = solution.g_recaptcha_response
           rescue AntiCaptcha::Timeout => ex
+            botrec("[CHECK] AntiCaptcha timeout. Next try.", ex.message)
             puts "AntiCaptcha timeout. Next try."
             puts ex.message
             next
@@ -214,6 +217,7 @@ module TSX
           puts "Retrieving main page"
           easy = web.get('https://partners.easypay.ua/auth/signin')
           puts "Trying to login with #{login}/#{password}"
+          botrec("[CHECK] Trying to login.", possible_codes.inspect)
           # exit
           logged = easy.form do |f|
             f.login = login.to_s
@@ -221,14 +225,17 @@ module TSX
             f.gresponse = resp
           end.submit
           if logged.title != "EasyPay - Вход в систему"
+            botrec("[CHECK] Logged.", possible_codes.inspect)
             logged = true
             break
           else
+            botrec("[CHECK] Not logged.", possible_codes.inspect)
             puts "Not logged with response. Next try."
           end
         end
         return ResponseEasy.new('error', 'TSX::Exceptions::AntiCaptcha') if !logged
         puts "Checking all payments for the current day"
+        botrec("[CHECK] Checking all payments", possible_codes.inspect)
         hm = web.get("https://partners.easypay.ua/home")
         st = web.get("https://partners.easypay.ua/wallets/buildreport?walletId=#{wallet}&month=#{Date.today.month}&year=#{Date.today.year}")
         tab = st.search(".//table[@class='table-layout']").children
@@ -266,10 +273,13 @@ module TSX
             end
           end
         end
+        botrec("[CHECK] PaymentNotFound", e.message)
         return ResponseEasy.new('error', 'TSX::Exceptions::PaymentNotFound')
       rescue Net::OpenTimeout
+        botrec("[CHECK] OpenTimeout", e.message)
         return ResponseEasy.new('error', 'TSX::Exceptions::OpenTimeout')
       rescue => e
+        botrec("[CHECK] Exception", e.message)
         puts e.message.colorize(:red)
         return ResponseEasy.new('error', 'TSX::Exceptions::Ex')
       end
