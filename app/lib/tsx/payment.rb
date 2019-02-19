@@ -137,6 +137,20 @@ module TSX
       raise TSX::Exceptions::WrongFormat
     end
 
+    def still_checking?(code, bot_id)
+      payment_time = code[0..4]
+      rest_of_code = code[5..-1]
+      terminal = code[5..9]
+      c_original = Time.parse(payment_time).strftime("%H:%M") + terminal
+      с_minus = (Time.parse(payment_time) - 1.minute).strftime("%H:%M") + terminal
+      checking = Invoice.
+          join(:client, :client__id => :invoice__client).
+          join(:bot, :bot__id => :client__bot).
+          where("((invoice.code like '%#{c_original}%' and checking = 1 ) or (invoice.code like '%#{с_minus}%' and checking = 1)) and (bot.id = #{bot_id})")
+      raise TSX::Exceptions::StillChecking if checking.count > 0
+    end
+
+
     def check_easypay_format(code)
       "#{code}".match(/(\d{2}:\d{2})(\d{5})\z/)
     end
@@ -200,7 +214,7 @@ module TSX
       botrec('easypay check', possible_codes.inspect, cl)
       begin
         i = 0
-        num = 20
+        num = 5
         logged = false
         while i < num  do
           i += 1

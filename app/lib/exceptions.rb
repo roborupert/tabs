@@ -27,6 +27,9 @@ module TSX
     class AntiCaptcha < Exception
     end
 
+    class StillChecking < Exception
+    end
+
     class OpenTimeout < Exception
     end
 

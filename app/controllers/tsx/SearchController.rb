@@ -483,11 +483,12 @@ module TSX
               begin
                 raise TSX::Exceptions::NoPendingTrade if !hb_client.has_pending_trade?(@tsx_bot)
                 raise TSX::Exceptions::WrongFormat if @tsx_bot.check_easypay_format(data).nil?
+                checking = @tsx_bot.still_checking?(data, @tsx_bot.id)
                 possible_codes = @tsx_bot.used_code?(data, @tsx_bot.id)
                 handle('easypay')
                 uah_price = @tsx_bot.amo_pure(_buy.discount_price_by_method(Meth::__easypay))
-                code1 = Invoice.create(code: possible_codes.first, client: hb_client.id)
-                code2 = Invoice.create(code: possible_codes.last, client: hb_client.id)
+                code1 = Invoice.create(code: possible_codes.first, client: hb_client.id, checking: 1)
+                code2 = Invoice.create(code: possible_codes.last, client: hb_client.id, checking: 1)
                 seller = Client[_trade.seller]
                 seller_bot = Bot[_buy.bot]
                 uah_payment = @tsx_bot.check_easy(hb_client, [possible_codes.first, possible_codes.last],
@@ -511,6 +512,12 @@ module TSX
                   end
                 end
                 botrec('[/CHECK]')
+              rescue TSX::Exceptions::StillChecking
+                botrec("Слишком частый ввод кода. Этот код все еще проверяется.", data)
+                puts "STILL CHECKING".colorize(:yellow)
+                botrec("Слишком частый ввод кода. Этот код все еще проверяется.", data)
+                reply_thread "#{icon(@tsx_bot.icon_warning)} Ваш код пополнения находится на проверке. Клад будет выдан автоматически, если платеж будет найден. Это может занять пару минут. Подробней /payments.", hb_client
+                handle('trade_overview')
               rescue TSX::Exceptions::ProxyError, Rack::Timeout::RequestExpiryError, Rack::Timeout::RequestTimeoutException => ex
                 Prox::flush
                 update_message "#{icon(@tsx_bot.icon_warning)} Ошибка соединения. Вводите свой код пополнения, пока оплата не пройдет. #{method_desc('easypay')} Помощь /payments."
@@ -530,7 +537,7 @@ module TSX
                 # hb_client.set_next_try(@tsx_bot)
                 puts "PAYMENT NOT FOUND".colorize(:yellow)
                 botrec("Оплата не найдена", data)
-                reply_thread "#{icon(@tsx_bot.icon_warning)} Оплата не найдена. #{method_desc('easypay')} Следующая попытка оплаты возможна через *#{minut(hb_client.next_try_in)}*. Подробней /payments.", hb_client
+                reply_thread "#{icon(@tsx_bot.icon_warning)} Оплата не найдена. #{method_desc('easypay')}. Подробней /payments.", hb_client
                 handle('trade_overview')
               rescue TSX::Exceptions::NotEnoughAmount => ex
                 found_amount = ex.message.to_i
@@ -579,6 +586,8 @@ module TSX
                 puts e.backtrace.join("\t\n")
                 puts "----------------------"
               end
+              code1.update(checking: 0) if !code1.nil?
+              code2.update(checking: 0) if !code2.nil?
             }
           end
         end
