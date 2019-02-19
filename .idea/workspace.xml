@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/lib/view_helpers.rb" afterPath="$PROJECT_DIR$/app/lib/view_helpers.rb" />
-      <change beforePath="$PROJECT_DIR$/app/views/tsx/search/serp.rb" afterPath="$PROJECT_DIR$/app/views/tsx/search/serp.rb" />
+      <change beforePath="$PROJECT_DIR$/app/models/client.rb" afterPath="$PROJECT_DIR$/app/models/client.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="client.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="client.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/client.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="396" column="36" lean-forward="true" selection-start-line="396" selection-start-column="36" selection-end-line="396" selection-end-column="36" />
+            <state relative-caret-position="344">
+              <caret line="864" column="49" lean-forward="false" selection-start-line="864" selection-start-column="49" selection-end-line="864" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -95,7 +94,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view_helpers.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="view_helpers.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/lib/view_helpers.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="236">
@@ -206,7 +205,6 @@
         <option value="$PROJECT_DIR$/app/lib/tsx/payment.rb" />
         <option value="$PROJECT_DIR$/app/views/partials/bene_menu.haml" />
         <option value="$PROJECT_DIR$/app/controllers/BotController.rb" />
-        <option value="$PROJECT_DIR$/app/models/client.rb" />
         <option value="$PROJECT_DIR$/app/views/partials/client.haml" />
         <option value="$PROJECT_DIR$/config/const.rb" />
         <option value="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" />
@@ -217,6 +215,7 @@
         <option value="$PROJECT_DIR$/app/views/tsx/welcome/referals.rb" />
         <option value="$PROJECT_DIR$/app/views/tsx/search/serp.rb" />
         <option value="$PROJECT_DIR$/app/lib/view_helpers.rb" />
+        <option value="$PROJECT_DIR$/app/models/client.rb" />
       </list>
     </option>
   </component>
@@ -490,12 +489,12 @@
       <workItem from="1549894526444" duration="8000" />
       <workItem from="1549986702971" duration="14402000" />
       <workItem from="1550554348424" duration="3441000" />
-      <workItem from="1550572464846" duration="6596000" />
+      <workItem from="1550572464846" duration="6982000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="356298000" />
+    <option name="totallyTimeSpent" value="356684000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="0" />
@@ -871,14 +870,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/client.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="396" column="36" lean-forward="true" selection-start-line="396" selection-start-column="36" selection-end-line="396" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/bot.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
@@ -903,14 +894,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tsx/welcome/referals.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="109" lean-forward="false" selection-start-line="5" selection-start-column="109" selection-end-line="5" selection-end-column="109" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/tsx/search/serp.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -923,6 +906,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
           <caret line="152" column="0" lean-forward="true" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tsx/welcome/referals.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="109" lean-forward="false" selection-start-line="5" selection-start-column="109" selection-end-line="5" selection-end-column="109" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/client.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="864" column="49" lean-forward="false" selection-start-line="864" selection-start-column="49" selection-end-line="864" selection-end-column="49" />
           <folding />
         </state>
       </provider>
