@@ -56,7 +56,7 @@
   Резерв клада на, мин
   %input{style: 'width: auto', size: 10, type: 'text', name: 'reserve_interval', value: hb_bot.reserve_interval, required: true, placeholder: 'Резервирование клада на'}
   Реферальные, %
-  %input{style: 'width: auto', size: 10, type: 'text', name: 'ref_rate', value: hb_bot.ref_rate, required: true, placeholder: 'Реферальные, %'}
+  %input{style: 'width: auto', size: 10, type: 'text', name: 'ref_rate', value: hb_bot.get_var('ref_rate'), required: true, placeholder: 'Реферальные, %'}
   %br
   %textarea{style: 'width: auto', cols: 80, rows: 3, name: 'description', required: true}= hb_bot.description
   %br

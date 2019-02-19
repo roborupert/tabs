@@ -20,7 +20,7 @@ end
 if !@tsx_bot.custom_buttons
   buts << [btn_bots_welcome, btn_cashout]
 else
-  buts << @tsx_bot.custom_buttons << [btn_bots_welcome, btn_abuse]
+  buts << @tsx_bot.custom_buttons << [btn_bots_welcome]
 end
 buts
 

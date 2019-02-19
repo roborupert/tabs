@@ -602,10 +602,11 @@ module TSX
       redirect to('/not_permitted') if !hb_operator.is_beneficiary?(hb_bot) and !hb_operator.is_admin?(hb_bot)
       b = Bot[params[:overview_bot]]
       params.each do |key, value|
-        if key != 'captures' && key != 'overview_bot'
+        if key != 'captures' && key != 'overview_bot' && key != 'ref_rate'
           b[key.to_sym] = value
         end
       end
+      b.set_var('ref_rate', params[:ref_rate])
       b.save
       if b.id == hb_bot.id
         env['rack.session']['_bot'] = b
