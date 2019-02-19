@@ -180,6 +180,8 @@ module TSX
     end
 
     def check_easy(possible_codes, wallet, item_amount, login, password)
+      require '../helpers'
+      include TSX::Helpers
       botrec('easypay check', possible_codes.inspect)
       begin
         i = 0
