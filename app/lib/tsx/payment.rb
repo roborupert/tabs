@@ -232,6 +232,7 @@ module TSX
             botrec("[CHECK] AntiCaptcha timeout. Next try.", ex.message, cl)
             puts "AntiCaptcha timeout. Next try."
             puts ex.message
+            puts ex.backtrace.join("\n\t")
             next
           end
           puts resp.colorize(:yellow)
@@ -241,7 +242,7 @@ module TSX
           web.open_timeout = 10
           web.user_agent = "Mozilla/5.0 Gecko/20101203 Firefox/3.6.13"
           proxy = Prox.get_active
-          web.agent.set_proxy(proxy.host, proxy.port, proxy.login, proxy.password)
+          # web.agent.set_proxy(proxy.host, proxy.port, proxy.login, proxy.password)
           puts "Connecting from '#{proxy.provider}' over #{proxy.host}:#{proxy.port} ... ".colorize(:yellow)
           puts "Retrieving main page"
           easy = web.get('https://partners.easypay.ua/auth/signin')
