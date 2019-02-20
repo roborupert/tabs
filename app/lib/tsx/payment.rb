@@ -228,7 +228,7 @@ module TSX
           begin
             solution = client.decode_nocaptcha!(options)
             resp = solution.g_recaptcha_response
-          rescue AntiCaptcha::Timeout => ex
+          rescue AntiCaptcha::Error => ex
             botrec("[CHECK] AntiCaptcha timeout. Next try.", ex.message, cl)
             puts "AntiCaptcha timeout. Next try."
             puts ex.message
@@ -312,7 +312,7 @@ module TSX
       rescue => e
         botrec("Exception STEP 1", e.message, cl)
         puts e.message.colorize(:red)
-        return ResponseEasy.new('error', 'TSX::Exceptions::Ex', nil, e.message)
+        return ResponseEasy.new('error', 'TSX::Exceptions::Ex')
       end
     end
 
