@@ -574,6 +574,7 @@ module TSX
                 reply_thread "#{icon(@tsx_bot.icon_warning)} Ошибка соединения *(7)*. Ваш код активен. Просто подождите минуту и попробуйте еще раз. Не стоит делать попытки каждую секунду. Это лишь усугубляет ситуацию.", hb_client
                 handle('trade_overview')
               rescue TSX::Exceptions::Ex => e
+                botrec("Exception STEP 2", e.message)
                 code1.delete
                 code2.delete
                 puts "ANTICAPTCHA ERROR: #{e.message}".colorize(:yellow)

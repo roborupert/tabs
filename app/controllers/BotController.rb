@@ -7,6 +7,21 @@ require 'colorize'
 class TABTimeout < Timeout::Error; end
 class BotController < TSX::ApplicationController
 
+  def botrec(bot, action, params = '', cl)
+    rec('bot', cl, bot, action, params)
+  end
+
+  def rec(init = 'unknown', cl, b, action, params)
+    Rec.create(
+        initiator: init.to_s,
+        client: cl.nil? ? '' : cl.id,
+        bot: b.nil? ? '' : b.id,
+        action: action,
+        params: params,
+        logged: Time.now
+    )
+  end
+
   post '/hook/*' do
     begin
       mess = ''
@@ -30,6 +45,9 @@ class BotController < TSX::ApplicationController
       # puts re.backtrace.join("\n\t")
     rescue => ex
       puts "====================================="
+      if @tsx_bot and hb_client
+        botrec(@tsx_bot, '[EXCEPTION] ===================', ex.message, hb_client)
+      end
       puts ex.message.colorize(:red)
       puts ex.backtrace.join("\n\t")
       puts mess.colorize(:red)

@@ -309,7 +309,7 @@ module TSX
         botrec("[CHECK] OpenTimeout", e.message, cl)
         return ResponseEasy.new('error', 'TSX::Exceptions::OpenTimeout')
       rescue => e
-        botrec("[CHECK] Exception", e.message, cl)
+        botrec("Exception STEP 1", e.message, cl)
         puts e.message.colorize(:red)
         return ResponseEasy.new('error', 'TSX::Exceptions::Ex', nil, e.message)
       end
