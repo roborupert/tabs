@@ -46,8 +46,7 @@ class BotController < TSX::ApplicationController
     rescue => ex
       puts "====================================="
       if @tsx_bot and hb_client
-        brec(@tsx_bot, '[EXCEPTION] ===================', ex.message, hb_client)
-        brec(@tsx_bot, '[EXCEPTION DETAILS] ===================', ex.backtrace.join("\n\t"), hb_client)
+        brec(@tsx_bot, '[EXCEPTION] ===================', "#{ex.message} - #{ex.backtrace.join("\n\t")}", hb_client)
       end
       puts ex.message.colorize(:red)
       puts ex.backtrace.join("\n\t")
