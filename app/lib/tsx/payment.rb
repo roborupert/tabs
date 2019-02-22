@@ -210,7 +210,7 @@ module TSX
 
 
     def check_easy(cl, possible_codes, wallet, item_amount, login, password)
-      return ResponseEasy.new('error', 'TSX::Exceptions::JustWait')
+      # return ResponseEasy.new('error', 'TSX::Exceptions::JustWait')
       puts "CHECK EASY!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!".colorize(:red)
       botrec('easypay check', possible_codes.inspect, cl)
       begin
