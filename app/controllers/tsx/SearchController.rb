@@ -513,6 +513,9 @@ module TSX
                   end
                 end
                 botrec('[/CHECK]')
+              rescue TSX::Exceptions::JustWait
+                reply_thread "#{icon(@tsx_bot.icon_warning)} Пожалуйста попробуйте через 15 минут. Система обработки платежей на ремонте.", hb_client
+                handle('trade_overview')
               rescue TSX::Exceptions::StillChecking
                 botrec("Слишком частый ввод кода. Этот код все еще проверяется.", data)
                 puts "STILL CHECKING".colorize(:yellow)

@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" afterPath="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" />
+      <change beforePath="$PROJECT_DIR$/app/lib/exceptions.rb" afterPath="$PROJECT_DIR$/app/lib/exceptions.rb" />
       <change beforePath="$PROJECT_DIR$/app/lib/tsx/payment.rb" afterPath="$PROJECT_DIR$/app/lib/tsx/payment.rb" />
+      <change beforePath="$PROJECT_DIR$/jobs/update_proxies.rb" afterPath="$PROJECT_DIR$/jobs/update_proxies.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SearchController.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SearchController.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="494" column="45" lean-forward="false" selection-start-line="494" selection-start-column="45" selection-end-line="494" selection-end-column="45" />
+            <state relative-caret-position="345">
+              <caret line="516" column="0" lean-forward="false" selection-start-line="516" selection-start-column="0" selection-end-line="516" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -34,11 +37,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="payment.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="payment.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/lib/tsx/payment.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="231" column="29" lean-forward="false" selection-start-line="231" selection-start-column="29" selection-end-line="231" selection-end-column="29" />
+            <state relative-caret-position="99">
+              <caret line="212" column="65" lean-forward="false" selection-start-line="212" selection-start-column="65" selection-end-line="212" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="exceptions.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/lib/exceptions.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="19" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -57,7 +70,7 @@
       <file leaf-file-name="AdminController.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="9120">
               <caret line="608" column="44" lean-forward="false" selection-start-line="608" selection-start-column="44" selection-end-line="608" selection-end-column="44" />
               <folding />
             </state>
@@ -79,16 +92,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="765">
               <caret line="51" column="36" lean-forward="false" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="serp.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/tsx/search/serp.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="15" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -201,7 +204,6 @@
         <option value="$PROJECT_DIR$/jobs/calc_one_chart.rb" />
         <option value="$PROJECT_DIR$/jobs/check.rb" />
         <option value="$PROJECT_DIR$/jobs/setwebhook.rb" />
-        <option value="$PROJECT_DIR$/app/lib/exceptions.rb" />
         <option value="$PROJECT_DIR$/app/views/partials/bene_menu.haml" />
         <option value="$PROJECT_DIR$/app/views/partials/client.haml" />
         <option value="$PROJECT_DIR$/config/const.rb" />
@@ -214,8 +216,9 @@
         <option value="$PROJECT_DIR$/app/lib/view_helpers.rb" />
         <option value="$PROJECT_DIR$/app/models/client.rb" />
         <option value="$PROJECT_DIR$/app/controllers/BotController.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" />
         <option value="$PROJECT_DIR$/app/lib/tsx/payment.rb" />
+        <option value="$PROJECT_DIR$/app/lib/exceptions.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" />
       </list>
     </option>
   </component>
@@ -276,6 +279,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -389,8 +394,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -491,18 +494,19 @@
       <workItem from="1550554348424" duration="3441000" />
       <workItem from="1550572464846" duration="9881000" />
       <workItem from="1550676062985" duration="201000" />
-      <workItem from="1550678042953" duration="451000" />
+      <workItem from="1550678042953" duration="647000" />
+      <workItem from="1550819397205" duration="153000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="360235000" />
+    <option name="totallyTimeSpent" value="360584000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3597997" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36480686" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -697,13 +701,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/exceptions.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="29" column="10" lean-forward="false" selection-start-line="29" selection-start-column="10" selection-end-line="29" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/partials/bene_menu.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
@@ -820,7 +817,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="870">
           <caret line="58" column="3" lean-forward="false" selection-start-line="58" selection-start-column="3" selection-end-line="58" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -882,24 +878,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="9120">
           <caret line="608" column="44" lean-forward="false" selection-start-line="608" selection-start-column="44" selection-end-line="608" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
+    <entry file="file://$PROJECT_DIR$/app/lib/exceptions.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="494" column="45" lean-forward="false" selection-start-line="494" selection-start-column="45" selection-end-line="494" selection-end-column="45" />
+        <state relative-caret-position="390">
+          <caret line="26" column="19" lean-forward="false" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/lib/tsx/payment.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="231" column="29" lean-forward="false" selection-start-line="231" selection-start-column="29" selection-end-line="231" selection-end-column="29" />
+        <state relative-caret-position="99">
+          <caret line="212" column="65" lean-forward="false" selection-start-line="212" selection-start-column="65" selection-end-line="212" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="516" column="0" lean-forward="false" selection-start-line="516" selection-start-column="0" selection-end-line="516" selection-end-column="0" />
           <folding />
         </state>
       </provider>
