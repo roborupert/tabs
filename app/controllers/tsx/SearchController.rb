@@ -480,9 +480,9 @@ module TSX
           else
             botrec('[CHECK]')
             reply_message "#{icon(@tsx_bot.icon_wait)} Проверяем платеж EasyPay. *ВВОДИТЕ КОД ЧЕРЕЗ 10 МИНУТ ПОСЛЕ ОПЛАТЫ*."
-            return false
             begin
               raise TSX::Exceptions::NoPendingTrade if !hb_client.has_pending_trade?(@tsx_bot)
+              raise TSX::Exceptions::NextTry if !hb_client.can_try?
               raise TSX::Exceptions::WrongFormat if @tsx_bot.check_easypay_format(data).nil?
               possible_codes = @tsx_bot.used_code?(data, @tsx_bot.id)
               handle('easypay')
@@ -508,10 +508,14 @@ module TSX
                 end
               end
               botrec('[/CHECK]')
+            rescue TSX::Exceptions::NextTry
+              reply_thread "#{icon(@tsx_bot.icon_warning)} Вы не можете так часто проверять код. Попробуйте *чере #{minut(hb_client.next_try_in)}*.", hb_client
+              handle('trade_overview')
             rescue TSX::Exceptions::JustWait
               reply_thread "#{icon(@tsx_bot.icon_warning)} Пожалуйста попробуйте через 15 минут. Система обработки платежей на ремонте.", hb_client
               handle('trade_overview')
             rescue TSX::Exceptions::PaymentNotFound
+              hb_client.set_next_try(@tsx_bot)
               botrec("Оба кода удалены из базы.", "#{code1.code}, #{code2.code}")
               code1.delete
               code2.delete
@@ -528,6 +532,7 @@ module TSX
               hb_client.cashin(@tsx_bot.cnts(found_amount.to_i), Client::__easypay, Meth::__easypay, Client::__tsx)
               handle('trade_overview')
             rescue TSX::Exceptions::UsedCode => e
+              hb_client.set_next_try(@tsx_bot)
               puts e.message
               # puts e.backtrace.join("\t\n")
               puts "BAD PAYMENT: USED CODE #{data}".colorize(:yellow)

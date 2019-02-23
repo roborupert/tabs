@@ -308,10 +308,14 @@ class Client < Sequel::Model(:client)
   end
 
   def can_try?
+    puts "#{self.next_try}".colorize(:red)
+    puts "#{Time.now}".colorize(:red)
     if self.next_try
-      self.next_try < Time.now
+      if self.next_try < Time.now
+        return true
+      end
     end
-    true
+    false
   end
 
   def allow_try
