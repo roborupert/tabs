@@ -1,2 +1,2 @@
-class Abuse < Sequel::Model(:abuse)
+class Easypay < Sequel::Model(:easypay)
 end

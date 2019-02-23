@@ -480,124 +480,115 @@ module TSX
           else
             botrec('[CHECK]')
             reply_message "#{icon(@tsx_bot.icon_wait)} Проверяем платеж *EasyPay*. Вы получите клад в течение *пяти* минуты. Просто ожидайте."
-            Thread.new {
-              begin
-                raise TSX::Exceptions::NoPendingTrade if !hb_client.has_pending_trade?(@tsx_bot)
-                raise TSX::Exceptions::WrongFormat if @tsx_bot.check_easypay_format(data).nil?
-                checking = @tsx_bot.still_checking?(data, @tsx_bot.id)
-                possible_codes = @tsx_bot.used_code?(data, @tsx_bot.id)
-                handle('easypay')
-                uah_price = @tsx_bot.amo_pure(_buy.discount_price_by_method(Meth::__easypay))
-                code1 = Invoice.create(code: possible_codes.first, client: hb_client.id, checking: 1)
-                code2 = Invoice.create(code: possible_codes.last, client: hb_client.id, checking: 1)
-                seller = Client[_trade.seller]
-                seller_bot = Bot[_buy.bot]
-                uah_payment = @tsx_bot.check_easy(hb_client, [possible_codes.first, possible_codes.last],
-                                                  @tsx_bot.payment_option('wallet', Meth::__easypay),
-                                                  uah_price,
-                                                  @tsx_bot.payment_option('login', Meth::__easypay),
-                                                  @tsx_bot.payment_option('password', Meth::__easypay)
-                )
-                rsp = eval(uah_payment.respond.inspect)
-                puts "response from Tor processing server: #{rsp}".colorize(:blue)
-                if rsp[:result] == 'error'
-                  ex = eval("#{rsp[:exception]}.new(#{rsp[:amount].to_s})")
-                  raise ex
-                else
-                  if hb_client.cashin(@tsx_bot.cnts(rsp[:amount].to_i), Client::__easypay, Meth::__easypay, Client::__tsx)
-                    puts "PAYMENT ACCEPTED".colorize(:blue)
-                    botrec("Оплата клада #{_buy.id} зачислена. Коды пополнения: ", "#{code1.code}, #{code2.code}")
-                    reply_thread "#{icon(@tsx_bot.icon_success)} Оплата успешно зачислена.", hb_client
-                    finalize_trade(data, Meth::__easypay)
-                    # hb_client.allow_try
-                  end
+            return false
+            begin
+              raise TSX::Exceptions::NoPendingTrade if !hb_client.has_pending_trade?(@tsx_bot)
+              raise TSX::Exceptions::WrongFormat if @tsx_bot.check_easypay_format(data).nil?
+              possible_codes = @tsx_bot.used_code?(data, @tsx_bot.id)
+              handle('easypay')
+              uah_price = @tsx_bot.amo_pure(_buy.discount_price_by_method(Meth::__easypay))
+              code1 = Invoice.create(code: possible_codes.first, client: hb_client.id)
+              code2 = Invoice.create(code: possible_codes.last, client: hb_client.id)
+              seller = Client[_trade.seller]
+              seller_bot = Bot[_buy.bot]
+              uah_payment = @tsx_bot.check_easy_payment(@tsx_bot, [possible_codes.first, possible_codes.last], uah_price)
+              rsp = eval(uah_payment.respond.inspect)
+              puts "response from Tor processing server: #{rsp}".colorize(:blue)
+              if rsp[:result] == 'error'
+                ex = eval("#{rsp[:exception]}.new(#{rsp[:amount].to_s})")
+                raise ex
+              else
+                if hb_client.cashin(@tsx_bot.cnts(rsp[:amount].to_i), Client::__easypay, Meth::__easypay, Client::__tsx)
+                  puts "PAYMENT ACCEPTED".colorize(:blue)
+                  botrec("Оплата клада #{_buy.id} зачислена. Коды пополнения: ", "#{code1.code}, #{code2.code}")
+                  reply_thread "#{icon(@tsx_bot.icon_success)} Оплата успешно зачислена.", hb_client
+                  finalize_trade(data, Meth::__easypay)
+                  # hb_client.allow_try
                 end
-                botrec('[/CHECK]')
-              rescue TSX::Exceptions::JustWait
-                reply_thread "#{icon(@tsx_bot.icon_warning)} Пожалуйста попробуйте через 15 минут. Система обработки платежей на ремонте.", hb_client
-                handle('trade_overview')
-              rescue TSX::Exceptions::StillChecking
-                botrec("Слишком частый ввод кода. Этот код все еще проверяется.", data)
-                puts "STILL CHECKING".colorize(:yellow)
-                botrec("Слишком частый ввод кода. Этот код все еще проверяется.", data)
-                reply_thread "#{icon(@tsx_bot.icon_warning)} Ваш код пополнения находится на проверке. Клад будет выдан автоматически, если платеж будет найден. Это может занять пару минут. Подробней /payments.", hb_client
-                handle('trade_overview')
-              rescue TSX::Exceptions::ProxyError, Rack::Timeout::RequestExpiryError, Rack::Timeout::RequestTimeoutException => ex
-                Prox::flush
-                update_message "#{icon(@tsx_bot.icon_warning)} Ошибка соединения. Вводите свой код пополнения, пока оплата не пройдет. #{method_desc('easypay')} Помощь /payments."
-                puts "TIMEOUT HAPPENED. More than 24 sec while checking easypay".colorize(:yellow)
-                puts ex.message.red
-                code1.delete
-                code2.delete
-                reply_thread "#{icon(@tsx_bot.icon_warning)} Проверка платежа заняла слишком много времени. Попробуйте еще раз прямо сейчсас.", hb_client
-                handle('trade_overview')
-                botrec("Ошибка соединения при покупке клада", _buy.id.to_s)
-                handle('trade_overview')
-                return
-              rescue TSX::Exceptions::PaymentNotFound
-                code1.delete
-                code2.delete
-                botrec("Оба кода удалены из базы.", "#{code1.code}, #{code2.code}")
-                # hb_client.set_next_try(@tsx_bot)
-                puts "PAYMENT NOT FOUND".colorize(:yellow)
-                botrec("Оплата не найдена", data)
-                reply_thread "#{icon(@tsx_bot.icon_warning)} Оплата не найдена. #{method_desc('easypay')}. Подробней /payments.", hb_client
-                handle('trade_overview')
-              rescue TSX::Exceptions::NotEnoughAmount => ex
-                found_amount = ex.message.to_i
-                puts "NOT EMOUGH AMOUNT".colorize(:red)
-                botrec("Найдено #{@tsx_bot.amo(@tsx_bot.cnts(found_amount))} Не хватает суммы при покупке клада #{_buy.id}", "")
-                reply_thread "#{icon(@tsx_bot.icon_warning)} Суммы не хватает, однако #{@tsx_bot.amo(@tsx_bot.cnts(found_amount))} зачислено Вам на баланс. #{method_desc('easypay')} Помощь /payments.", hb_client
-                hb_client.cashin(@tsx_bot.cnts(found_amount.to_i), Client::__easypay, Meth::__easypay, Client::__tsx)
-                handle('trade_overview')
-              rescue TSX::Exceptions::UsedCode => e
-                puts e.message
-                # puts e.backtrace.join("\t\n")
-                botrec("Введен использованный код", data)
-                reply_thread "#{icon(@tsx_bot.icon_warning)} Код уже был использован. Код пополнения Easypay должен иметь вид `00:0012345`. Если Вы уверены, что не использовали этот код, создайте запрос в службу поддержки.", hb_client
-                puts "USED CODE".colorize(:yellow)
-                handle('trade_overview')
-              rescue TSX::Exceptions::WrongFormat
-                puts "WRONG FORMAT".colorize(:yellow)
-                botrec("Неверный формат кода пополнения при покупке клада #{_buy.id}", data)
-                reply_thread "#{icon(@tsx_bot.icon_warning)} Неверный формат кода пополнения. Пожалуйста, прочитайте внимательно /payments и вводите сразу верный код пополнения.", hb_client
-                handle('trade_overview')
-              rescue TSX::Exceptions::WrongEasyPass
-                code1.delete
-                code2.delete
-                puts "WRONG EASYPAY PASS".colorize(:yellow)
-                botrec("Неверный пароль в Изипей", data)
-                reply_thread "#{icon(@tsx_bot.icon_warning)} Ошибка соединения *(2)*. Ваш код активен. Просто подождите минуту и попробуйте еще раз. Не стоит делать попытки каждую секунду. Это лишь усугубляет ситуацию.", hb_client
-                handle('trade_overview')
-              rescue TSX::Exceptions::AntiCaptcha
-                code1.delete
-                code2.delete
-                puts "ANTICAPTCHA ERROR".colorize(:yellow)
-                botrec("Проблема с капчей", data)
-                reply_thread "#{icon(@tsx_bot.icon_warning)} Проверка платежа заняла слишком много времени. Ваш код активен. Попробуйте, пожалуйста, еще раз.", hb_client
-                handle('trade_overview')
-              rescue TSX::Exceptions::Ex => e
-                botrec("Exception STEP 2", e.message)
-                code1.delete
-                code2.delete
-                puts "ANTICAPTCHA ERROR: #{e.message}".colorize(:yellow)
-                botrec("Exception", e.message)
-                reply_thread "#{icon(@tsx_bot.icon_warning)} Упс. Ошибочка. Ваш код активен. Попробуйте еще раз.", hb_client
-                handle('trade_overview')
-              rescue TSX::Exceptions::NoPendingTrade
-                reply_thread "#{icon(@tsx_bot.icon_warning)} Заказ был отменен. Начните сначала.", hb_client
-                start
-              rescue => e
-                puts "--------------------"
-                puts "Ошибка соединения:  #{e.message}"
-                puts e.backtrace.join("\t\n")
-                puts "----------------------"
               end
-              code1.update(checking: 0) if !code1.nil?
-              code2.update(checking: 0) if !code2.nil?
-            }
+              botrec('[/CHECK]')
+            rescue TSX::Exceptions::JustWait
+              reply_thread "#{icon(@tsx_bot.icon_warning)} Пожалуйста попробуйте через 15 минут. Система обработки платежей на ремонте.", hb_client
+              handle('trade_overview')
+            rescue TSX::Exceptions::StillChecking
+              botrec("Слишком частый ввод кода. Этот код все еще проверяется.", data)
+              puts "STILL CHECKING".colorize(:yellow)
+              botrec("Слишком частый ввод кода. Этот код все еще проверяется.", data)
+              reply_thread "#{icon(@tsx_bot.icon_warning)} Ваш код пополнения находится на проверке. Клад будет выдан автоматически, если платеж будет найден. Это может занять пару минут. Подробней /payments.", hb_client
+              handle('trade_overview')
+            rescue TSX::Exceptions::ProxyError, Rack::Timeout::RequestExpiryError, Rack::Timeout::RequestTimeoutException => ex
+              Prox::flush
+              update_message "#{icon(@tsx_bot.icon_warning)} Ошибка соединения. Вводите свой код пополнения, пока оплата не пройдет. #{method_desc('easypay')} Помощь /payments."
+              puts "TIMEOUT HAPPENED. More than 24 sec while checking easypay".colorize(:yellow)
+              puts ex.message.red
+              code1.delete
+              code2.delete
+              reply_thread "#{icon(@tsx_bot.icon_warning)} Проверка платежа заняла слишком много времени. Попробуйте еще раз прямо сейчсас.", hb_client
+              handle('trade_overview')
+              botrec("Ошибка соединения при покупке клада", _buy.id.to_s)
+              handle('trade_overview')
+              return
+            rescue TSX::Exceptions::PaymentNotFound
+              code1.delete
+              code2.delete
+              botrec("Оба кода удалены из базы.", "#{code1.code}, #{code2.code}")
+              # hb_client.set_next_try(@tsx_bot)
+              puts "PAYMENT NOT FOUND".colorize(:yellow)
+              botrec("Оплата не найдена", data)
+              reply_thread "#{icon(@tsx_bot.icon_warning)} Оплата не найдена. #{method_desc('easypay')}. Мы проверяем платежи каждые 10 минут. Если Вы уверены, что оплатили, попробуйте через пару минут. Подробней /payments.", hb_client
+              handle('trade_overview')
+            rescue TSX::Exceptions::NotEnoughAmount => ex
+              found_amount = ex.message.to_i
+              puts "NOT EMOUGH AMOUNT".colorize(:red)
+              botrec("Найдено #{@tsx_bot.amo(@tsx_bot.cnts(found_amount))} Не хватает суммы при покупке клада #{_buy.id}", "")
+              reply_thread "#{icon(@tsx_bot.icon_warning)} Суммы не хватает, однако #{@tsx_bot.amo(@tsx_bot.cnts(found_amount))} зачислено Вам на баланс. #{method_desc('easypay')} Помощь /payments.", hb_client
+              hb_client.cashin(@tsx_bot.cnts(found_amount.to_i), Client::__easypay, Meth::__easypay, Client::__tsx)
+              handle('trade_overview')
+            rescue TSX::Exceptions::UsedCode => e
+              puts e.message
+              # puts e.backtrace.join("\t\n")
+              botrec("Введен использованный код", data)
+              reply_thread "#{icon(@tsx_bot.icon_warning)} Код уже был использован. Код пополнения Easypay должен иметь вид `00:0012345`. Если Вы уверены, что не использовали этот код, создайте запрос в службу поддержки.", hb_client
+              puts "USED CODE".colorize(:yellow)
+              handle('trade_overview')
+            rescue TSX::Exceptions::WrongFormat
+              puts "WRONG FORMAT".colorize(:yellow)
+              botrec("Неверный формат кода пополнения при покупке клада #{_buy.id}", data)
+              reply_thread "#{icon(@tsx_bot.icon_warning)} Неверный формат кода пополнения. Пожалуйста, прочитайте внимательно /payments и вводите сразу верный код пополнения.", hb_client
+              handle('trade_overview')
+            rescue TSX::Exceptions::WrongEasyPass
+              code1.delete
+              code2.delete
+              puts "WRONG EASYPAY PASS".colorize(:yellow)
+              botrec("Неверный пароль в Изипей", data)
+              reply_thread "#{icon(@tsx_bot.icon_warning)} Ошибка соединения *(2)*. Ваш код активен. Просто подождите минуту и попробуйте еще раз. Не стоит делать попытки каждую секунду. Это лишь усугубляет ситуацию.", hb_client
+              handle('trade_overview')
+            rescue TSX::Exceptions::AntiCaptcha
+              code1.delete
+              code2.delete
+              puts "ANTICAPTCHA ERROR".colorize(:yellow)
+              botrec("Проблема с капчей", data)
+              reply_thread "#{icon(@tsx_bot.icon_warning)} Проверка платежа заняла слишком много времени. Ваш код активен. Попробуйте, пожалуйста, еще раз.", hb_client
+              handle('trade_overview')
+            rescue TSX::Exceptions::Ex => e
+              botrec("Exception STEP 2", e.message)
+              code1.delete
+              code2.delete
+              puts "ANTICAPTCHA ERROR: #{e.message}".colorize(:yellow)
+              botrec("Exception", e.message)
+              reply_thread "#{icon(@tsx_bot.icon_warning)} Упс. Ошибочка. Ваш код активен. Попробуйте еще раз.", hb_client
+              handle('trade_overview')
+            rescue TSX::Exceptions::NoPendingTrade
+              reply_thread "#{icon(@tsx_bot.icon_warning)} Заказ был отменен. Начните сначала.", hb_client
+              start
+            rescue => e
+              puts "--------------------"
+              puts "Ошибка соединения:  #{e.message}"
+              puts e.backtrace.join("\t\n")
+              puts "----------------------"
+            end
           end
-        end
+      end
 
         def pay_by_balance
           # reply_message 'платежи закрыты'

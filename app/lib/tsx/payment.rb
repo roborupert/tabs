@@ -208,6 +208,21 @@ module TSX
       )
     end
 
+    def check_easy_payment(bot, codes, price)
+      payments = Easypay.where("bot = #{bot.id} and (code = '#{codes.first}' or code = '#{codes.last}')")
+      if payments.count == 0
+        return ResponseEasy.new('error', 'TSX::Exceptions::PaymentNotFound')
+      else
+        amt = payments.first.amount
+        puts "AMOUNT FOUND #{amt}"
+        puts "PRICE #{price}"
+        if amt.to_i < price.to_i
+          return ResponseEasy.new('error', 'TSX::Exceptions::NotEnoughAmount', nil, amt)
+        else
+          return ResponseEasy.new('success', nil, nil, amt)
+        end
+      end
+    end
 
     def check_easy(cl, possible_codes, wallet, item_amount, login, password)
       # return ResponseEasy.new('error', 'TSX::Exceptions::JustWait')
