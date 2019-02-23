@@ -550,14 +550,14 @@ module TSX
               reply_thread "#{icon(@tsx_bot.icon_warning)} Заказ был отменен. Начните сначала.", hb_client
               start
             rescue => e
-              puts "PAYMENT EXCEPTION --------------------"
+              puts "PAYMENT EXCEPTION: #{e.message}"
               botrec("PAYMENT General Exception", e.message)
               code1.delete if !code1.nil?
               code2.delete if !code2.nil?
               puts "PAYMENT EXCEPTION --------------------"
               puts "--------------------"
               puts "Ошибка соединения:  #{e.message}"
-              puts e.backtrace.join("\t\n")
+              puts "PAYMENT EXCEPTION: #{e.backtrace.join("\t\n")}"
               puts "----------------------"
             end
           end
