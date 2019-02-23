@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" afterPath="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/jobs/easypay.rb" afterPath="$PROJECT_DIR$/jobs/easypay.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SearchController.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SearchController.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="482" column="0" lean-forward="false" selection-start-line="482" selection-start-column="0" selection-end-line="482" selection-end-column="0" />
+            <state relative-caret-position="639">
+              <caret line="536" column="0" lean-forward="false" selection-start-line="536" selection-start-column="0" selection-end-line="536" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -26,18 +27,18 @@
       <file leaf-file-name="payment.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/lib/tsx/payment.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="218" column="32" lean-forward="false" selection-start-line="218" selection-start-column="32" selection-end-line="218" selection-end-column="32" />
+            <state relative-caret-position="484">
+              <caret line="310" column="0" lean-forward="false" selection-start-line="306" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="easypay.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="easypay.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jobs/easypay.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="98" column="31" lean-forward="false" selection-start-line="98" selection-start-column="31" selection-end-line="98" selection-end-column="31" />
+            <state relative-caret-position="510">
+              <caret line="88" column="52" lean-forward="false" selection-start-line="88" selection-start-column="52" selection-end-line="88" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -203,8 +204,8 @@
         <option value="$PROJECT_DIR$/app/models/easypay.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/lib/tsx/payment.rb" />
-        <option value="$PROJECT_DIR$/jobs/easypay.rb" />
         <option value="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" />
+        <option value="$PROJECT_DIR$/jobs/easypay.rb" />
       </list>
     </option>
   </component>
@@ -481,12 +482,12 @@
       <workItem from="1550572464846" duration="9881000" />
       <workItem from="1550676062985" duration="201000" />
       <workItem from="1550678042953" duration="647000" />
-      <workItem from="1550819397205" duration="11011000" />
+      <workItem from="1550819397205" duration="11454000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="371442000" />
+    <option name="totallyTimeSpent" value="371885000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="0" />
@@ -899,26 +900,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="639">
+          <caret line="536" column="0" lean-forward="false" selection-start-line="536" selection-start-column="0" selection-end-line="536" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/lib/tsx/payment.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="218" column="32" lean-forward="false" selection-start-line="218" selection-start-column="32" selection-end-line="218" selection-end-column="32" />
+        <state relative-caret-position="484">
+          <caret line="310" column="0" lean-forward="false" selection-start-line="306" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jobs/easypay.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="98" column="31" lean-forward="false" selection-start-line="98" selection-start-column="31" selection-end-line="98" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="482" column="0" lean-forward="false" selection-start-line="482" selection-start-column="0" selection-end-line="482" selection-end-column="0" />
+        <state relative-caret-position="510">
+          <caret line="88" column="52" lean-forward="false" selection-start-line="88" selection-start-column="52" selection-end-line="88" selection-end-column="52" />
           <folding />
         </state>
       </provider>
