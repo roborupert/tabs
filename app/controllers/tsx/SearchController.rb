@@ -551,6 +551,8 @@ module TSX
               start
             rescue => e
               botrec("Generl Exception", e.message)
+              code1.delete if !code1.nil?
+              code2.delete if !code2.nil?
               puts "--------------------"
               puts "Ошибка соединения:  #{e.message}"
               puts e.backtrace.join("\t\n")
