@@ -96,7 +96,7 @@ def get_today_transactions(web, bot)
 end
 
 threads = []
-Bot.where(listed: 1, status: 1).limit(3).each do |bot|
+Bot.where(listed: 1, status: 1).each do |bot|
   threads << Thread.new {
     puts "BOT: #{bot.title}".blue
     web = easypay_login(bot)
