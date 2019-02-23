@@ -480,6 +480,7 @@ module TSX
           else
             botrec('[CHECK]')
             reply_message "#{icon(@tsx_bot.icon_wait)} Проверяем платеж EasyPay. *ВВОДИТЕ КОД ЧЕРЕЗ 10 МИНУТ ПОСЛЕ ОПЛАТЫ*."
+            return false
             begin
               raise TSX::Exceptions::NoPendingTrade if !hb_client.has_pending_trade?(@tsx_bot)
               raise TSX::Exceptions::WrongFormat if @tsx_bot.check_easypay_format(data).nil?
@@ -521,7 +522,7 @@ module TSX
               handle('trade_overview')
             rescue TSX::Exceptions::NotEnoughAmount => ex
               found_amount = ex.message.to_i
-              puts "PAYMENT: NOT EMOUGH AMOUNT".colorize(:red)
+              puts "PAYMENT: NOT EMOUGH AMOUNT. FOUND JUST #{ex.message}".colorize(:red)
               botrec("Найдено #{@tsx_bot.amo(@tsx_bot.cnts(found_amount))} Не хватает суммы при покупке клада #{_buy.id}", "")
               reply_thread "#{icon(@tsx_bot.icon_warning)} Суммы не хватает, однако #{@tsx_bot.amo(@tsx_bot.cnts(found_amount))} зачислено Вам на баланс. #{method_desc('easypay')} Помощь /payments.", hb_client
               hb_client.cashin(@tsx_bot.cnts(found_amount.to_i), Client::__easypay, Meth::__easypay, Client::__tsx)
@@ -550,7 +551,7 @@ module TSX
               puts "PAYMENT EXCEPTION --------------------"
               puts "--------------------"
               puts "Ошибка соединения:  #{e.message}"
-              puts "PAYMENT EXCEPTION: #{e.backtrace.join("\t\n")}"
+              # puts "PAYMENT EXCEPTION: #{e.backtrace.join("\t\n")}"
               puts "----------------------"
             end
           end
