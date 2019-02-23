@@ -30,7 +30,7 @@ def easypay_login(bot)
     web.open_timeout = 10
     web.user_agent = "Mozilla/5.0 Gecko/20101203 Firefox/3.6.13"
     proxy = Prox.get_active
-    # web.agent.set_proxy(proxy.host, proxy.port, proxy.login, proxy.password)
+    web.agent.set_proxy(proxy.host, proxy.port, proxy.login, proxy.password)
     puts "#{bot.title}: Retrieving main page".white
     easy = web.get('https://partners.easypay.ua/auth/signin')
     login = bot.payment_option('login', Meth::__easypay)
