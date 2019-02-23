@@ -539,14 +539,6 @@ module TSX
               botrec("Неверный формат кода пополнения при покупке клада #{_buy.id}", data)
               reply_thread "#{icon(@tsx_bot.icon_warning)} Неверный формат кода пополнения. Пожалуйста, прочитайте внимательно /payments и вводите сразу верный код пополнения.", hb_client
               handle('trade_overview')
-            rescue TSX::Exceptions::Ex => e
-              botrec("Exception STEP 2", e.message)
-              code1.delete
-              code2.delete
-              puts "ANTICAPTCHA ERROR: #{e.message}".colorize(:yellow)
-              botrec("Exception", e.message)
-              reply_thread "#{icon(@tsx_bot.icon_warning)} Упс. Ошибочка. Ваш код активен. Попробуйте еще раз.", hb_client
-              handle('trade_overview')
             rescue TSX::Exceptions::NoPendingTrade
               reply_thread "#{icon(@tsx_bot.icon_warning)} Заказ был отменен. Начните сначала.", hb_client
               start

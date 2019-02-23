@@ -213,9 +213,10 @@ module TSX
       if payments.count == 0
         return ResponseEasy.new('error', 'TSX::Exceptions::PaymentNotFound')
       else
-        amt = payments.first.amount
+        amnt = payments.first.amount
         puts "AMOUNT FOUND #{amt}"
         puts "PRICE #{price}"
+        amt = amnt.to_f.round.to_i
         if amt.to_i < price.to_i
           return ResponseEasy.new('error', 'TSX::Exceptions::NotEnoughAmount', nil, amt)
         else
