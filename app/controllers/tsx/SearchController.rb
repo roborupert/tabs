@@ -528,7 +528,7 @@ module TSX
             rescue TSX::Exceptions::UsedCode => e
               puts e.message
               # puts e.backtrace.join("\t\n")
-              puts "BAD PAYMENT: USED CODE".colorize(:yellow)
+              puts "BAD PAYMENT: USED CODE #{data}".colorize(:yellow)
               botrec("Введен использованный код", data)
               reply_thread "#{icon(@tsx_bot.icon_warning)} Код уже был использован. Код пополнения Easypay должен иметь вид `00:0012345`. Если Вы уверены, что не использовали этот код, создайте запрос в службу поддержки.", hb_client
               puts "USED CODE".colorize(:yellow)
@@ -550,9 +550,11 @@ module TSX
               reply_thread "#{icon(@tsx_bot.icon_warning)} Заказ был отменен. Начните сначала.", hb_client
               start
             rescue => e
-              botrec("Generl Exception", e.message)
+              puts "PAYMENT EXCEPTION --------------------"
+              botrec("PAYMENT General Exception", e.message)
               code1.delete if !code1.nil?
               code2.delete if !code2.nil?
+              puts "PAYMENT EXCEPTION --------------------"
               puts "--------------------"
               puts "Ошибка соединения:  #{e.message}"
               puts e.backtrace.join("\t\n")
