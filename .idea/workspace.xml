@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/lib/tsx/payment.rb" afterPath="$PROJECT_DIR$/app/lib/tsx/payment.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,8 +17,8 @@
       <file leaf-file-name="SearchController.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="492" column="50" lean-forward="false" selection-start-line="492" selection-start-column="50" selection-end-line="492" selection-end-column="50" />
+            <state relative-caret-position="251">
+              <caret line="497" column="59" lean-forward="false" selection-start-line="497" selection-start-column="59" selection-end-line="497" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -76,8 +77,8 @@
       <file leaf-file-name="payment.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/lib/tsx/payment.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="219" column="17" lean-forward="false" selection-start-line="219" selection-start-column="17" selection-end-line="219" selection-end-column="17" />
+            <state relative-caret-position="131">
+              <caret line="215" column="32" lean-forward="false" selection-start-line="215" selection-start-column="32" selection-end-line="215" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -117,7 +118,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>/team</find>
       <find>/add_op</find>
       <find>/tabik</find>
       <find>/admins</find>
@@ -147,6 +147,7 @@
       <find>gray</find>
       <find>login</find>
       <find>платежа</find>
+      <find>amt</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -491,12 +492,12 @@
       <workItem from="1550572464846" duration="9881000" />
       <workItem from="1550676062985" duration="201000" />
       <workItem from="1550678042953" duration="647000" />
-      <workItem from="1550819397205" duration="16164000" />
+      <workItem from="1550819397205" duration="16329000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="376595000" />
+    <option name="totallyTimeSpent" value="376760000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="0" />
@@ -922,16 +923,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="492" column="50" lean-forward="false" selection-start-line="492" selection-start-column="50" selection-end-line="492" selection-end-column="50" />
+        <state relative-caret-position="251">
+          <caret line="497" column="59" lean-forward="false" selection-start-line="497" selection-start-column="59" selection-end-line="497" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/lib/tsx/payment.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="219" column="17" lean-forward="false" selection-start-line="219" selection-start-column="17" selection-end-line="219" selection-end-column="17" />
+        <state relative-caret-position="131">
+          <caret line="215" column="32" lean-forward="false" selection-start-line="215" selection-start-column="32" selection-end-line="215" selection-end-column="32" />
           <folding />
         </state>
       </provider>
