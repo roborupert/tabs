@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" afterPath="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/app/models/client.rb" afterPath="$PROJECT_DIR$/app/models/client.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SearchController.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SearchController.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="511" column="46" lean-forward="false" selection-start-line="511" selection-start-column="46" selection-end-line="511" selection-end-column="46" />
+            <state relative-caret-position="272">
+              <caret line="484" column="61" lean-forward="true" selection-start-line="484" selection-start-column="61" selection-end-line="484" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -63,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="client.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="client.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/client.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="312" column="0" lean-forward="false" selection-start-line="310" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
+            <state relative-caret-position="308">
+              <caret line="314" column="6" lean-forward="false" selection-start-line="314" selection-start-column="6" selection-end-line="314" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -213,8 +214,8 @@
         <option value="$PROJECT_DIR$/jobs/easypay.rb" />
         <option value="$PROJECT_DIR$/app/views/tsx/search/confirm.rb" />
         <option value="$PROJECT_DIR$/app/lib/tsx/payment.rb" />
-        <option value="$PROJECT_DIR$/app/models/client.rb" />
         <option value="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" />
+        <option value="$PROJECT_DIR$/app/models/client.rb" />
       </list>
     </option>
   </component>
@@ -491,12 +492,12 @@
       <workItem from="1550572464846" duration="9881000" />
       <workItem from="1550676062985" duration="201000" />
       <workItem from="1550678042953" duration="647000" />
-      <workItem from="1550819397205" duration="18242000" />
+      <workItem from="1550819397205" duration="18397000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="378673000" />
+    <option name="totallyTimeSpent" value="378828000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="0" />
@@ -921,18 +922,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/client.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="312" column="0" lean-forward="false" selection-start-line="310" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
+        <state relative-caret-position="272">
+          <caret line="484" column="61" lean-forward="true" selection-start-line="484" selection-start-column="61" selection-end-line="484" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/client.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="511" column="46" lean-forward="false" selection-start-line="511" selection-start-column="46" selection-end-line="511" selection-end-column="46" />
+        <state relative-caret-position="308">
+          <caret line="314" column="6" lean-forward="false" selection-start-line="314" selection-start-column="6" selection-end-line="314" selection-end-column="6" />
           <folding />
         </state>
       </provider>

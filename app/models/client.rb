@@ -314,8 +314,8 @@ class Client < Sequel::Model(:client)
       if self.next_try < Time.now
         return true
       end
+      false
     end
-    false
   end
 
   def allow_try
