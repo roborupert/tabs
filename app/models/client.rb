@@ -315,6 +315,8 @@ class Client < Sequel::Model(:client)
         return true
       end
       false
+    else
+      true
     end
   end
 
