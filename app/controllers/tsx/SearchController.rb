@@ -509,6 +509,7 @@ module TSX
               end
               botrec('[/CHECK]')
             rescue TSX::Exceptions::NextTry
+              puts "PAYMENT TOO OFTEN: #{data}".colorize(:yellow)
               reply_thread "#{icon(@tsx_bot.icon_warning)} Вы не можете так часто проверять код. Попробуйте *чере #{minut(hb_client.next_try_in)}*.", hb_client
               handle('trade_overview')
             rescue TSX::Exceptions::JustWait
