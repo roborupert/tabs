@@ -124,7 +124,7 @@ module TSX
       used_code = Invoice.
           join(:client, :client__id => :invoice__client).
           join(:bot, :bot__id => :client__bot).
-          where("(invoice.code like '%#{c_original}%' or invoice.code like '%#{с_minus}%') and (bot.id = #{bot_id})")
+          where("(invoice.code = '#{c_original}' or invoice.code = '#{с_minus}') and (bot.id = #{bot_id})")
       # puts used_code.inspect.colorize(:yellow)
       if used_code.count == 0
         return [c_original, с_minus]
