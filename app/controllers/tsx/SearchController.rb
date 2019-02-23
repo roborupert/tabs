@@ -521,7 +521,7 @@ module TSX
               handle('trade_overview')
             rescue TSX::Exceptions::NotEnoughAmount => ex
               found_amount = ex.message.to_i
-              puts "NOT EMOUGH AMOUNT".colorize(:red)
+              puts "PAYMENT: NOT EMOUGH AMOUNT".colorize(:red)
               botrec("Найдено #{@tsx_bot.amo(@tsx_bot.cnts(found_amount))} Не хватает суммы при покупке клада #{_buy.id}", "")
               reply_thread "#{icon(@tsx_bot.icon_warning)} Суммы не хватает, однако #{@tsx_bot.amo(@tsx_bot.cnts(found_amount))} зачислено Вам на баланс. #{method_desc('easypay')} Помощь /payments.", hb_client
               hb_client.cashin(@tsx_bot.cnts(found_amount.to_i), Client::__easypay, Meth::__easypay, Client::__tsx)
