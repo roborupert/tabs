@@ -509,28 +509,10 @@ module TSX
             rescue TSX::Exceptions::JustWait
               reply_thread "#{icon(@tsx_bot.icon_warning)} Пожалуйста попробуйте через 15 минут. Система обработки платежей на ремонте.", hb_client
               handle('trade_overview')
-            rescue TSX::Exceptions::StillChecking
-              botrec("Слишком частый ввод кода. Этот код все еще проверяется.", data)
-              puts "STILL CHECKING".colorize(:yellow)
-              botrec("Слишком частый ввод кода. Этот код все еще проверяется.", data)
-              reply_thread "#{icon(@tsx_bot.icon_warning)} Ваш код пополнения находится на проверке. Клад будет выдан автоматически, если платеж будет найден. Это может занять пару минут. Подробней /payments.", hb_client
-              handle('trade_overview')
-            rescue TSX::Exceptions::ProxyError, Rack::Timeout::RequestExpiryError, Rack::Timeout::RequestTimeoutException => ex
-              Prox::flush
-              update_message "#{icon(@tsx_bot.icon_warning)} Ошибка соединения. Вводите свой код пополнения, пока оплата не пройдет. #{method_desc('easypay')} Помощь /payments."
-              puts "TIMEOUT HAPPENED. More than 24 sec while checking easypay".colorize(:yellow)
-              puts ex.message.red
-              code1.delete
-              code2.delete
-              reply_thread "#{icon(@tsx_bot.icon_warning)} Проверка платежа заняла слишком много времени. Попробуйте еще раз прямо сейчсас.", hb_client
-              handle('trade_overview')
-              botrec("Ошибка соединения при покупке клада", _buy.id.to_s)
-              handle('trade_overview')
-              return
             rescue TSX::Exceptions::PaymentNotFound
+              botrec("Оба кода удалены из базы.", "#{code1.code}, #{code2.code}")
               code1.delete
               code2.delete
-              botrec("Оба кода удалены из базы.", "#{code1.code}, #{code2.code}")
               # hb_client.set_next_try(@tsx_bot)
               puts "PAYMENT NOT FOUND".colorize(:yellow)
               botrec("Оплата не найдена", data)
@@ -546,6 +528,7 @@ module TSX
             rescue TSX::Exceptions::UsedCode => e
               puts e.message
               # puts e.backtrace.join("\t\n")
+              puts "BAD PAYMENT: USED CODE".colorize(:yellow)
               botrec("Введен использованный код", data)
               reply_thread "#{icon(@tsx_bot.icon_warning)} Код уже был использован. Код пополнения Easypay должен иметь вид `00:0012345`. Если Вы уверены, что не использовали этот код, создайте запрос в службу поддержки.", hb_client
               puts "USED CODE".colorize(:yellow)
@@ -554,20 +537,6 @@ module TSX
               puts "WRONG FORMAT".colorize(:yellow)
               botrec("Неверный формат кода пополнения при покупке клада #{_buy.id}", data)
               reply_thread "#{icon(@tsx_bot.icon_warning)} Неверный формат кода пополнения. Пожалуйста, прочитайте внимательно /payments и вводите сразу верный код пополнения.", hb_client
-              handle('trade_overview')
-            rescue TSX::Exceptions::WrongEasyPass
-              code1.delete
-              code2.delete
-              puts "WRONG EASYPAY PASS".colorize(:yellow)
-              botrec("Неверный пароль в Изипей", data)
-              reply_thread "#{icon(@tsx_bot.icon_warning)} Ошибка соединения *(2)*. Ваш код активен. Просто подождите минуту и попробуйте еще раз. Не стоит делать попытки каждую секунду. Это лишь усугубляет ситуацию.", hb_client
-              handle('trade_overview')
-            rescue TSX::Exceptions::AntiCaptcha
-              code1.delete
-              code2.delete
-              puts "ANTICAPTCHA ERROR".colorize(:yellow)
-              botrec("Проблема с капчей", data)
-              reply_thread "#{icon(@tsx_bot.icon_warning)} Проверка платежа заняла слишком много времени. Ваш код активен. Попробуйте, пожалуйста, еще раз.", hb_client
               handle('trade_overview')
             rescue TSX::Exceptions::Ex => e
               botrec("Exception STEP 2", e.message)
@@ -581,6 +550,7 @@ module TSX
               reply_thread "#{icon(@tsx_bot.icon_warning)} Заказ был отменен. Начните сначала.", hb_client
               start
             rescue => e
+              botrec("Generl Exception", e.message)
               puts "--------------------"
               puts "Ошибка соединения:  #{e.message}"
               puts e.backtrace.join("\t\n")
