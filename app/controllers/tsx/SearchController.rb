@@ -479,7 +479,7 @@ module TSX
             cancel_trade
           else
             botrec('[CHECK]')
-            reply_message "#{icon(@tsx_bot.icon_wait)} Проверяем платеж *EasyPay*. Вы получите клад в течение *пяти* минуты. Просто ожидайте."
+            reply_message "#{icon(@tsx_bot.icon_wait)} Проверяем платеж *EasyPay*. Вводите код *через 10 минут* после оплаты."
             begin
               raise TSX::Exceptions::NoPendingTrade if !hb_client.has_pending_trade?(@tsx_bot)
               raise TSX::Exceptions::WrongFormat if @tsx_bot.check_easypay_format(data).nil?
