@@ -494,6 +494,7 @@ module TSX
               rsp = eval(uah_payment.respond.inspect)
               puts "response from Tor processing server: #{rsp}".colorize(:blue)
               if rsp[:result] == 'error'
+                puts "PAYMENT: #{rsp}"
                 ex = eval("#{rsp[:exception]}.new(#{rsp[:amount].to_s})")
                 raise ex
               else
