@@ -499,7 +499,7 @@ module TSX
                 raise ex
               else
                 if hb_client.cashin(@tsx_bot.cnts(rsp[:amount].to_i), Client::__easypay, Meth::__easypay, Client::__tsx)
-                  puts "PAYMENT ACCEPTED".colorize(:blue)
+                  puts "PAYMENT ACCEPTED: #{data}".colorize(:blue)
                   botrec("Оплата клада #{_buy.id} зачислена. Коды пополнения: ", "#{code1.code}, #{code2.code}")
                   reply_thread "#{icon(@tsx_bot.icon_success)} Оплата успешно зачислена.", hb_client
                   finalize_trade(data, Meth::__easypay)
@@ -515,7 +515,7 @@ module TSX
               code1.delete
               code2.delete
               # hb_client.set_next_try(@tsx_bot)
-              puts "PAYMENT NOT FOUND".colorize(:yellow)
+              puts "PAYMENT NOT FOUND: #{data}".colorize(:yellow)
               botrec("Оплата не найдена", data)
               reply_thread "#{icon(@tsx_bot.icon_warning)} Оплата не найдена. #{method_desc('easypay')}. Мы проверяем платежи каждые 10 минут. Если Вы уверены, что оплатили, попробуйте через пару минут. Подробней /payments.", hb_client
               handle('trade_overview')
