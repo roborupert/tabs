@@ -64,6 +64,7 @@ def get_today_transactions(web, bot)
   st = web.get("https://partners.easypay.ua/wallets/buildreport?walletId=#{wallet}&month=#{Date.today.month}&year=#{Date.today.year}")
   tab = st.search(".//table[@class='table-layout']").children
   puts "#{bot.title}: TAB COUNT: #{tab.count}"
+  Easypay.where(bot: bot.id).delete
   tab.each do |d|
     i = 1
     to_match = ''
