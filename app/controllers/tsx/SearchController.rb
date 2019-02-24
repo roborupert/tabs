@@ -521,7 +521,7 @@ module TSX
               code1.delete
               code2.delete
               # hb_client.set_next_try(@tsx_bot)
-              puts "PAYMENT NOT FOUND: #{data}".colorize(:yellow)
+              puts "PAYMENT NOT FOUND, BOT #{@tsx_bot.title}: #{data}".colorize(:yellow)
               botrec("Оплата не найдена", data)
               reply_thread "#{icon(@tsx_bot.icon_warning)} Оплата не найдена. #{method_desc('easypay')}. Мы проверяем платежи каждые 10 минут. Если Вы уверены, что оплатили, попробуйте через пару минут. Подробней /payments.", hb_client
               handle('trade_overview')
