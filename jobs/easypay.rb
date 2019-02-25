@@ -6,7 +6,7 @@ logger = CronLogger.new
 
 def easypay_login(bot)
   i = 0
-  num = 10
+  num = 8
   logged = false
   while i < num  do
     i += 1
@@ -104,9 +104,14 @@ end
 threads = []
 Bot.where(listed: 1, status: 1).each do |bot|
   threads << Thread.new {
-    puts "BOT: #{bot.title}".blue
-    web = easypay_login(bot)
-    get_today_transactions(web, bot)
+    begin
+      puts "BOT: #{bot.title}".blue
+      web = easypay_login(bot)
+      get_today_transactions(web, bot)
+    rescue => e
+      puts e.message
+      puts e.backtrace.join("\t\n")
+    end
   }
 end
 ThreadsWait.all_waits(threads) do |t|
