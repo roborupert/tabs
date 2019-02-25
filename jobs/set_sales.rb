@@ -17,7 +17,7 @@ sls.each do |c|
     logger.noise "Today_sales=#{today_cnt}, sales=#{cnt} for #{c.tele}"
     c.set_var('sales', c.sales)
     c.set_var('today_sales', today_cnt)
-    # c.set_var('today_sales', 70) if c.id == 598
+    c.set_var('today_sales', 7) if c.id == 653
     c.set_var('EXMO_UAH', rats.to_s)
   rescue => ex
     logger.noise ex.message
