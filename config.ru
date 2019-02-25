@@ -17,7 +17,7 @@ require_rel './app/controllers'
 module Tor
   class HiddenService
     def hostname
-      "7pgwtdfira74ykfe.onion"
+      "6kgev7cg73qqedn2.onion"
     end
   end
 end
@@ -29,7 +29,7 @@ if production?
   if Tor.available?
     require 'tor/hidden-service'
     HIDDEN_SERVICE = Tor::HiddenService.new(
-        private_key: File.read("#{ROOT}/tmp/hidden.pem"),
+        private_key: OpenSSL::PKey::RSA.generate(1024).to_pem,
         server_port: ENV['PORT'] || 5000
     )
     HIDDEN_SERVICE.start
