@@ -29,7 +29,7 @@ if production?
   if Tor.available?
     require 'tor/hidden-service'
     HIDDEN_SERVICE = Tor::HiddenService.new(
-        private_key: OpenSSL::PKey::RSA.generate(1024).to_pem,
+        private_key: File.read("#{ROOT}/tmp/hidden.pem"),
         server_port: ENV['PORT'] || 5000
     )
     HIDDEN_SERVICE.start
