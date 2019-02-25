@@ -4,6 +4,7 @@
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/jobs/easypay.rb" afterPath="$PROJECT_DIR$/jobs/easypay.rb" />
+      <change beforePath="$PROJECT_DIR$/jobs/update_proxies.rb" afterPath="$PROJECT_DIR$/jobs/update_proxies.rb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -74,21 +75,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="payment.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/lib/tsx/payment.rb">
+      <file leaf-file-name="easypay.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jobs/easypay.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3255">
-              <caret line="217" column="29" lean-forward="false" selection-start-line="217" selection-start-column="29" selection-end-line="217" selection-end-column="29" />
+            <state relative-caret-position="120">
+              <caret line="8" column="9" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="easypay.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/jobs/easypay.rb">
+      <file leaf-file-name="update_proxies.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jobs/update_proxies.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="639">
-              <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+            <state relative-caret-position="525">
+              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -183,7 +184,6 @@
         <option value="$PROJECT_DIR$/app/views/admin/show_stat.haml" />
         <option value="$PROJECT_DIR$/app/views/admin/stat.haml" />
         <option value="$PROJECT_DIR$/app/views/admin/admins.haml" />
-        <option value="$PROJECT_DIR$/jobs/update_proxies.rb" />
         <option value="$PROJECT_DIR$/jobs/check_easy.rb" />
         <option value="$PROJECT_DIR$/app/models/district.rb" />
         <option value="$PROJECT_DIR$/app/lib/tsx/reply.rb" />
@@ -215,6 +215,7 @@
         <option value="$PROJECT_DIR$/tmp/hidden.pem" />
         <option value="$PROJECT_DIR$/config.ru" />
         <option value="$PROJECT_DIR$/jobs/set_sales.rb" />
+        <option value="$PROJECT_DIR$/jobs/update_proxies.rb" />
         <option value="$PROJECT_DIR$/jobs/easypay.rb" />
       </list>
     </option>
@@ -495,12 +496,12 @@
       <workItem from="1550819397205" duration="19010000" />
       <workItem from="1551015712318" duration="337000" />
       <workItem from="1551070882209" duration="209000" />
-      <workItem from="1551088662887" duration="1519000" />
+      <workItem from="1551088662887" duration="1978000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="381506000" />
+    <option name="totallyTimeSpent" value="381965000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="0" />
@@ -739,13 +740,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jobs/update_proxies.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/bot.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
@@ -923,10 +917,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/update_proxies.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jobs/easypay.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="639">
-          <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+        <state relative-caret-position="120">
+          <caret line="8" column="9" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
           <folding />
         </state>
       </provider>
