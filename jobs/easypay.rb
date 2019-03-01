@@ -83,7 +83,7 @@ def easypay_login_nocaptcha(bot)
     end.submit
   rescue => e
     puts "#{bot.title}: Not logged to Easypay.".colorize(:red)
-    next
+    return false
   end
   if logged.title != "EasyPay - Вход в систему"
     puts "#{bot.title}: Logged to Easypay.".colorize(:green)
