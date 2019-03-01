@@ -158,6 +158,7 @@
     <orderEntry type="library" scope="PROVIDED" name="temple (v0.8.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thin (v1.7.2, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thread_safe (v0.3.6, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="thwait (v0.1.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tilt (v2.0.8, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="time_diff (v0.3.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tor (v0.1.2, RVM: ruby-2.4.3) [gem]" level="application" />
