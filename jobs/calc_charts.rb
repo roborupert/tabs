@@ -5,9 +5,9 @@ logger = CronLogger.new
 logger.noise "Deleting all stats ... "
 Stat.truncate
 logger.noise "Calculating data for charts ... "
-m_int = [*Date.parse('2017-06-01') .. Date.today]
+m_int = [*Date.parse('2018-12-01') .. Date.today]
 
-bot = Bot[314]
+bot = Bot[310]
 logger.noise "Calc bot: #{bot.tele}"
 cities = Client::cities_by_country(Country.find(code: 'UA'), bot.id)
 cities.each do |city|
