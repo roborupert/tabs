@@ -30,9 +30,9 @@ TOKEN_ALPHABET = 'ABCDEFGHKLMNO1234567890'
 ONION_ADDRESS = '3q5jrloba3ea3pza.onion'
 OWNERS_CHAT = 'https://t.me/joinchat/GVN5xg2sFEBE5fulDp23ww'
 
-BCHANGE = BestchangeRates.new
-OBMENKI = BCHANGE.exchangers
-RATES = BCHANGE.currencies
+# BCHANGE = BestchangeRates.new
+# OBMENKI = BCHANGE.exchangers
+# RATES = BCHANGE.currencies
 
 I18n.load_path << "#{ROOT}/locales/ru.yml" << "#{ROOT}/locales/date/ru.yml"
 I18n.load_path << "#{ROOT}/locales/en.yml" << "#{ROOT}/locales/date/en.yml"
