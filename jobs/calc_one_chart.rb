@@ -2,14 +2,15 @@ require_relative './requires'
 logger = CronLogger.new
 # DB.logger = logger
 
+logger.noise "Deleting all stats for all bots"
+Stat.wall.delete
+
 logger.noise "Calculating data for charts ... "
 m_int = [*Date.parse('2019-01-01') .. Date.today]
 
 threads = []
 Bot.where(listed: 1, status: 1).each do |bot|
   threads << Thread.new {
-    logger.noise "Deleting all stats for bot #{bot.tele}"
-    Stat.where(bot: bot.id).delete
     logger.noise "Calc bot: #{bot.tele}"
     cities = Client::cities_by_country(Country.find(code: 'UA'), bot.id)
     cities.each do |city|
