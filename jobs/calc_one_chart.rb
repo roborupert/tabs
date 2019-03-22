@@ -2,8 +2,8 @@ require_relative './requires'
 logger = CronLogger.new
 # DB.logger = logger
 
-logger.noise "Deleting all stats for all bots"
-Stat.all.delete
+# logger.noise "Deleting all stats for all bots"
+# Stat.where('bot in [1..800]').delete
 
 logger.noise "Calculating data for charts ... "
 m_int = [*Date.parse('2019-01-01') .. Date.today]
