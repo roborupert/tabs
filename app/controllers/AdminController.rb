@@ -773,7 +773,7 @@ module TSX
             where(status: [Item::SOLD], bot: search_bots(hb_bot)).
             order(Sequel.desc(:item__sold)).limit(10)
         @items = Item.
-            where(status: [Item::ACTIVE, Item::SOLD, Item::RESERVED], bot: search_bots(hb_bot)).
+            where(status: [Item::ACTIVE], bot: search_bots(hb_bot)).
             order(Sequel.desc(:item__created)).
             paginate(@p.to_i, 40)
         haml :'admin/items', layout: hb_layout
