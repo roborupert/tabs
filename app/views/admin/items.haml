@@ -46,15 +46,17 @@
 - if @items.nil?
   %p Здесь пусто.
 - else
-  %form{method: 'post', action: url('/delete_items')}
-    %h3 Клады
-    %p
-      В этой таблице перечислены все клады бота.
-      %span#controls.hide
-        %br
-        Выберите действие, чтобы применить к выбранным кладам
-        %button.btn-small Удалить
-        %button.btn-small.red-btn{onclick: "releaseItems(event);"} Отмена
+  %h3 Клады
+  %p
+    В этой таблице перечислены все клады бота. Выберите действие, чтобы применить к выбранным кладам
+  %form{method: 'post', action: url('/transfer_items'), styles: 'dislya:inline-block;'}
+    %span#controls.hide
+      %button.btn-small Перенести
+    -#= partial "admin/item_search"
+  %form{method: 'post', action: url('/delete_items'), styles: 'dislya:inline-block;'}
+    %span#controls.hide
+      %button.btn-small Удалить
+      %button.btn-small.red-btn{onclick: "releaseItems(event);"} Отмена
     -#= partial "admin/item_search"
     %table{width: '100%'}
       %thead

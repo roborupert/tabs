@@ -8,42 +8,36 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="CFPropertyList (v2.3.6, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="actionview (v5.2.1, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="activesupport (v5.2.1, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="addressable (v2.6.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="anti_captcha (v2.1.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="aws_cf_signer (v0.1.3, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="axiom-types (v0.1.1, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="backports (v3.11.4, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="backports (v3.12.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bacon (v1.2.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="base62-rb (v0.3.1, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bestchange_rates (v0.0.4@350211, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="block_io (v1.2.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="btce (v0.5.5, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.3, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.16.0, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="chartkick (v3.0.1, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="cloudinary (v1.9.1, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.16.6, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coercible (v1.0.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="colorize (v0.8.1, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.0.5, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="concurrent-ruby (v1.1.5, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="connection_pool (v2.2.2, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="crass (v1.0.4, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="daemons (v1.2.6, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="declarative (v0.0.10, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="declarative-option (v0.1.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="descendants_tracker (v0.0.4, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="domain_name (v0.5.20180417, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="dry-inflector (v0.1.2, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ecdsa (v1.2.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="equalizer (v0.0.11, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="erubi (v1.7.1, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="erubi (v1.8.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="eventmachine (v1.2.7, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="excon (v0.62.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ezcrypto (v0.7.2, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="faraday (v0.15.3, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="faraday_middleware (v0.12.2, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ffi (v1.9.25, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ffi (v1.10.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fission (v0.5.0, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="fog (v2.0.0, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="fog-aliyun (v0.3.2, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="fog-aliyun (v0.3.3, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog-atmos (v0.1.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog-aws (v2.0.1, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog-brightbox (v0.16.1, RVM: ruby-2.4.3) [gem]" level="application" />
@@ -53,13 +47,13 @@
     <orderEntry type="library" scope="PROVIDED" name="fog-dnsimple (v1.0.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog-dynect (v0.0.3, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog-ecloud (v0.3.0, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="fog-google (v0.1.0, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="fog-google (v1.9.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog-internet-archive (v0.0.1, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog-joyent (v0.0.1, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog-json (v1.2.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog-local (v0.6.0, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="fog-openstack (v0.3.7, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="fog-ovirt (v1.1.2, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="fog-openstack (v0.3.10, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="fog-ovirt (v1.1.6, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog-powerdns (v0.2.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog-profitbricks (v4.1.1, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog-rackspace (v0.1.6, RVM: ruby-2.4.3) [gem]" level="application" />
@@ -72,38 +66,34 @@
     <orderEntry type="library" scope="PROVIDED" name="fog-terremark (v0.1.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog-vmfusion (v0.1.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog-voxel (v0.1.0, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="fog-vsphere (v1.2.1, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="fog-vsphere (v3.0.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog-xenserver (v1.0.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fog-xml (v0.1.3, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="formatador (v0.2.5, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="geocoder (v1.5.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="get_process_mem (v0.2.3, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="git-version-bump (v0.15.1, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="google-api-client (v0.23.9, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="google_currency (v3.4.1, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="groupdate (v4.0.2, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="gruff (v0.7.0, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="googleauth (v0.6.7, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="haml (v5.0.4, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hash_syntax (v1.0.0, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="hashids (v1.0.4, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hashie (v3.6.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="http-cookie (v1.0.3, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="httparty (v0.16.2, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="httparty (v0.16.4, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="httpclient (v2.8.3, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="i18n (v1.1.1, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ice_nine (v0.11.2, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="inflecto (v0.0.2, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ipaddress (v0.8.3, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="json (v2.1.0, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="json (v2.2.0, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="jwt (v2.1.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="kgio (v2.11.2, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="kramdown (v1.17.0, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="logger (v1.2.8, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="loofah (v2.2.2, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="loofah (v2.2.3, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mechanize (v2.7.6, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="memoist (v0.16.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mime-types (v3.2.2, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mime-types-data (v3.2018.0812, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="mini_portile2 (v2.3.0, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="mini_portile2 (v2.4.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="minitest (v5.11.3, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="money (v6.13.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="monkey-patch (v0.1.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.13.1, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_xml (v0.6.0, RVM: ruby-2.4.3) [gem]" level="application" />
@@ -112,41 +102,38 @@
     <orderEntry type="library" scope="PROVIDED" name="net-http-digest_auth (v1.4.1, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-http-persistent (v3.0.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="netrc (v0.11.0, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.8.5, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.10.1, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ntlm-http (v0.1.1, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="object_regex (v1.0.1, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="oj (v3.6.12, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="oj (v3.7.11, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="open_exchange_rates (v0.5.1, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="ovirt-engine-sdk (v4.2.5, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="optimist (v3.0.0, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="os (v1.0.0, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="ovirt-engine-sdk (v4.3.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pbkdf2-ruby (v0.2.1, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="pg (v0.21.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="privatbank (v0.0.3, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="public_suffix (v3.0.3, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack (v2.0.5, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rack-protection (v2.0.4, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack-protection (v2.0.5, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-timeout (v0.5.1, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-dom-testing (v2.0.3, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-html-sanitizer (v1.0.4, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="raindrops (v0.19.0, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rake (v12.3.1, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rb-fsevent (v0.10.3, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rb-inotify (v0.9.10, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rb-inotify (v0.10.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rbovirt (v0.1.7, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rbvmomi (v1.8.2, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rbvmomi (v2.0.1, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="representable (v3.0.4, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="require_all (v2.0.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rest-client (v2.0.2, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rmagick (v2.16.0, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="retriable (v3.1.2, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby-hidden-service (v0.0.2, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubyzip (v1.2.2, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="russian (v0.6.0, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sass (v3.6.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass-listen (v4.0.0, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sentry-raven (v2.7.4, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sequel (v4.39.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sequel-pg-comment (v2.0.1, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sinatra (v2.0.4, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="signet (v0.11.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sinatra-captcha (v0.1.0.0, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="sinatra-contrib (v2.0.4, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sinatra-flash (v0.3.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sinatra-partial (v1.0.1, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sinatra-reloader (v1.0, RVM: ruby-2.4.3) [gem]" level="application" />
@@ -155,24 +142,23 @@
     <orderEntry type="library" scope="PROVIDED" name="socksify (v1.7.1, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="stackprof (v0.2.12, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="telegram-bot-ruby (v0.8.6.1, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="temple (v0.8.0, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="temple (v0.8.1, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thin (v1.7.2, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thread_safe (v0.3.6, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thwait (v0.1.0, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="tilt (v2.0.8, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="tilt (v2.0.9, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="time_diff (v0.3.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tor (v0.1.2, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="trollop (v1.16.2, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="twemoji (v3.1.4, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v1.2.5, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="uber (v0.1.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="unf (v0.1.4, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="unf_ext (v0.0.7.5, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="unicorn (v5.4.1, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="unicorn-worker-killer (v0.4.4, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="version (v1.1.1, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="virtus (v1.0.5, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="webrobots (v0.1.2, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="will_paginate (v3.1.6, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="xml-simple (v1.1.5, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="xmlrpc (v0.3.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="yajl-ruby (v1.4.1, RVM: ruby-2.4.3) [gem]" level="application" />

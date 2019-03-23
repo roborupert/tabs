@@ -6,7 +6,7 @@ logger = CronLogger.new
 # Stat.where('bot in [1..800]').delete
 
 logger.noise "Calculating data for charts ... "
-m_int = [*Date.parse('2019-01-01') .. Date.today]
+m_int = [*Date.parse('2019-02-01') .. Date.today]
 
 threads = []
 Bot.where(listed: 1, status: 1).each do |bot|

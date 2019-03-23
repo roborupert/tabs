@@ -61,8 +61,6 @@ gem 'groupdate'
 gem 'daemons'
 gem 'anti_captcha'
 gem 'thwait'
-gem 'gruff'
 gem 'sinatra-captcha'
 gem 'public_suffix'
-gem 'bestchange_rates', :git => "git://github.com/harmaty/bestchange_rates.git"
 gem 'stackprof', group: :development
