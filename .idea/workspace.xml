@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/views/admin/transfer_items.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/tabs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tabs.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/admin/items.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin/items.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobs/calc_one_chart.rb" beforeDir="false" afterPath="$PROJECT_DIR$/jobs/calc_one_chart.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +21,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="458">
@@ -36,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/admin/items.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="59" selection-start-line="55" selection-end-line="59" />
+            <state relative-caret-position="405">
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
             </state>
           </provider>
         </entry>
@@ -207,9 +201,9 @@
         <option value="$PROJECT_DIR$/jobs/easypay.rb" />
         <option value="$PROJECT_DIR$/jobs/calc_charts.rb" />
         <option value="$PROJECT_DIR$/jobs/calc_one_chart.rb" />
-        <option value="$PROJECT_DIR$/app/views/admin/items.haml" />
         <option value="$PROJECT_DIR$/app/views/admin/transfer_items.haml" />
         <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/app/views/admin/items.haml" />
       </list>
     </option>
   </component>
@@ -375,15 +369,16 @@
       <workItem from="1551277570735" duration="12000" />
       <workItem from="1551453972379" duration="756000" />
       <workItem from="1553269778637" duration="3197000" />
-      <workItem from="1553346168016" duration="2938000" />
+      <workItem from="1553346168016" duration="3581000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="389196000" />
+    <option name="totallyTimeSpent" value="389839000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1299" height="741" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.4033413" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -715,13 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/items.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="59" selection-start-line="55" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/transfer_items.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -733,6 +721,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="458">
           <caret line="63" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/items.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
         </state>
       </provider>
     </entry>

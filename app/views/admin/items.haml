@@ -49,15 +49,13 @@
   %h3 Клады
   %p
     В этой таблице перечислены все клады бота. Выберите действие, чтобы применить к выбранным кладам
-  %form{method: 'post', action: url('/transfer_items'), styles: 'dislya:inline-block;'}
-    %span#controls.hide
+  %p#controls.hide
+    %form{method: 'post', action: url('/transfer_items'), styles: 'dislya:inline-block;'}
       %button.btn-small Перенести
-    -#= partial "admin/item_search"
-  %form{method: 'post', action: url('/delete_items'), styles: 'dislya:inline-block;'}
-    %span#controls.hide
+      -#= partial "admin/item_search"
+    %form{method: 'post', action: url('/delete_items'), styles: 'dislya:inline-block;'}
       %button.btn-small Удалить
       %button.btn-small.red-btn{onclick: "releaseItems(event);"} Отмена
-    -#= partial "admin/item_search"
     %table{width: '100%'}
       %thead
         %th.no-wrap{width: '30px'}
