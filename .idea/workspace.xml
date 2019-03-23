@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/controllers/AdminController.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/AdminController.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/admin/items.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin/items.haml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,16 +30,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/admin/items.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="58" selection-start-line="58" selection-end-line="58" />
+            <state relative-caret-position="120">
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="311">
@@ -202,8 +202,8 @@
         <option value="$PROJECT_DIR$/jobs/calc_one_chart.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/transfer_items.haml" />
         <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/app/views/admin/items.haml" />
         <option value="$PROJECT_DIR$/app/controllers/AdminController.rb" />
+        <option value="$PROJECT_DIR$/app/views/admin/items.haml" />
       </list>
     </option>
   </component>
@@ -375,12 +375,12 @@
       <workItem from="1551277570735" duration="12000" />
       <workItem from="1551453972379" duration="756000" />
       <workItem from="1553269778637" duration="3197000" />
-      <workItem from="1553346168016" duration="3677000" />
+      <workItem from="1553346168016" duration="4454000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="389935000" />
+    <option name="totallyTimeSpent" value="390712000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1299" height="741" extended-state="6" />
@@ -723,17 +723,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/items.haml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
           <caret line="775" column="39" selection-start-line="775" selection-start-column="39" selection-end-line="775" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/items.haml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
         </state>
       </provider>
     </entry>
