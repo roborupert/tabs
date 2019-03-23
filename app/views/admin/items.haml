@@ -46,7 +46,14 @@
 - if @items.nil?
   %p Здесь пусто.
 - else
-  %h3 Клады
+  %h3
+    Клады
+  %p
+    = "Всего #{kladov(hb_bot.all_items)}"
+    = "На продаже *#{kladov(hb_bot.active_items)}*"
+    = "Продано *#{kladov(hb_bot.sold_items)}*"
+    = "Зарезервировано *#{kladov(hb_bot.reserved_items)}*"
+    = "Сегодня *#{hb_bot.today_bot_sales(Date.today)}* на *#{hb_bot.amo(hb_bot.today_income(Date.today))}*"
   %p
     В этой таблице перечислены все клады бота.
     %form{method: 'post', action: url('/delete_items'), styles: 'display:inline;'}
