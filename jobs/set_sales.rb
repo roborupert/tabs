@@ -1,9 +1,9 @@
 require_relative './requires'
 logger = CronLogger.new
 
-BCHANGE = BestchangeRates.new
-rats = BestchangeRates.new.rates('Exmo USD' => 'Visa/MasterCard UAH').first[:get].to_f.round(2)
-puts "Today WEX exchange rate: #{rats}"
+#BCHANGE = BestchangeRates.new
+#rats = BestchangeRates.new.rates('Exmo USD' => 'Visa/MasterCard UAH').first[:get].to_f.round(2)
+#puts "Today WEX exchange rate: #{rats}"
 
 logger.noise "Setting sales ... "
 
@@ -17,7 +17,7 @@ sls.each do |c|
     logger.noise "Today_sales=#{today_cnt}, sales=#{cnt} for #{c.tele}"
     c.set_var('sales', c.sales)
     c.set_var('today_sales', today_cnt)
-    c.set_var('EXMO_UAH', rats.to_s)
+#    c.set_var('EXMO_UAH', rats.to_s)
   rescue => ex
     logger.noise ex.message
     logger.noise "Sales count not set"
