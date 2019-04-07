@@ -1,7 +1,7 @@
-%h3 Статистика продаж по районам
+%h3 Остатки по районам
 %p
-  Выбирайте из каждого списка последовательо. Вконце увидите топ районов по продажам за два месяца.
-%form{:method=>'post', :action=>'/show_stat', autocomplete: 'on', enctype: 'multipart/form-data'}
+  Выбирайте из каждого списка последовательо. Вконце увидите районы и остатки кладов в них.
+%form{:method=>'post', :action=>'/show_rest', autocomplete: 'on', enctype: 'multipart/form-data'}
   %select#city{name: 'b22_city', onchange: "update_stat_products()"}
     %option{value: "", disabled: true, selected: true} Выберите город
     - Client::cities_by_country(Country.find(code: 'UA'), hb_bot.id).each do |ci|

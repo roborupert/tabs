@@ -383,6 +383,13 @@ module TSX
       haml :'admin/show_stat', layout: hb_layout
     end
 
+    post '/show_rest' do
+      @city = City[params[:b22_city]]
+      @product = Product[params[:b22_product]]
+      @districts = Client::districts_by_city_and_product(@product, hb_bot.id, @city)
+      haml :'admin/show_rest', layout: hb_layout
+    end
+
     post '/activate_shop' do
       # dollars = 50
       # balance = hb_operator.available_cash
@@ -841,6 +848,10 @@ module TSX
 
     get '/stat' do
       haml :'admin/stat', layout: hb_layout
+    end
+
+    get '/rest' do
+      haml :'admin/rest', layout: hb_layout
     end
 
     get '/product_stat/*/*' do

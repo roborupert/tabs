@@ -1,2 +1,2 @@
-class Abuse < Sequel::Model(:abuse)
+class Rest < Sequel::Model(:rest)
 end
