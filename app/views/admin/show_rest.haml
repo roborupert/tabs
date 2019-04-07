@@ -17,10 +17,10 @@
         %td{width: '40%'}
           = d[:entity_russian]
         %td{width: '30%'}
-          - c = Items.where(district: dist.id, product: @product.id, bot: hb_bot.id)
+          - c = Item.where(district: dist.id, product: @product.id, bot: hb_bot.id)
           = c.count
         %td
-          - c = Items.where(district: dist.id, product: @product.id, bot: hb_bot.id, status: Item::SOLD)
+          - c = Item.where(district: dist.id, product: @product.id, bot: hb_bot.id, status: Item::SOLD)
           = c.count
         %td{width: '30%'}
           - cnt = Rest.find(district: dist.id, product: @product.id, bot: hb_bot.id)
