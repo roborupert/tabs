@@ -4,13 +4,24 @@
   по
   =icn(@product.icon)
   =@product.russian
-%table
+%table{width: '60%'}
+  %thead
+    %th Район
+    %th Всего
+    %th Продано
+    %th Осталось
   %tbody
     - @districts.each do |d|
+      - dist = District[d[:entity_id]]
       %tr
         %td{width: '40%'}
           = d[:entity_russian]
         %td{width: '30%'}
-          - dist = District[d[:entity_id]]
+          - c = Items.where(district: dist.id, product: @product.id, bot: hb_bot.id)
+          = c.count
+        %td
+          - c = Items.where(district: dist.id, product: @product.id, bot: hb_bot.id, status: Item::SOLD)
+          = c.count
+        %td{width: '30%'}
           - cnt = Rest.find(district: dist.id, product: @product.id, bot: hb_bot.id)
           = !cnt.nil? ? kladov(cnt.items): 'нет'
