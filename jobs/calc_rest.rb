@@ -2,12 +2,12 @@ require_relative './requires'
 logger = CronLogger.new
 # DB.logger = logger
 
-logger.noise "Deleting all rest for all bots"
-Rest.where('bot = [1..800]').delete
 
 threads = []
 Bot.where(listed: 1, status: 1).each do |bot|
   threads << Thread.new {
+    logger.noise "Deleting all rest for bot: #{bot.tele}"
+    Rest.where(bot: bot.id).delete
     logger.noise "Calc bot: #{bot.tele}"
     cities = Client::cities_by_country(Country.find(code: 'UA'), bot.id)
     cities.each do |city|
