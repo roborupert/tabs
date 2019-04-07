@@ -1,0 +1,30 @@
+%h3 Статистика продаж по районам
+%p
+  Выбирайте из каждого списка последовательо. Вконце увидите топ районов по продажам за два месяца.
+%form{:method=>'post', :action=>'/show_stat', autocomplete: 'on', enctype: 'multipart/form-data'}
+  %select#city{name: 'b22_city', onchange: "update_stat_products()"}
+    %option{value: "", disabled: true, selected: true} Выберите город
+    - Client::cities_by_country(Country.find(code: 'UA'), hb_bot.id).each do |ci|
+      %option{value: ci[:entity_id]}= ci[:entity_russian]
+  %span#hidden.hide
+    %select{:name => 'b22_product', id: 'b22_d', required: true, autocomplete: 'off'}
+    %br
+    %input{id: 'upload_submit', :type=>'submit', :value => 'Показать'}
+:javascript
+  function update_stat_products() {
+    city = $('#city').val()
+    $.get("#{url('/products_by_city/city/')}" + city).
+      done(function(data) {
+        $('#b22_d').html(data);
+        $('#show_btn').hide();
+        $('#hidden').show();
+      })
+  }
+  function update_prices() {
+    prod = $('#prod').val();
+    $.get("#{url('/prices_by_product/product/')}" + prod).
+      done(function(data) {
+        $('#b22_p').html(data);
+        $('#hidden_prices').show();
+      })
+  }
