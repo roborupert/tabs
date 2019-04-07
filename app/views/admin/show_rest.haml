@@ -6,22 +6,22 @@
   =@product.russian
 %table{width: '60%'}
   %thead
-    %th Район
-    %th Всего
-    %th Продано
-    %th Осталось
+    %th{width: '70%'} Район
+    %th{width: '10%'} Всего
+    %th{width: '10%'} Продано
+    %th{width: '10%'} Осталось
   %tbody
     - @districts.each do |d|
       - dist = District[d[:entity_id]]
       %tr
-        %td{width: '40%'}
+        %td
           = d[:entity_russian]
-        %td{width: '30%'}
+        %td
           - c = Item.where(district: dist.id, product: @product.id, bot: hb_bot.id)
           = c.count
         %td
           - c = Item.where(district: dist.id, product: @product.id, bot: hb_bot.id, status: Item::SOLD)
           = c.count
-        %td{width: '30%'}
+        %td
           - cnt = Rest.find(district: dist.id, product: @product.id, bot: hb_bot.id)
           = !cnt.nil? ? kladov(cnt.items): 'нет'
