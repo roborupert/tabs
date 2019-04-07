@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/models/rest.rb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/admin/rest.haml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/admin/show_rest.haml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/admin/zld.haml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jobs/calc_rest.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.rakeTasks" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/tabs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tabs.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/AdminController.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/AdminController.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/partials/bene_menu.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/partials/bene_menu.haml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobs/update_proxies.rb" beforeDir="false" afterPath="$PROJECT_DIR$/jobs/update_proxies.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/admin/show_rest.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin/show_rest.haml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,8 +69,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/admin/show_rest.haml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+            <state relative-caret-position="210">
+              <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -427,12 +417,12 @@
       <workItem from="1554024433174" duration="2519000" />
       <workItem from="1554047054285" duration="3056000" />
       <workItem from="1554386509551" duration="613000" />
-      <workItem from="1554472895919" duration="3442000" />
+      <workItem from="1554472895919" duration="3899000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="402301000" />
+    <option name="totallyTimeSpent" value="402758000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1299" height="741" extended-state="6" />
@@ -758,13 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jobs/calc_rest.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="25" column="57" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/stat.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -793,10 +776,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/jobs/calc_rest.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="25" column="57" selection-start-line="25" selection-start-column="57" selection-end-line="25" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/show_rest.haml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+        <state relative-caret-position="210">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
         </state>
       </provider>
     </entry>

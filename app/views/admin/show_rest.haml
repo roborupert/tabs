@@ -12,5 +12,5 @@
           = d[:entity_russian]
         %td{width: '30%'}
           - dist = District[d[:entity_id]]
-          - cnt = Rest.where(district: dist.id, product: @product.id, bot: hb_bot.id)
+          - cnt = Rest.find(district: dist.id, product: @product.id, bot: hb_bot.id)
           = kladov(cnt.items)
