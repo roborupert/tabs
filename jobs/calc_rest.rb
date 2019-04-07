@@ -3,7 +3,7 @@ logger = CronLogger.new
 # DB.logger = logger
 
 logger.noise "Deleting all rest for all bots"
-Rest.where('bot in [1..800]').delete
+Rest.where('bot = [1..800]').delete
 
 threads = []
 Bot.where(listed: 1, status: 1).each do |bot|

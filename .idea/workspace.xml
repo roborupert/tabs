@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/views/admin/show_rest.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/admin/show_rest.haml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jobs/calc_rest.rb" beforeDir="false" afterPath="$PROJECT_DIR$/jobs/calc_rest.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jobs/calc_rest.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="75">
+              <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -418,12 +417,12 @@
       <workItem from="1554024433174" duration="2519000" />
       <workItem from="1554047054285" duration="3056000" />
       <workItem from="1554386509551" duration="613000" />
-      <workItem from="1554472895919" duration="4863000" />
+      <workItem from="1554472895919" duration="5014000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="403722000" />
+    <option name="totallyTimeSpent" value="403873000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1299" height="741" extended-state="6" />
@@ -786,8 +785,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jobs/calc_rest.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="75">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
         </state>
       </provider>
     </entry>
