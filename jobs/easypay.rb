@@ -9,21 +9,21 @@ def easypay_login(bot)
   num = 5
   logged = false
   while i < num  do
-    # i += 1
-    # puts "#{bot.title}:  Trying to solve reCaptcha #{i} try ..."
-    # client = AntiCaptcha.new('7766d57328e2d81745bc87bcf2d6f765')
-    # options = {
-    #     website_key: '6LefhCUTAAAAAOQiMPYspmagWsoVyHyTBFyafCFb',
-    #     website_url: 'https://partners.easypay.ua/auth/signin'
-    # }
-    # begin
-    #   solution = client.decode_nocaptcha!(options)
-    #   resp = solution.g_recaptcha_response
-    # rescue AntiCaptcha::Error => ex
-    #   puts "#{bot.title}: AntiCaptcha timeout. Next try.".red
-    #   next
-    # end
-    # puts "#{bot.title}: Got AntiCaptcha response: #{resp}".green
+    i += 1
+    puts "#{bot.title}:  Trying to solve reCaptcha #{i} try ..."
+    client = AntiCaptcha.new('7766d57328e2d81745bc87bcf2d6f765')
+    options = {
+        website_key: '6LefhCUTAAAAAOQiMPYspmagWsoVyHyTBFyafCFb',
+        website_url: 'https://partners.easypay.ua/auth/signin'
+    }
+    begin
+      solution = client.decode_nocaptcha!(options)
+      resp = solution.g_recaptcha_response
+    rescue AntiCaptcha::Error => ex
+      puts "#{bot.title}: AntiCaptcha timeout. Next try.".red
+      next
+    end
+    puts "#{bot.title}: Got AntiCaptcha response: #{resp}".green
     web = Mechanize.new
     web.keep_alive = false
     web.read_timeout = 10
@@ -143,7 +143,7 @@ Bot.where(listed: 1, status: 1).each do |bot|
   threads << Thread.new {
     begin
       puts "BOT: #{bot.title}".blue
-      web = easypay_login_nocaptcha(bot)
+      web = easypay_login(bot)
       get_today_transactions(web, bot)
     rescue => e
       puts e.message
