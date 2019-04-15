@@ -41,7 +41,7 @@ def easypay_login(bot)
       logged = easy.form do |f|
         f.login = login.to_s
         f.password = password.to_s
-        # f.gresponse = resp
+        f.gresponse = resp
       end.submit
     rescue => e
       puts "#{bot.title}: Not logged to Easypay.".colorize(:red)
