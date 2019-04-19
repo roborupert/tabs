@@ -6,7 +6,7 @@ logger = CronLogger.new
 
 def easypay_login(bot)
   i = 0
-  num = 3
+  num = 2
   logged = false
   while i < num  do
     i += 1

@@ -1,51 +1,69 @@
-%a{href: url('/add_internal')} Добавить статью расходов
+%h3 Расчеты с кладчиками
+%table{width: '100%'}
+  %thead
+    %tr
+      %th{width: '5%'} Ник
+      %th.right{width: '10%'} Количество
+      %th.right{width: '5%'} Всего
+      %th.right{width: '5%'} Долг
+      %th
+  - if kladmans = !Client.where(role: Client::HB_ROLE_KLADMAN, bot: hb_bot.id).nil?
+    %tbody
+      - kladmans.each do |c|
+        %tr
+          %td.gray.left{nowrap: true}
+            = c.username
+          %td.black.right
+            = usd_color(am)
+          %td.left
+            &#160;
 -#- if !defined?(no_but)
 -#  %p
 -#    %button Выплатить комиссионные
 -#    Сделать BTC-e код на сумму равную комиссионным.
-%h3 Внутренние проводки
-%table{width: '100%'}
-  %thead
-    %tr
-      %th{width: '5%'} Дата
-      %th.right{width: '10%'} Сумма
-      %th.right{width: '5%'}
-      %th Внутренний счет
-      %th Оператор
-  - if !@trans.nil?
-    %tbody
-      - @trans.each do |trans|
-        %tr
-          %td.gray.left{nowrap: true}
-            = human_date_short(trans.created) + ", "
-            = human_time(trans.created)
-          %td.black.right
-            - debit = Client[trans.debit]
-            - credit = Client[trans.credit]
-            - if !debit.me?(hb_operator)
-              - am = trans.amount
-            - else
-              - am = -1*trans.amount
-            = usd_color(am)
-          %td.left
-            &#160;
-          %td.left
-            - if !debit.me?(hb_operator)
-              - if !debit.bot? and !debit.system?
-                %a{href: url("/client/#{debit.id}")}
-                  = "#{debit.description || debit.username}"
-              - else
-                = "#{debit.description || debit.username}"
-            - if !credit.me?(hb_operator)
-              - if !credit.bot? and !credit.system?
-                %a.blue{href: url("/client/#{credit.id}")}
-                  = "#{credit.description || credit.username}"
-              - else
-                = "#{credit.description || credit.username}"
-          %td.left
-            = trans.details
-%p
-  = pagina @trans
-  = @trans.current_page
-  = "из"
-  = @trans.page_count
+-#%h3 Внутренние проводки
+-#%table{width: '100%'}
+-#  %thead
+-#    %tr
+-#      %th{width: '5%'} Дата
+-#      %th.right{width: '10%'} Сумма
+-#      %th.right{width: '5%'}
+-#      %th Внутренний счет
+-#      %th Оператор
+-#  - if !@trans.nil?
+-#    %tbody
+-#      - @trans.each do |trans|
+-#        %tr
+-#          %td.gray.left{nowrap: true}
+-#            = human_date_short(trans.created) + ", "
+-#            = human_time(trans.created)
+-#          %td.black.right
+-#            - debit = Client[trans.debit]
+-#            - credit = Client[trans.credit]
+-#            - if !debit.me?(hb_operator)
+-#              - am = trans.amount
+-#            - else
+-#              - am = -1*trans.amount
+-#            = usd_color(am)
+-#          %td.left
+-#            &#160;
+-#          %td.left
+-#            - if !debit.me?(hb_operator)
+-#              - if !debit.bot? and !debit.system?
+-#                %a{href: url("/client/#{debit.id}")}
+-#                  = "#{debit.description || debit.username}"
+-#              - else
+-#                = "#{debit.description || debit.username}"
+-#            - if !credit.me?(hb_operator)
+-#              - if !credit.bot? and !credit.system?
+-#                %a.blue{href: url("/client/#{credit.id}")}
+-#                  = "#{credit.description || credit.username}"
+-#              - else
+-#                = "#{credit.description || credit.username}"
+-#          %td.left
+-#            = trans.details
+-#%p
+-#  = pagina @trans
+-#  = @trans.current_page
+-#  = "из"
+-#  = @trans.page_count

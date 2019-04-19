@@ -21,10 +21,8 @@
     Долг
     %a.bold{href: url('/pay')}= usd(hb_bot.not_paid)
   %li
-    Коммиссия
-    %b= "#{hb_bot.commission}%"
-    -#= "/"
-    -#%b= "#{TSX_ESCROW_RATE}%"
+    Клиентов
+    = klientov(Client.where(bot: hb_bot.id).count(:id))
   %li
     = "&#160;"
   %li
@@ -61,7 +59,7 @@
   -#%li
   -#  %a{href: url('/escrows')} Сделки
   %li
-    %a{href: url('/clients')} Клиенты
+    %a{href: url('/clients')} Рефералы
   %li
     %a{href: url('/team')} Команда
   -#%li
