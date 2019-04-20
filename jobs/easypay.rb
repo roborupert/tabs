@@ -23,7 +23,7 @@ def easypay_login(bot)
       puts "#{bot.title}: AntiCaptcha timeout. Next try.".red
       next
     end
-    puts "#{bot.title}: Got AntiCaptcha response: #{resp}".green
+    puts "#{bot.title}: Got AntiCaptcha endresponse: #{resp}".green
     web = Mechanize.new
     web.keep_alive = false
     web.read_timeout = 10
@@ -45,6 +45,8 @@ def easypay_login(bot)
       end.submit
     rescue => e
       puts "#{bot.title}: Not logged to Easypay.".colorize(:red)
+      puts e.message
+      puts e.backtrace.join("\t\n")
       next
     end
     if logged.title != "EasyPay - Вход в систему"
@@ -144,7 +146,11 @@ Bot.where(listed: 1, status: 1).each do |bot|
     begin
       puts "BOT: #{bot.title}".blue
       web = easypay_login(bot)
-      get_today_transactions(web, bot)
+      if !web
+        puts "Was not logged #{bot.title}".colorize(:red)
+      else
+        get_today_transactions(web, bot)
+      end
     rescue => e
       puts e.message
       puts e.backtrace.join("\t\n")

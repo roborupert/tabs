@@ -2,16 +2,11 @@ require_relative './requires'
 logger = CronLogger.new
 
 logger.noise "Updating proxies from file ... "
-proxies = "186.65.115.61:9315:SU9mHr:MoYvxk
-186.65.114.251:9431:SU9mHr:MoYvxk
-186.65.118.45:9624:SU9mHr:MoYvxk
-186.65.118.22:9614:SU9mHr:MoYvxk
-186.65.117.241:9734:SU9mHr:MoYvxk
-186.65.117.184:9539:SU9mHr:MoYvxk
-186.65.117.107:9340:SU9mHr:MoYvxk
-186.65.117.207:9604:SU9mHr:MoYvxk
-186.65.118.10:9946:SU9mHr:MoYvxk
-186.65.115.125:9447:SU9mHr:MoYvxk
+proxies = "91.188.243.81:9119:9wqyrA:FpYJB8
+138.59.205.126:9616:P5jM74:MwfMzF
+138.59.207.48:9864:P5jM74:MwfMzF
+91.188.243.163:9836:41Y8o6:oMknMN
+104.227.96.211:9584:ucwwAh:swH4ay
 ".split("\n")
 
 proxies.each do |proxy_string|
