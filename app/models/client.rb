@@ -860,8 +860,7 @@ class Client < Sequel::Model(:client)
     credit = Ledger.dataset.
         select{Sequel.as(Sequel.expr{COALESCE(sum(:ledger__amount), 0)}, :bns)}.
         where(credit: self.id, debit: Client::__referals_paid.id)
-    puts credit.inspect
-    puts credit.map(:bns)[0]
+    credit.map(:bns)[0]
   end
 
   def bonuses_cash

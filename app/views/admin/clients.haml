@@ -21,7 +21,7 @@
         %td
           = !mst ? 'без реферала' : "[#{mst.id}] <b class='blue'>@" + mst.username+ "</b>"
         %td
-          = prodazh(acc.sales)
+          = prodazh(acc.sales.count)
         %td
           = hb_bot.amo(acc.ref_cash)
         %td
