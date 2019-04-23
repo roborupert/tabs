@@ -187,6 +187,10 @@ class Client < Sequel::Model(:client)
     Client.find(username: '__refs')
   end
 
+  def self.__referals_paid
+    Client.find(username: '__refs_paid')
+  end
+
   def self.__salary
     Client.find(username: '__kladmans')
   end
@@ -852,6 +856,12 @@ class Client < Sequel::Model(:client)
     credit.map(:bns)[0]
   end
 
+  def ref_paid
+    credit = Ledger.dataset.
+        select{Sequel.as(Sequel.expr{COALESCE(sum(:ledger__amount), 0)}, :bns)}.
+        where(credit: self.id, debit: Client::__referals_paid.id)
+    credit.map(:bns)[0]
+  end
 
   def bonuses_cash
     credit = Ledger.dataset.

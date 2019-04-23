@@ -5,12 +5,10 @@
   %thead
     %tr
       %th{width: '20%'} # клиент
-      %th{width: '15%'} зарегался
       %th{width: '15%'} привел
       %th продаж
       %th заработано
       %th выплачено
-      %th
   %tbody.no-shadow
     - @list.each do |ac|
       - acc = Client[ac[:id]]
@@ -21,20 +19,15 @@
           = acc.id
           %a.blue{href: url("/client/#{acc.id}")}= acc.username
         %td
-          %span.small.dark
-            = human_date_short(acc.created)
-            = " "
-            = human_time(acc.created)
+          = !mst ? 'без реферала' : "[#{mst.id}] <b class='blue'>@" + mst.username+ "</b>"
         %td
-          = hb_bot.amo(acc.available_cash)
+          = prodazh(acc.sales)
         %td
           = hb_bot.amo(acc.ref_cash)
         %td
-          - spend = acc.buy_trades([Trade::FINALIZED, Trade::FINISHED, Trade::DISPUTED])
-          %b= spend.count
-          = "на"
-          %b=  hb_bot.amo(spend.sum(:price))
+          = hb_bot.amo(acc.ref_paid)
         %td
-          = !mst ? 'без реферала' : "[#{mst.id}] <b class='blue'>@" + mst.username+ "</b>"
+          %button
+            Выплатить
 %p
   = pagina @list
