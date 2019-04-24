@@ -15,11 +15,12 @@
   %b= spend.count
   = "на"
   %b= hb_bot.amo(spend.sum(:price))
-  Всего реферальных
+  Заработано
   %b= hb_bot.amo(vc.ref_cash)
-  - if vc.master
-    Пригласил
-    %b.blue= "@#{vc.master.username}"
+  Выплачено
+  = hb_bot.amo(acc.ref_paid)
+  %form
+    %button Заработано
 %p
   Чтобы пополнить счет клиенту, укажите сумму в гривнах. Если Вы хотите отнять деньги со счета, указывайте суммы со знаком минус.
 %form.inline{:method=>'post', :action=>'/add_cash', autocomplete: 'on'}
