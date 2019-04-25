@@ -700,8 +700,8 @@ module TSX
         )
       Ledger.
           create(
-              debit: Client::__referals.id,
-              credit: Client::__referals_paid.id,
+              debit: Client::__referals_paid.id,
+              credit: Client::__referals.id,
               amount: cl.ref_cash,
               details: "Реферальные выплачены на баланс",
               status: Ledger::ACTIVE,
