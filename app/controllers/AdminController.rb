@@ -698,6 +698,16 @@ module TSX
           created: Time.now,
           operator: Client::__tsx.id
         )
+      Ledger.
+          create(
+              debit: Client::__referals.id,
+              credit: Client::__referals_paid.id,
+              amount: cl.ref_cash,
+              details: "Реферальные выплачены на баланс",
+              status: Ledger::ACTIVE,
+              created: Time.now,
+              operator: Client::__tsx.id
+          )
       flash['info'] = 'Реферальные скинуты на баланс.'
       redirect back
     end
