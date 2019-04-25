@@ -15,12 +15,12 @@
   %b= spend.count
   = "на"
   %b= hb_bot.amo(spend.sum(:price))
-  Заработано
-  %b= hb_bot.amo(vc.ref_cash)
+  К выплате
+  %b= hb_bot.amo(vc.ref_cash - vc.ref_paid)
   Выплачено
   = hb_bot.amo(vc.ref_paid)
   %form{style: 'display: inline;', action: url("/ref_to_balance/#{vc.id}"), method: 'get'}
-    %button На баланс
+    %button Выплатить
 %p
   Чтобы пополнить счет клиенту, укажите сумму в гривнах. Если Вы хотите отнять деньги со счета, указывайте суммы со знаком минус.
 %form.inline{:method=>'post', :action=>'/add_cash', autocomplete: 'on'}
