@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/views/partials/client.haml" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/partials/client.haml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/AdminController.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/AdminController.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +21,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/partials/client.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
@@ -48,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="326">
-              <caret line="702" column="42" selection-start-line="702" selection-start-column="21" selection-end-line="702" selection-end-column="42" />
+              <caret line="702" column="47" selection-start-line="702" selection-start-column="47" selection-end-line="702" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -97,7 +97,7 @@
         <entry file="file://$PROJECT_DIR$/app/models/client.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="188">
-              <caret line="185" column="11" lean-forward="true" selection-start-line="185" selection-start-column="11" selection-end-line="185" selection-end-column="11" />
+              <caret line="851" column="6" selection-start-line="851" selection-start-column="6" selection-end-line="851" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -202,8 +202,8 @@
         <option value="$PROJECT_DIR$/app/controllers/tsx/SearchController.rb" />
         <option value="$PROJECT_DIR$/app/views/partials/bene_menu.haml" />
         <option value="$PROJECT_DIR$/jobs/set_sales.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/AdminController.rb" />
         <option value="$PROJECT_DIR$/app/views/partials/client.haml" />
+        <option value="$PROJECT_DIR$/app/controllers/AdminController.rb" />
       </list>
     </option>
   </component>
@@ -425,12 +425,12 @@
       <workItem from="1554047054285" duration="3056000" />
       <workItem from="1554386509551" duration="613000" />
       <workItem from="1554472895919" duration="13639000" />
-      <workItem from="1555617786218" duration="41906000" />
+      <workItem from="1555617786218" duration="42467000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="454404000" />
+    <option name="totallyTimeSpent" value="454965000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1299" height="741" extended-state="6" />
@@ -784,13 +784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/client.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="185" column="11" lean-forward="true" selection-start-line="185" selection-start-column="11" selection-end-line="185" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/clients.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -798,17 +791,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="702" column="42" selection-start-line="702" selection-start-column="21" selection-end-line="702" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/partials/client.haml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/client.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="851" column="6" selection-start-line="851" selection-start-column="6" selection-end-line="851" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="702" column="47" selection-start-line="702" selection-start-column="47" selection-end-line="702" selection-end-column="47" />
         </state>
       </provider>
     </entry>
