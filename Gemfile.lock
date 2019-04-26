@@ -1,14 +1,506 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    CFPropertyList (2.3.6)
+    actionview (5.2.2.1)
+      activesupport (= 5.2.2.1)
+      builder (~> 3.1)
+      erubi (~> 1.4)
+      rails-dom-testing (~> 2.0)
+      rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    activesupport (5.2.2.1)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 0.7, < 2)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
+    addressable (2.6.0)
+      public_suffix (>= 2.0.2, < 4.0)
+    anti_captcha (2.1.0)
+    aws_cf_signer (0.1.3)
+    axiom-types (0.1.1)
+      descendants_tracker (~> 0.0.4)
+      ice_nine (~> 0.11.0)
+      thread_safe (~> 0.3, >= 0.3.1)
+    backports (3.12.0)
+    bacon (1.2.0)
+    base62-rb (0.3.1)
+    block_io (1.2.0)
+      ecdsa (~> 1.2, >= 1.2.0)
+      httpclient (~> 2.8, >= 2.8.0)
+      oj (~> 3.3, >= 3.3.5)
+      pbkdf2-ruby (~> 0.2, >= 0.2.1)
+    btce (0.5.5)
+      monkey-patch (~> 0.1.0)
+    builder (3.2.3)
+    chartkick (3.0.2)
+    cloudinary (1.11.1)
+      aws_cf_signer
+      rest-client
+    coercible (1.0.0)
+      descendants_tracker (~> 0.0.1)
+    colorize (0.8.1)
+    concurrent-ruby (1.1.5)
+    connection_pool (2.2.2)
+    crass (1.0.4)
+    daemons (1.3.1)
+    declarative (0.0.10)
+    declarative-option (0.1.0)
+    descendants_tracker (0.0.4)
+      thread_safe (~> 0.3, >= 0.3.1)
+    domain_name (0.5.20180417)
+      unf (>= 0.0.5, < 1.0.0)
+    dry-inflector (0.1.2)
+    ecdsa (1.2.0)
+    equalizer (0.0.11)
+    erubi (1.8.0)
+    eventmachine (1.2.7)
+    excon (0.62.0)
+    ezcrypto (0.7.2)
+    faraday (0.15.4)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.13.1)
+      faraday (>= 0.7.4, < 1.0)
+    ffi (1.10.0)
+    fission (0.5.0)
+      CFPropertyList (~> 2.2)
+    fog (2.1.0)
+      fog-aliyun (>= 0.1.0)
+      fog-atmos
+      fog-aws (>= 0.6.0)
+      fog-brightbox (~> 0.4)
+      fog-cloudatcost (~> 0.1.0)
+      fog-core (~> 1.45)
+      fog-digitalocean (>= 0.3.0)
+      fog-dnsimple (~> 1.0)
+      fog-dynect (~> 0.0.2)
+      fog-ecloud (~> 0.1)
+      fog-google (~> 1.0)
+      fog-internet-archive
+      fog-joyent
+      fog-json
+      fog-local
+      fog-openstack
+      fog-ovirt
+      fog-powerdns (>= 0.1.1)
+      fog-profitbricks
+      fog-rackspace
+      fog-radosgw (>= 0.0.2)
+      fog-riakcs
+      fog-sakuracloud (>= 0.0.4)
+      fog-serverlove
+      fog-softlayer
+      fog-storm_on_demand
+      fog-terremark
+      fog-vmfusion
+      fog-voxel
+      fog-vsphere (>= 0.4.0)
+      fog-xenserver
+      fog-xml (~> 0.1.1)
+      ipaddress (~> 0.5)
+      json (~> 2.0)
+    fog-aliyun (0.3.3)
+      fog-core
+      fog-json
+      ipaddress (~> 0.8)
+      xml-simple (~> 1.1)
+    fog-atmos (0.1.0)
+      fog-core
+      fog-xml
+    fog-aws (2.0.1)
+      fog-core (~> 1.38)
+      fog-json (~> 1.0)
+      fog-xml (~> 0.1)
+      ipaddress (~> 0.8)
+    fog-brightbox (0.16.1)
+      dry-inflector
+      fog-core
+      fog-json
+      mime-types
+    fog-cloudatcost (0.1.2)
+      fog-core (~> 1.36)
+      fog-json (~> 1.0)
+      fog-xml (~> 0.1)
+      ipaddress (~> 0.8)
+    fog-core (1.45.0)
+      builder
+      excon (~> 0.58)
+      formatador (~> 0.2)
+    fog-digitalocean (0.4.0)
+      fog-core
+      fog-json
+      fog-xml
+      ipaddress (>= 0.5)
+    fog-dnsimple (1.0.0)
+      fog-core (~> 1.38)
+      fog-json (~> 1.0)
+    fog-dynect (0.0.3)
+      fog-core
+      fog-json
+      fog-xml
+    fog-ecloud (0.3.0)
+      fog-core
+      fog-xml
+    fog-google (1.9.0)
+      fog-core (<= 2.1.0)
+      fog-json (~> 1.2)
+      fog-xml (~> 0.1.0)
+      google-api-client (~> 0.23.0)
+    fog-internet-archive (0.0.1)
+      fog-core
+      fog-json
+      fog-xml
+    fog-joyent (0.0.1)
+      fog-core (~> 1.42)
+      fog-json (>= 1.0)
+    fog-json (1.2.0)
+      fog-core
+      multi_json (~> 1.10)
+    fog-local (0.6.0)
+      fog-core (>= 1.27, < 3.0)
+    fog-openstack (0.3.10)
+      fog-core (>= 1.45, <= 2.1.0)
+      fog-json (>= 1.0)
+      ipaddress (>= 0.8)
+    fog-ovirt (1.1.6)
+      fog-core
+      fog-json
+      fog-xml
+      ovirt-engine-sdk (>= 4.1.3)
+      rbovirt (~> 0.1.5)
+    fog-powerdns (0.2.0)
+      fog-core
+      fog-json
+      fog-xml
+    fog-profitbricks (4.1.1)
+      fog-core (~> 1.42)
+      fog-json (~> 1.0)
+    fog-rackspace (0.1.6)
+      fog-core (>= 1.35)
+      fog-json (>= 1.0)
+      fog-xml (>= 0.1)
+      ipaddress (>= 0.8)
+    fog-radosgw (0.0.5)
+      fog-core (>= 1.21.0)
+      fog-json
+      fog-xml (>= 0.0.1)
+    fog-riakcs (0.1.0)
+      fog-core
+      fog-json
+      fog-xml
+    fog-sakuracloud (1.7.5)
+      fog-core
+      fog-json
+    fog-serverlove (0.1.2)
+      fog-core
+      fog-json
+    fog-softlayer (1.1.4)
+      fog-core
+      fog-json
+    fog-storm_on_demand (0.1.1)
+      fog-core
+      fog-json
+    fog-terremark (0.1.0)
+      fog-core
+      fog-xml
+    fog-vmfusion (0.1.0)
+      fission
+      fog-core
+    fog-voxel (0.1.0)
+      fog-core
+      fog-xml
+    fog-vsphere (3.0.0)
+      fog-core
+      rbvmomi (>= 1.9, < 3)
+    fog-xenserver (1.0.0)
+      fog-core
+      fog-xml
+      xmlrpc
+    fog-xml (0.1.3)
+      fog-core
+      nokogiri (>= 1.5.11, < 2.0.0)
+    formatador (0.2.5)
+    geocoder (1.5.1)
+    get_process_mem (0.2.3)
+    git-version-bump (0.15.1)
+    google-api-client (0.23.9)
+      addressable (~> 2.5, >= 2.5.1)
+      googleauth (>= 0.5, < 0.7.0)
+      httpclient (>= 2.8.1, < 3.0)
+      mime-types (~> 3.0)
+      representable (~> 3.0)
+      retriable (>= 2.0, < 4.0)
+      signet (~> 0.9)
+    google_currency (3.4.1)
+      money (~> 6.7)
+    googleauth (0.6.7)
+      faraday (~> 0.12)
+      jwt (>= 1.4, < 3.0)
+      memoist (~> 0.16)
+      multi_json (~> 1.11)
+      os (>= 0.9, < 2.0)
+      signet (~> 0.7)
+    groupdate (4.1.1)
+      activesupport (>= 4.2)
+    haml (5.0.4)
+      temple (>= 0.8.0)
+      tilt
+    hash_syntax (1.0.0)
+      object_regex (~> 1.0.1)
+      trollop (~> 1.16.2)
+    hashids (1.0.5)
+    hashie (3.6.0)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
+    httparty (0.16.4)
+      mime-types (~> 3.0)
+      multi_xml (>= 0.5.2)
+    httpclient (2.8.3)
+    i18n (1.6.0)
+      concurrent-ruby (~> 1.0)
+    ice_nine (0.11.2)
+    inflecto (0.0.2)
+    ipaddress (0.8.3)
+    json (2.2.0)
+    jwt (2.1.0)
+    kgio (2.11.2)
+    kramdown (2.1.0)
+    logger (1.3.0)
+    loofah (2.2.3)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.5.9)
+    mechanize (2.7.6)
+      domain_name (~> 0.5, >= 0.5.1)
+      http-cookie (~> 1.0)
+      mime-types (>= 1.17.2)
+      net-http-digest_auth (~> 1.1, >= 1.1.1)
+      net-http-persistent (>= 2.5.2)
+      nokogiri (~> 1.6)
+      ntlm-http (~> 0.1, >= 0.1.1)
+      webrobots (>= 0.0.9, < 0.2)
+    memoist (0.16.0)
+    mime-types (3.2.2)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2018.0812)
+    mini_portile2 (2.4.0)
+    minitest (5.11.3)
+    money (6.13.2)
+      i18n (>= 0.6.4, <= 2)
+    monkey-patch (0.1.0)
+      activesupport
+    multi_json (1.13.1)
+    multi_xml (0.6.0)
+    multipart-post (2.0.0)
+    mustermann (1.0.3)
+    net-http-digest_auth (1.4.1)
+    net-http-persistent (3.0.0)
+      connection_pool (~> 2.2)
+    netrc (0.11.0)
+    nokogiri (1.10.1)
+      mini_portile2 (~> 2.4.0)
+    ntlm-http (0.1.1)
+    object_regex (1.0.1)
+    oj (3.7.11)
+    open_exchange_rates (0.5.1)
+      yajl-ruby
+    optimist (3.0.0)
+    os (1.0.0)
+    ovirt-engine-sdk (4.3.0)
+      json (>= 1, < 3)
+    pbkdf2-ruby (0.2.1)
+    pg (0.21.0)
+    privatbank (0.0.3)
+      builder
+      hashie
+      httparty
+    public_suffix (3.0.3)
+    rack (2.0.6)
+    rack-protection (2.0.5)
+      rack
+    rack-timeout (0.5.1)
+    rails-dom-testing (2.0.3)
+      activesupport (>= 4.2.0)
+      nokogiri (>= 1.6)
+    rails-html-sanitizer (1.0.4)
+      loofah (~> 2.2, >= 2.2.2)
+    raindrops (0.19.0)
+    rake (12.3.2)
+    rb-fsevent (0.10.3)
+    rb-inotify (0.10.0)
+      ffi (~> 1.0)
+    rbovirt (0.1.7)
+      nokogiri
+      rest-client (> 1.7.0)
+    rbvmomi (2.0.1)
+      builder (~> 3.0)
+      json (>= 1.8)
+      nokogiri (~> 1.5)
+      optimist (~> 3.0)
+    representable (3.0.4)
+      declarative (< 0.1.0)
+      declarative-option (< 0.2.0)
+      uber (< 0.2.0)
+    require_all (2.0.0)
+    rest-client (2.0.2)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
+    retriable (3.1.2)
+    ruby-hidden-service (0.0.2)
+      tor
+    russian (0.6.0)
+      i18n (>= 0.5.0)
+    sass (3.7.3)
+      sass-listen (~> 4.0.0)
+    sass-listen (4.0.0)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
+    sentry-raven (2.9.0)
+      faraday (>= 0.7.6, < 1.0)
+    sequel (4.39.0)
+    sequel-pg-comment (2.0.1)
+      git-version-bump (~> 0.10)
+      sequel
+    signet (0.11.0)
+      addressable (~> 2.3)
+      faraday (~> 0.9)
+      jwt (>= 1.5, < 3.0)
+      multi_json (~> 1.10)
+    sinatra (2.0.5)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.5)
+      tilt (~> 2.0)
+    sinatra-captcha (0.1.0.0)
+    sinatra-contrib (2.0.5)
+      backports (>= 2.8.2)
+      multi_json
+      mustermann (~> 1.0)
+      rack-protection (= 2.0.5)
+      sinatra (= 2.0.5)
+      tilt (>= 1.3, < 3)
+    sinatra-flash (0.3.0)
+      sinatra (>= 1.0.0)
+    sinatra-partial (1.0.1)
+      sinatra (>= 1.4)
+    sinatra-reloader (1.0)
+      sinatra-contrib
+    sinatra-sequel (0.9.0)
+      sequel (>= 3.2.0)
+      sinatra (>= 0.9.4)
+    sinatra-support (1.2.2)
+      sinatra (>= 1.0)
+    socksify (1.7.1)
+    stackprof (0.2.12)
+    telegram-bot-ruby (0.8.6.1)
+      faraday
+      inflecto
+      virtus
+    temple (0.8.1)
+    thin (1.7.2)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0, >= 1.0.4)
+      rack (>= 1, < 3)
+    thread_safe (0.3.6)
+    thwait (0.1.0)
+    tilt (2.0.9)
+    time_diff (0.3.0)
+      activesupport
+      i18n
+    tor (0.1.2)
+    trollop (1.16.2)
+    twemoji (3.1.4)
+      nokogiri (~> 1.6)
+    tzinfo (1.2.5)
+      thread_safe (~> 0.1)
+    uber (0.1.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.5)
+    unicorn (5.5.0)
+      kgio (~> 2.6)
+      raindrops (~> 0.7)
+    unicorn-worker-killer (0.4.4)
+      get_process_mem (~> 0)
+      unicorn (>= 4, < 6)
+    version (1.1.1)
+    virtus (1.0.5)
+      axiom-types (~> 0.1)
+      coercible (~> 1.0)
+      descendants_tracker (~> 0.0, >= 0.0.3)
+      equalizer (~> 0.0, >= 0.0.9)
+    webrobots (0.1.2)
+    will_paginate (3.1.7)
+    xml-simple (1.1.5)
+    xmlrpc (0.3.0)
+    yajl-ruby (1.4.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionview
+  activesupport
+  anti_captcha
+  bacon
+  base62-rb
+  block_io
+  btce
+  chartkick
+  cloudinary
+  colorize
+  daemons
+  ezcrypto
+  faraday
+  faraday_middleware
+  fog
+  geocoder
+  google_currency
+  groupdate
+  haml
+  hash_syntax
+  hashids
+  i18n
+  kramdown
+  logger
+  mechanize
+  money
+  open_exchange_rates
+  pg (= 0.21.0)
+  privatbank
+  public_suffix
+  rack
+  rack-timeout
+  rake
+  require_all
+  ruby-hidden-service
+  russian
+  sass
+  sentry-raven
+  sequel (= 4.39.0)
+  sequel-pg-comment
+  sinatra
+  sinatra-captcha
+  sinatra-contrib
+  sinatra-flash
+  sinatra-partial
+  sinatra-reloader
+  sinatra-sequel (= 0.9.0)
+  sinatra-support
+  socksify
+  stackprof
+  telegram-bot-ruby
+  thin
+  thwait
+  time_diff
+  tor
+  twemoji
+  unicorn
+  unicorn-worker-killer
+  version
+  will_paginate (~> 3.1.1)
 
 RUBY VERSION
-   ruby 2.6.0p0
+   ruby 2.4.3p205
 
 BUNDLED WITH
    1.17.2
