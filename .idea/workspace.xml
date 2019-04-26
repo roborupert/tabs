@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/tabs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tabs.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/AdminController.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/AdminController.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.ru" beforeDir="false" afterPath="$PROJECT_DIR$/config.ru" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/hidden.pem" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/hidden.pem" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,15 +18,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/admin/client.haml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/partials/client.haml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
@@ -31,64 +27,64 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/partials/bene_menu.haml">
+        <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="356">
-              <caret line="58" selection-start-line="58" selection-end-line="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jobs/update_refs.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+              <caret line="703" column="23" selection-start-line="703" selection-start-column="23" selection-end-line="703" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
+        <entry file="file://$PROJECT_DIR$/config.ru">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="702" column="47" selection-start-line="702" selection-start-column="47" selection-end-line="702" selection-end-column="47" />
+            <state>
+              <caret lean-forward="true" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/tsx/SearchController.rb">
+        <entry file="file://$PROJECT_DIR$/tmp/tor_62348/hidden_service/private_key">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="481" selection-start-line="481" selection-end-line="481" />
+            <state>
+              <caret selection-end-line="15" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/admin/clients.haml">
+        <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.4.3/gems/tor-0.1.2/lib/tor.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="356">
+              <caret line="79" column="11" selection-start-line="79" selection-start-column="11" selection-end-line="79" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/lib/helpers.rb">
+        <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="64" column="8" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
+            <state>
+              <caret lean-forward="true" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jobs/set_sales.rb">
+        <entry file="file://$PROJECT_DIR$/tmp/hidden.pem">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="210">
+              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tmp/tor_62348/hidden_service/hostname">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -106,10 +102,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>btn_</find>
-      <find>/settings</find>
-      <find>cashout</find>
-      <find>available_ca</find>
       <find>Упс</find>
       <find>TSX::Exceptions::Ex</find>
       <find>white</find>
@@ -136,6 +128,10 @@
       <find>method</find>
       <find>easypay</find>
       <find>ref</find>
+      <find>fog</find>
+      <find>uni</find>
+      <find>open</find>
+      <find>hidden</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -153,7 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/WallController.rb" />
         <option value="$PROJECT_DIR$/jobs/setwebhook-full.rb" />
         <option value="$PROJECT_DIR$/jobs/setallwebhooks.rb" />
         <option value="$PROJECT_DIR$/jobs/token.rb" />
@@ -181,12 +176,9 @@
         <option value="$PROJECT_DIR$/app/models/easypay.rb" />
         <option value="$PROJECT_DIR$/app/views/tsx/search/confirm.rb" />
         <option value="$PROJECT_DIR$/app/lib/tsx/payment.rb" />
-        <option value="$PROJECT_DIR$/tmp/hidden.pem" />
-        <option value="$PROJECT_DIR$/config.ru" />
         <option value="$PROJECT_DIR$/jobs/calc_charts.rb" />
         <option value="$PROJECT_DIR$/jobs/calc_one_chart.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/transfer_items.haml" />
-        <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/views/admin/items.haml" />
         <option value="$PROJECT_DIR$/app/views/admin/zld.haml" />
         <option value="$PROJECT_DIR$/app/models/rest.rb" />
@@ -204,6 +196,10 @@
         <option value="$PROJECT_DIR$/jobs/set_sales.rb" />
         <option value="$PROJECT_DIR$/app/views/partials/client.haml" />
         <option value="$PROJECT_DIR$/app/controllers/AdminController.rb" />
+        <option value="$PROJECT_DIR$/cr.rb" />
+        <option value="$PROJECT_DIR$/config.ru" />
+        <option value="$PROJECT_DIR$/tmp/hidden.pem" />
+        <option value="$PROJECT_DIR$/Gemfile" />
       </list>
     </option>
   </component>
@@ -425,12 +421,12 @@
       <workItem from="1554047054285" duration="3056000" />
       <workItem from="1554386509551" duration="613000" />
       <workItem from="1554472895919" duration="13639000" />
-      <workItem from="1555617786218" duration="42467000" />
+      <workItem from="1555617786218" duration="44536000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="454965000" />
+    <option name="totallyTimeSpent" value="457034000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1299" height="741" extended-state="6" />
@@ -482,22 +478,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.4.3/gems/colorize-0.8.1/lib/colorize/class_methods.rb" />
-    <entry file="file://$PROJECT_DIR$/app/lib/view_helpers.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="246" column="41" lean-forward="true" selection-start-line="246" selection-start-column="41" selection-end-line="246" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.4.3/gems/sequel-4.39.0/lib/sequel/dataset/query.rb" />
-    <entry file="file://$PROJECT_DIR$/app/models/easypay.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" lean-forward="true" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/tsx/search/confirm.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -548,14 +528,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tmp/hidden.pem">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tmp/tor_20863/hidden_service/hostname">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -578,13 +550,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/tsx/admin/botstat.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -600,13 +565,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/zl.haml" />
-    <entry file="file://$PROJECT_DIR$/config.ru">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="56" selection-start-line="31" selection-start-column="56" selection-end-line="31" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/brom.haml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -807,8 +765,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/AdminController.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="702" column="47" selection-start-line="702" selection-start-column="47" selection-end-line="702" selection-end-column="47" />
+        <state relative-caret-position="356">
+          <caret line="703" column="23" selection-start-line="703" selection-start-column="23" selection-end-line="703" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.4.3/gems/tor-0.1.2/lib/tor.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="79" column="11" selection-start-line="79" selection-start-column="11" selection-end-line="79" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/tor_62348/hidden_service/hostname">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/hidden.pem">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cr.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/tor_62348/hidden_service/private_key">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.ru">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
         </state>
       </provider>
     </entry>

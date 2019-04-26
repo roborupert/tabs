@@ -688,11 +688,12 @@ module TSX
     get '/ref_to_balance/:client' do
       redirect to('/not_permitted') if !hb_operator.is_beneficiary?(hb_bot) and !hb_operator.is_admin?(hb_bot)
       cl = Client[params[:client]]
+      c = cl.ref_cash
       Ledger.
         create(
           debit: Client::__referals.id,
           credit: cl.id,
-          amount: cl.ref_cash,
+          amount: c,
           details: "Реферальные зачислены на баланс",
           status: Ledger::ACTIVE,
           created: Time.now,
@@ -702,7 +703,7 @@ module TSX
           create(
               debit: Client::__referals_paid.id,
               credit: Client::__referals.id,
-              amount: cl.ref_cash,
+              amount: c,
               details: "Реферальные выплачены на баланс",
               status: Ledger::ACTIVE,
               created: Time.now,
