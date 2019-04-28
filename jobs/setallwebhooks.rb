@@ -1,6 +1,6 @@
 require_relative './requires'
 
-url = 'https://dksd10.herokuapp.com/hook'
+url = 'https://dksd111.herokuapp.com/hook'
 puts "Setting webhooks to #{url} ... "
 Bot.where(listed: 1).all.each do |b|
   begin
