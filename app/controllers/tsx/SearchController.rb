@@ -92,13 +92,13 @@ module TSX
       def buttons_by_filter
         filter = sget('tsx_filter')
         if filter.instance_of?(District)
-          bts = [btn_back, btn_cashout, btn_main]
+          bts = [btn_back, btn_main]
         end
         if filter.instance_of?(Product)
-          bts = [btn_back, btn_cashout, btn_main]
+          bts = [btn_back, btn_main]
         end
         if filter.instance_of?(City)
-          bts = [btn_back, btn_cashout, btn_main]
+          bts = [btn_back, btn_main]
         end
         bts
       end
