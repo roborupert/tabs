@@ -90,9 +90,9 @@ module TSX
     end
 
     Cloudinary.config do |config|
-      config.cloud_name = 'hjc9vetdl'
-      config.api_key = '882757826477989'
-      config.api_secret = '6Q1GcDD7p5sk5rEr_rvAIRpmqr4'
+      config.cloud_name = 'hfjpbj9mq'
+      config.api_key = '998253742268124'
+      config.api_secret = 'sSKNB1YcxFatJByvB6axZqruOnE'
       config.cdn_subdomain = true
     end
 
