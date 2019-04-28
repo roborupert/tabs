@@ -15,7 +15,7 @@ module TSX
         reply_inline 'welcome/welcome', links: false, sh: hb_client.shop?, support_line: @tsx_bot.support_line
         serp
         # play_game
-        reply_inline "welcome/referals"
+        # reply_inline "welcome/referals"
       end
 
       def serp
