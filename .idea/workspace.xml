@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c19c9c15-2f73-44f6-8aef-7f4b5ff78af3" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/tabs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tabs.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/BotController.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/BotController.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobs/setallwebhooks.rb" beforeDir="false" afterPath="$PROJECT_DIR$/jobs/setallwebhooks.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,8 +75,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/BotController.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
+            <state relative-caret-position="71">
+              <caret line="27" selection-start-line="26" selection-end-line="27" />
             </state>
           </provider>
         </entry>
@@ -424,12 +422,12 @@
       <workItem from="1554047054285" duration="3056000" />
       <workItem from="1554386509551" duration="613000" />
       <workItem from="1554472895919" duration="13639000" />
-      <workItem from="1555617786218" duration="50007000" />
+      <workItem from="1555617786218" duration="50343000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="462505000" />
+    <option name="totallyTimeSpent" value="462841000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1299" height="741" extended-state="6" />
@@ -813,8 +811,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/BotController.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret lean-forward="true" />
+        <state relative-caret-position="71">
+          <caret line="27" selection-start-line="26" selection-end-line="27" />
         </state>
       </provider>
     </entry>
