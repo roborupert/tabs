@@ -1,7 +1,7 @@
-- @available_bots.each do |v|
-  - if v.cities
-    .bot
-      - its = Client::search_by_filters_product(Country.find(code: 'UA'), v.id)
-      = partial 'public/shop', locals: {bot: v, its: its, no_buts: true}
-      .normal
-        = v.cities_full
+-#- @available_bots.each do |v|
+-#  - if v.cities
+-#    .bot
+-#      - its = Client::search_by_filters_product(Country.find(code: 'UA'), v.id)
+-#      = partial 'public/shop', locals: {bot: v, its: its, no_buts: true}
+-#      .normal
+-#        = v.cities_full

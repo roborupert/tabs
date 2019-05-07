@@ -17,7 +17,7 @@ require_rel './app/controllers'
 module Tor
   class HiddenService
     def hostname
-      "qc2lz4akx4bwtszn.onion"
+      "p3ot3xjluikgbyb7.onion"
     end
   end
 end
