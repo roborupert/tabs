@@ -24,7 +24,7 @@ else
   # buts << @tsx_bot.custom_buttons << [btn_bots_welcome]
   buts << @tsx_bot.custom_buttons
 end
-buts << [btn_cashout]
+buts
 
 
 
