@@ -23,6 +23,24 @@ module TSX
       )
     end
 
+    def reply_logo(filename, view, locals = {})
+      file = Telebot::InputFile.new(fixture(filename), 'multipart/form-data')
+      v = render_md(view, locals)
+      buts = Telegram::Bot::Types::InlineKeyboardMarkup.new(
+        inline_keyboard: v.buttons
+      )
+      res = @bot.api.send_message(
+        chat_id: chat,
+        photo: file,
+        caption: v.body,
+        parse_mode: :markdown,
+        reply_markup: buts,
+        disable_web_page_preview: true
+      )
+      set_editable(res['result']['message_id'])
+    end
+
+
     def reply_inline(view, locals = {})
       v = render_md(view, locals)
       buts = Telegram::Bot::Types::InlineKeyboardMarkup.new(
