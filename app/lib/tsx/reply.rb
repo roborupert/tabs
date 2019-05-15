@@ -29,7 +29,7 @@ module TSX
       buts = Telegram::Bot::Types::InlineKeyboardMarkup.new(
         inline_keyboard: v.buttons
       )
-      res = @bot.api.send_message(
+      res = @bot.api.send_photo(
         chat_id: chat,
         photo: file,
         caption: v.body,
