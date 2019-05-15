@@ -1,3 +1,3 @@
 require_relative './requires'
-Faraday.get('http://ukrojob.herokuapp.com')
+Faraday.get('http://shmbot.herokuapp.com')
 logger.noise "Finished."
