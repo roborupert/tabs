@@ -18,7 +18,7 @@
     <orderEntry type="library" scope="PROVIDED" name="block_io (v1.2.0, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="btce (v0.5.5, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.3, RVM: ruby-2.4.3) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="bundler (v2.0.1, RVM: ruby-2.4.3) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v1.17.3, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="chartkick (v3.0.2, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cloudinary (v1.11.1, RVM: ruby-2.4.3) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coercible (v1.0.0, RVM: ruby-2.4.3) [gem]" level="application" />
